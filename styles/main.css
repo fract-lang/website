@@ -145,6 +145,7 @@ table th {
 }
 
 .linktable a {
+	color: black;
 	text-indent: 0px;
 	text-decoration: none;
 	font-weight: normal;
