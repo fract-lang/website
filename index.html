@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>
+			The Fract Programming Language
+		</title>
+		<link rel="icon" href="https://raw.githubusercontent.com/fract-lang/resources/main/logo/fract.svg">
+		<link rel="stylesheet" type="text/css" href="./styles/main.css">
+	</head>
+	<body>
+		<div id="navigation">
+			<div>
+				<img width="70" height="70" src="https://raw.githubusercontent.com/fract-lang/resources/main/logo/fract.svg">
+			</div>
+			<ul>
+				<li><a target="_blank" href="https://github.com/fract-lang/fract/tree/master/samples">Examples</a></li>
+				<li><a target="_blank" href="https://github.com/fract-lang/fract/tree/master/docs">Documentation</a></li>
+				<li><a target="_blank" href="https://github.com/fract-lang/fract/blob/master/docs/fract/a_tour_of_fract.md">Tour</a></li>
+			</ul>
+		</div>
+
+		<div class="main">
+			<div style="display: flex;">
+				<div>
+					<div style="font-size: x-large;">The Fract Programming Language</div>
+					Fast, efficient, safe and simple.
+					<br>
+					Designed for powerful scripting programming.
+					<div style="margin-top: 60px">
+						See example algorithms made with Fract
+					</div>
+					<div style="margin-top: 5px">
+						<div class="dropdown">
+							<button class="dropbtn">Select Algorithm ᐯ</button>
+							<div class="dropdown-content">
+								<a id="example_helloworld">Hello World</a>
+								<a id="example_fibonacci">Fibonacci</a>
+								<a id="example_primecheck">Prime Check</a>
+								<a id="example_fizzbuzz">FizzBuzz</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div style="margin-left: 70px; height: 250px; width: 60%;">
+					<div id="algorithm_example_block" class="code" style="width: 100%; height: 100%;"></div>
+				</div>
+			</div>
+
+			<div style="margin: 30px; margin-top: 150px;">
+				<div class="area">
+					<div class="section_title">Simplicity</div>
+					<div style="display: flex;">
+						<div style="width: 500px;">
+							Fract code blocks are not based on indentation, don't get in trouble with weird indentation errors, and not cause no-nonsense problems for beginners.
+							<br><br>
+							With clean and readable code blocks, it's easy to understand where each code block ends and the syntax is pretty simple.
+						</div>
+						<div style="margin-left: 70px">
+							<li>No mandatory indention</li>
+							<li>Clean code blocks</li>
+							<li>Clean syntax</li>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div style="margin: 30px; margin-top: 50px;">
+				<div class="area">
+					<div class="section_title">Performance</div>
+					<div style="display: flex;">
+						<div style="width: 500px;">
+							Lexer works pretty fast. Before the code is run, it is parsed by the lexer and never goes through the parsing phase again.
+							<br><br>
+							Interpreted languages ​​are inherently slower than compiled languages, but Fract is one of the fastest interpreted languages.
+							It has a fast interpreter and implements a debugging algorithm as simple as possible.
+						</div>
+						<div style="margin-left: 70px">
+							<li>No unnecessarry debugging</li>
+							<li>No retokenize</li>
+							<li>No conscious delay on interpreter processes</li>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div style="margin: 30px; margin-top: 50px;">
+				<div class="area">
+					<div class="section_title">Safety</div>
+					<div style="display: flex;">
+						<div style="width: 500px;">
+							Fract does not support null, it is impossible to get a null error.
+							<br><br>
+							All definitions must be fully defined at the time of declaration and there is no default value assignment, the value must be given by the developer.
+						</div>
+						<div style="margin-left: 70px">
+							<li>No null</li>
+							<li>No undefined values</li>
+							<li>No variable shadowing in blocks</li>
+							<li>No evaluate function</li>
+							<li>Immutability by default</li>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div style="margin: 30px; margin-top: 50px;">
+				<div class="area">
+					<div class="section_title">Efficiency</div>
+					<div style="display: flex;">
+						<div style="width: 1000px;">
+							It has high memory efficiency and a powerful backend.
+							<br><br>
+							Memory consumption is low, does not overload. It is a lightweight alternative for most systems with a light memory consumption.
+						</div>
+						<div style="margin-left: 70px; width: 100%;">
+							Just started interpreters on Windows 10 x64
+							<table style="width: 100%;">
+								<tr style="font-weight: bold;">
+									<td>Language</td>
+									<td>Version</td>
+									<td>Release</td>
+									<td>Shell</td>
+									<td>Total</td>
+								</tr>
+								<tr>
+									<td>Fract</td>
+									<td>0.0.1</td>
+									<td>Developer Beta</td>
+									<td>1.1Mb</td>
+									<td>7.4Mb</td>
+								</tr>
+								<tr>
+									<td>Python</td>
+									<td>3.9.5</td>
+									<td>Stable</td>
+									<td>2.8Mb</td>
+									<td>9.6Mb</td>
+								</tr>
+								<tr>
+									<td>R</td>
+									<td>4.0.2</td>
+									<td>Stable</td>
+									<td>0.7Mb</td>
+									<td>44Mb</td>
+								</tr>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div style="margin: 30px; margin-top: 50px;">
+				<div class="area">
+					<div class="section_title">Memory Management</div>
+					<div style="display: flex;">
+						<div style="width: 500px;">
+							Fract has garbage collector and memory management is done automatically. But if a developer wants to do it, why not?
+							<br>
+							<br>
+							With the delete (del) keyword you can delete the definitions from the definition memory in the backend and that means free space in the memory eventually.
+						</div>
+						<div style="margin-left: 70px;">
+							<div class="code">var (
+  name    = input("Name: ")
+  surname = input("Surname: ")
+)
+
+print("Hello " + name + " " + surname + "!")
+del name, surname
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div style="margin: 30px; margin-top: 50px;">
+				<div class="area">
+					<div class="section_title">Debugging</div>
+					<div style="display: flex;">
+						<div style="width: 500px;">
+							Unreachable parts of code are never included in debugging.
+							<br><br>
+							For example, the body of an if block, the body of a loop that is never executed, the body of a function that is never called... These are not included in debugging.
+						</div>
+						<div style="margin-left: 70px">
+							<div class="code">func a()
+  Unreachable code.
+end
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div> <!-- Main -->
+
+		<div style="margin-top: 100px; margin-bottom: 50px;">
+			<center style="user-select: none;">
+				<table class="linktable" style="margin: 100px;">
+					<tr>
+						<td>Contribute</td>
+						<td>Open Source</td>
+						<td>Comminity</td>
+					</tr>
+					<tr>
+						<td><a target="blank" href="https://github.com/fract-lang/fract/blob/master/CODE_OF_CONDUCT.md">Code of Conduct</a></td>
+						<td><a target="blank" href="https://github.com/fract-lang/fract">Repository</a></td>
+						<td><a target="blank" href="https://github.com/fract-lang/fract/blob/master/LICENSE">License</a></td>
+					</tr>
+					<tr>
+						<td><a target="blank" href="https://github.com/fract-lang/fract/blob/master/CONTRIBUTING.md">Guide</td>
+						<td><a target="blank" href="https://github.com/fract-lang">GitHub Organization</a></td>
+						<td><a target="blank" href="https://github.com/fract-lang/fract/graphs/contributors">Contributors</a></td>
+					</tr>
+					<tr>
+						<td><a target="blank" href="https://github.com/fract-lang/fract/discussions">Discussions</a></td>
+						<td><a target="blank" href="https://github.com/fract-lang/fract.github.io">Source Code</a></td>
+						<td><a target="blank" href="https://github.com/fract-lang/resources">Resources</a></td>
+					</tr>
+					<tr>
+						<td><a target="blank" href="https://github.com/fract-lang/fract/issues">Issues</a></td>
+						<td></td>
+						<td></td>
+					</tr>
+				</table>
+				<div id="endmsg"></div>
+			</center>
+		</div>
+	</body>
+	<script src="./scripts/background.js"></script>
+	<script src="./scripts/example_algorithms.js"></script>
+	<script src="./scripts/generic.js"></script>
+</html>

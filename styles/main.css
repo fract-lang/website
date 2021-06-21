@@ -1,0 +1,161 @@
+body {
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	font-size: large;
+}
+
+::-moz-selection { /* Code for Firefox */
+  background: rgb(255, 208, 0);
+}
+
+::selection {
+  background: rgb(255, 208, 0);
+}
+
+#navigation {
+	user-select: none;
+	width: 100%;
+	height: 70px;
+	display: flex;
+	overflow: hidden;
+	padding-bottom: 60px;
+	text-align: center;
+}
+
+#navigation ul {
+	user-select: none;
+	font-size: larger;
+	list-style-type: none;
+	margin-top: auto;
+	margin-bottom: auto;
+	padding: 0;
+}
+
+#navigation li {
+	user-select: none;
+	float: left;
+}
+
+#navigation li a {
+	user-select: none;
+	display: block;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+	color: black;
+}
+
+.main {
+	padding-left: 5%;
+	padding-right: 5%;
+}
+
+.code {
+	white-space: pre-wrap;
+	overflow: auto;
+	font-family: monospace;
+	font-size: 17px;
+	border: 1px solid silver;
+	border-radius: 10px;
+	padding: 20px;
+}
+
+.area {
+	overflow: auto;
+	font-size: 17px;
+	border: 1px solid gainsboro;
+	background-color: white;
+	border-radius: 5px;
+	padding: 20px;
+}
+
+.dropbtn {
+	transition: 0.5s;
+	user-select: none;
+	background-color: rgb(252, 188, 71);
+	color: white;
+	padding: 16px;
+	font-size: 16px;
+	border: none;
+	cursor: pointer;
+}
+
+.dropdown {
+	user-select: none;
+	position: relative;
+	display: inline-block;
+}
+
+.dropdown-content {
+	display: none;
+	position: absolute;
+	background-color: #f9f9f9;
+	min-width: 160px;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	z-index: 1;
+}
+
+.dropdown-content a {
+	transition: 0.15s;
+	cursor: pointer;
+	color: black;
+	padding: 12px 16px;
+	text-decoration: none;
+	display: block;
+}
+
+.dropdown-content a:hover {
+	transition: 0.15s;
+	background-color: #e0e0e0
+}
+
+.dropdown:hover .dropdown-content {
+	display: block;
+}
+
+.dropdown:hover .dropbtn {
+	background-color: orange;
+}
+
+.section_title {
+	font-size: x-large;
+	margin-bottom: 10px;
+}
+
+table {
+	border-collapse: collapse;
+	padding: 8px;
+}
+
+table td {
+	padding: 12px;
+}
+
+table th {
+	padding: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #04AA6D;
+  color: white;
+}
+
+.linktable tr {
+	width: 100%;
+	text-indent: 15px;
+	font-weight: bold;
+}
+
+.linktable a {
+	text-indent: 0px;
+	text-decoration: none;
+	font-weight: normal;
+	transition: 0.15s;
+	cursor: pointer;
+	padding: 12px 16px;
+	text-decoration: none;
+	display: block;
+}
+
+.linktable a:hover {
+	transition: 0.15s;
+	background-color: #ffd988
+}
