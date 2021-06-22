@@ -21,41 +21,33 @@
 			</ul>
 		</div>
 
-		<div style="display: flex;">
-			<div class="linktable" style="width: 250px; position: sticky; top: 40px;">
-				<a href="#rules">Rules</a>
-				<a href="#steps">Steps</a>
-				<a href="#tips">Tips</a>
-			</div>
-			<div class="main" style="width: 90%;">
-				<h1>Contributor Guide</h1>
-				<div class="linktable" style="display: flex; text-align: center;">
-					<a style="width: 165px;" target="_blank" href="code_of_conduct.html">Code Of Conduct</a>
-					<a style="width: 165px;" target="_blank" href="license.html">License</a>
-				</div>
-				<br>
-				<br>
-				<div id="rules" class="section_title">Rules</div>
-				It is important that the code is written and properly formatted. Description lines should be legible and meaningful. The code must be properly documented. Commit messages should be understandable and expressive.
-
-				<br>
-				<br>
-				<div id="steps" class="section_title">Steps</div>
-				<ul>
-					<li>Get a fork from repository</li>
-					<li>Make your changes to your fork</li>
-					<li>Send a pull request</li>
-				</ul>
-
-				<br>
-				<br>
-				<div id="tips" class="section_title">Tips</div>
-				<ul>
-					<li>You can improve codes and documentation.</li>
-					<li>You can <x class="inline_code"> // TODO: </x> notes.</li>
-				</ul>
-
-			</div>
+		<div class="main" style="margin-left: 100px; margin-right: 100px;">
+			<h1>License</h1>
+			MIT License
+			<br>
+			<br>
+			Copyright (c) <x id="year"></x> Fract Developer Team
+			<br>
+			<br>
+			Permission is hereby granted, free of charge, to any person obtaining a copy
+			of this software and associated documentation files (the "Software"), to deal
+			in the Software without restriction, including without limitation the rights
+			to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+			copies of the Software, and to permit persons to whom the Software is
+			furnished to do so, subject to the following conditions:
+			<br>
+			<br>
+			The above copyright notice and this permission notice shall be included in all
+			copies or substantial portions of the Software.
+			<br>
+			<br>
+			THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+			IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+			FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+			AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+			LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+			OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+			SOFTWARE.
 		</div>
 
 		<div style="margin-top: 100px; margin-bottom: 50px;">
@@ -91,5 +83,8 @@
 			</center>
 		</div>
 	</body>
+	<script type="text/javascript">
+		document.getElementById('year').textContent = new Date().getFullYear()
+	</script>
 	<script src="../scripts/generic.js"></script>
 </html>
