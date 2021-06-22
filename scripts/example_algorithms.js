@@ -8,8 +8,7 @@ const code_fibonacci =
     end
 end
 
-fib(0, 1)
-`
+fib(0, 1)`
 const code_primecheck =
 `func prime(x)
     if x == 2
@@ -29,8 +28,7 @@ for _, i in range(2, 100)
     if prime(i)
         print(i)
     end
-end
-`
+end`
 const code_fizzbuzz =
 `for _, number in range(1, 100)
     if number % 3 == 0 && number % 5 == 0
@@ -42,8 +40,7 @@ const code_fizzbuzz =
     else
         print(number)
     end
-end
-`
+end`
 const code_factorial =
 `func fact(x)
     if x < 0
@@ -54,8 +51,7 @@ const code_factorial =
     ret x * fact(x - 1)
 end
 
-print(fact(12))
-`
+print(fact(12))`
 const code_hellocountries =
 `func hello(...countries)
     print('Hello', fin='')
@@ -65,8 +61,7 @@ const code_hellocountries =
     print('!')
 end
 
-hello('Turkey', 'France', 'German', 'Japan', 'Canada')
-`
+hello('Turkey', 'France', 'German', 'Japan', 'Canada')`
 
 const codeblock = document.getElementById('algorithm_example_block')
 

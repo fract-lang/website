@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>
+			The Fract Programming Language - Documentation
+		</title>
+		<link rel="icon" href="https://raw.githubusercontent.com/fract-lang/resources/main/logo/fract.svg">
+		<link rel="stylesheet" type="text/css" href="../styles/main.css">
+	</head>
+	<body>
+		<div id="navigation">
+			<div>
+				<a href="../index.html">
+					<img width="70" height="70" src="https://raw.githubusercontent.com/fract-lang/resources/main/logo/fract.svg">
+				</a>
+			</div>
+			<ul class="linktable">
+				<li><a href="examples.html">Examples</a></li>
+				<li><a target="_blank" href="https://github.com/fract-lang/fract/tree/master/docs">Documentation</a></li>
+				<li><a target="_blank" href="https://github.com/fract-lang/fract/blob/master/docs/fract/a_tour_of_fract.md">Tour</a></li>
+			</ul>
+		</div>
+
+		<div style="display: flex;">
+			<div class="linktable" style="width: 200px; position: sticky; top: 40px;">
+				<a href="#simplecalculator">Simple Calculator</a>
+				<a href="#fibonacci">Fibonacci</a>
+				<a href="#fizzbuzz">FizzBuzz</a>
+				<a href="#primenumber">Prime Number</a>
+			</div>
+			<div class="main" style="width: 90%;">
+				<div id="simplecalculator" class="section_title">Simple Calculator</div>
+				<div class="code">print("Welcome to Fract simple calculator!")
+print("**** Operations ****")
+print("1 - Add")
+print("2 - Subtract")
+print("3 - Multiple")
+print("4 - Divide")
+print("0 - Exit")
+
+for
+    const input = input("Select your operation: ")
+    if input == "0"
+        break
+    elif input == "1" || input == "2" || input == "3" || input == "4"
+        const (
+            first  = float(input("Enter first number: "))
+            second = float(input("Enter second number: "))
+        )
+        if input == "1"
+            print(first + second)
+        elif input == "2"
+            print(first - second)
+        elif input == "3"
+            print(first * second)
+        else
+            print(first / second)
+        end
+    else
+        print("Invalid choice!")
+    end
+end</div>
+				<br>
+				<div id="fibonacci" class="section_title">Fibonacci</div>
+				<div class="code">var (
+    nterms = int(input("How many terms: "))
+    n1     = 0
+    n2     = 1
+    count  = 0
+)
+if nterms <= 0
+    print("Please enter a positive integer!")
+else
+    print("Fibonacci sequence;")
+    for count < nterms
+        print(n1)
+        const nth = n1 + n2
+        # update values
+        n1 = n2
+        n2 = nth
+        count += 1
+    end
+end</div>
+				<br>
+				<div id="fizzbuzz" class="section_title">FizzBuzz</div>
+				<div class="code">for _, number in range(1, 100)
+    if number % 3 == 0 && number % 5 == 0
+        print('FizzBuzz')
+    elif number % 3 == 0
+        print('Fizz')
+    elif number % 5 == 0
+        print('Buzz')
+    else
+        print(number)
+    end
+end</div>
+				<br>
+				<div id="primenumber" class="section_title">Prime Number</div>
+				<div class="code">for _, x in range(2, 100)
+    if x == 2
+        print(x)
+        continue
+    elif x < 2 || x % 2 == 0
+        continue
+    end
+
+    var prime = true
+    for _, y in range(2, x - 1)
+        if x % y == 0
+            prime = false
+            break
+        end
+    end
+    if prime
+        print(x)
+    end
+end</div>
+			</div>
+		</div>
+
+		<div style="margin-top: 100px; margin-bottom: 50px;">
+			<center style="user-select: none;">
+				<table class="linktable" style="margin: 100px;">
+					<tr>
+						<td>Contribute</td>
+						<td>Open Source</td>
+						<td>Comminity</td>
+					</tr>
+					<tr>
+						<td><a target="_blank" href="https://github.com/fract-lang/fract/blob/master/CODE_OF_CONDUCT.md">Code of Conduct</a></td>
+						<td><a target="_blank" href="https://github.com/fract-lang/fract">Repository</a></td>
+						<td><a target="_blank" href="https://github.com/fract-lang/fract/blob/master/LICENSE">License</a></td>
+					</tr>
+					<tr>
+						<td><a target="_blank" href="https://github.com/fract-lang/fract/blob/master/CONTRIBUTING.md">Guide</td>
+						<td><a target="_blank" href="https://github.com/fract-lang">GitHub Organization</a></td>
+						<td><a target="_blank" href="https://github.com/fract-lang/fract/graphs/contributors">Contributors</a></td>
+					</tr>
+					<tr>
+						<td><a target="_blank" href="https://github.com/fract-lang/fract/discussions">Discussions</a></td>
+						<td><a target="_blank" href="https://github.com/fract-lang/website">Source Code</a></td>
+						<td><a target="_blank" href="https://github.com/fract-lang/resources">Resources</a></td>
+					</tr>
+					<tr>
+						<td><a target="_blank" href="https://github.com/fract-lang/fract/issues">Issues</a></td>
+						<td></td>
+						<td></td>
+					</tr>
+				</table>
+				<div id="endmsg"></div>
+			</center>
+		</div>
+	</body>
+	<script src="../scripts/generic.js"></script>
+</html>
