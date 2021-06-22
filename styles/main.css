@@ -167,3 +167,9 @@ table th {
 	transition: 0.15s;
 	background-color: rgb(252, 188, 71);
 }
+
+.inline_code {
+	white-space: pre-wrap;
+	background-color: gainsboro;
+	border-radius: 5px;
+}
