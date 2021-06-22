@@ -24,7 +24,8 @@
 		<div style="display: flex;">
 			<div class="linktable" style="width: 250px; position: sticky; top: 40px;">
 				<a href="#rules">Rules</a>
-				<a href="#steps">Steps</a>
+				<a href="#get_fork">Get Fork</a>
+				<a href="#send_pull_request">Send Pull Request</a>
 				<a href="#tips">Tips</a>
 			</div>
 			<div class="main" style="width: 90%;">
@@ -36,20 +37,54 @@
 				<br>
 				<br>
 				<div id="rules" class="section_title">Rules</div>
-				It is important that the code is written and properly formatted. Description lines should be legible and meaningful. The code must be properly documented. Commit messages should be understandable and expressive.
+				<ul>
+					<li>It is important that the code is written and properly formatted.</li>
+					<li>Description lines should be legible and meaningful.</li>
+					<li>The code must be properly documented.</li>
+					<li>Commit messages should be understandable and expressive.</li>
+				</ul>
 
 				<br>
 				<br>
-				<div id="steps" class="section_title">Steps</div>
+				<div id="get_fork" class="section_title">Get Fork</div>
+				<div class="linktable" style="width: 111px;">
+					<a target="_blank" href="https://github.com/fract-lang/fract/fork">Fork Fract</a>
+				</div>
+
+				Once you have your fork, you can work directly. But to make things easier, you can open a branch in your own name.
+				<br>
+				After making the changes in the fork you want to work with, you can throw a pull request.
+				<br>
+				<br>
 				<ul>
-					<li>Get a fork from repository</li>
-					<li>Make your changes to your fork</li>
-					<li>Send a pull request</li>
+					<li>Very large changes are difficult to control and understand. Therefore, avoid excessively large PR requests as much as possible.</li>
+					<li>Try not to make multiple changes within a single PR, a PR request should only serve one change.</li>
+				</ul>
+
+				<br>
+				<br>
+				<div id="send_pull_request" class="section_title">Send Pull Request</div>
+				After making the contribution you want to make, you have reached the stage of sending it as a PR request.
+				<br>
+				<br>
+				Before send a PR;
+				<ul>
+					<li>Your contribution will be published under <a target="_blank" href="license.html">this license.</a></li>
+					<li>Be sure to document the necessary places in the code.</li>
+					<li>Make sure the code is readable and the existing layout is protected (if you make refactoring, you can skip).</li>
+				</ul>
+				<br>
+				There are some points to be considered for an understandable PR;
+				<ul>
+					<li>The PR title should be short and concise and give information about the PR.</li>
+					<li>Changes should be noted in the PR statement, reviewers should understand the purpose of PR.</li>
+					<li>If there are, possible errors and conflicts that may occur in the case of combining the PR should be mentioned.</li>
 				</ul>
 
 				<br>
 				<br>
 				<div id="tips" class="section_title">Tips</div>
+				Want to contribute but don't have an idea yet?
 				<ul>
 					<li>You can improve codes and documentation.</li>
 					<li>You can <x class="inline_code"> // TODO: </x> notes.</li>
