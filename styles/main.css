@@ -150,6 +150,7 @@ table th {
 }
 
 .linktable a {
+	user-select: none;
 	border-radius: 5px;
 	color: black;
 	text-indent: 0px;
