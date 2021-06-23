@@ -15,19 +15,24 @@ body {
 
 #navigation {
 	user-select: none;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
 	width: 100%;
-	height: 70px;
+	height: 5px;
 	display: flex;
 	overflow: hidden;
 	padding-bottom: 60px;
 	text-align: center;
+	z-index: 1;
 }
 
 #navigation ul {
 	user-select: none;
 	font-size: larger;
 	list-style-type: none;
-	margin-top: auto;
+	margin-top: 4px;
 	margin-bottom: auto;
 	padding: 0;
 }
@@ -169,7 +174,40 @@ table th {
 }
 
 .inline_code {
+	display: inline-flex;
 	white-space: pre-wrap;
-	background-color: gainsboro;
+	background-color: rgb(231, 231, 231);
 	border-radius: 5px;
+}
+
+.side_menu {
+	display: flex;
+	margin-top: 50px;
+}
+
+.warn {
+	position: relative;
+	padding: 10px;
+	border-radius: 10px;
+	margin-top: 15px;
+	background-color: rgb(241, 237, 197);
+	border: 1px solid goldenrod;
+}
+
+.info {
+	position: relative;
+	padding: 10px;
+	border-radius: 10px;
+	margin-top: 15px;
+	background-color: rgb(212, 244, 250);
+	border: 1px solid blue;
+}
+
+.tip {
+	position: relative;
+	padding: 10px;
+	border-radius: 10px;
+	margin-top: 15px;
+	background-color: rgb(198, 241, 197);
+	border: 1px solid green;
 }

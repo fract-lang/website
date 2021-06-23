@@ -17,11 +17,11 @@
 			<ul class="linktable">
 				<li><a href="samples.html">Samples</a></li>
 				<li><a target="_blank" href="https://github.com/fract-lang/fract/tree/master/docs">Documentation</a></li>
-				<li><a target="_blank" href="https://github.com/fract-lang/fract/blob/master/docs/fract/a_tour_of_fract.md">Tour</a></li>
+				<li><a href="tour.html">Tour</a></li>
 			</ul>
 		</div>
 
-		<div style="display: flex;">
+		<div class="side_menu">
 			<div class="linktable" style="width: 200px; position: sticky; top: 40px;">
 				<a href="#simplecalculator">Simple Calculator</a>
 				<a href="#fibonacci">Fibonacci</a>
@@ -30,49 +30,49 @@
 			</div>
 			<div class="main" style="width: 90%;">
 				<div id="simplecalculator" class="section_title">Simple Calculator</div>
-				<div class="code">print("Welcome to Fract simple calculator!")
-print("**** Operations ****")
-print("1 - Add")
-print("2 - Subtract")
-print("3 - Multiple")
-print("4 - Divide")
-print("0 - Exit")
+				<div class="code">print('Welcome to Fract simple calculator!')
+print('**** Operations ****')
+print('1 - Add')
+print('2 - Subtract')
+print('3 - Multiple')
+print('4 - Divide')
+print('0 - Exit')
 
 for
-    const input = input("Select your operation: ")
-    if input == "0"
+    const input = input('Select your operation: ')
+    if input == '0'
         break
-    elif input == "1" || input == "2" || input == "3" || input == "4"
+    elif input == '1' || input == '2' || input == '3' || input == '4'
         const (
-            first  = float(input("Enter first number: "))
-            second = float(input("Enter second number: "))
+            first  = float(input('Enter first number: '))
+            second = float(input('Enter second number: '))
         )
-        if input == "1"
+        if input == '1'
             print(first + second)
-        elif input == "2"
+        elif input == '2'
             print(first - second)
-        elif input == "3"
+        elif input == '3'
             print(first * second)
         else
             print(first / second)
         end
     else
-        print("Invalid choice!")
+        print('Invalid choice!')
     end
 end</div>
 				<br>
 				<br>
 				<div id="fibonacci" class="section_title">Fibonacci</div>
 				<div class="code">var (
-    nterms = int(input("How many terms: "))
+    nterms = int(input('How many terms: '))
     n1     = 0
     n2     = 1
     count  = 0
 )
 if nterms <= 0
-    print("Please enter a positive integer!")
+    print('Please enter a positive integer!')
 else
-    print("Fibonacci sequence;")
+    print('Fibonacci sequence;')
     for count < nterms
         print(n1)
         const nth = n1 + n2
