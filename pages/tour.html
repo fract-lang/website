@@ -27,8 +27,10 @@
 				<a href="#hello_world">Hello World!</a>
 				<a href="#comments">Comments</a>
 				<a href="#statement_terminator">Statement Terminator</a>
+				<a href="#operators">Operators</a>
 				<a href="#data_types">Data Types</a>
 				<a href="#arrays">Arrays</a>
+				<a href="#naming_conventions">Naming Conventions</a>
 				<a href="#variables_and_mutability">Variables and Mutability</a>
 				<a href="#control_flow">Control Flow</a>
 				<a href="#functions">Functions</a>
@@ -83,20 +85,170 @@ end</div>
 
 				<br>
 				<br>
+				<h2 id="operators">Operators</h2>
+				<table border="1">
+					<tr>
+						<td align="center"><b>;</b></td>
+						<td>Statement Terminator.</td>
+					</tr>
+					<tr>
+						<td align="center"><b>+</b></td>
+						<td>Addition.</td>
+					</tr>
+					<tr>
+						<td align="center"><b>-</b></td>
+						<td>Subtraction.</td>
+					</tr>
+					<tr>
+						<td align="center"><b>*</b></td>
+						<td>Multiplication.</td>
+					</tr>
+					<tr>
+						<td align="center"><b>/</b></td>
+						<td>Division.</td>
+					</tr>
+					<tr>
+						<td align="center"><b>**</b></td>
+						<td>Exponentiation.</td>
+					</tr>
+					<tr>
+						<td align="center"><b>%</b></td>
+						<td>Modulus.</td>
+					</tr>
+					<tr>
+						<td align="center"><b>\</b></td>
+						<td>Divide with bigger.</td>
+					</tr>
+					<tr>
+						<td align="center"><b>//</b></td>
+						<td>Integer division.</td>
+					</tr>
+					<tr>
+						<td align="center"><b>\\</b></td>
+						<td>Integer division with bigger.</td>
+					</tr>
+					<tr>
+						<td align="center"><b>=</b></td>
+						<td>Set with value.</td>
+					</tr>
+					<tr>
+						<td align="center"><b>==</b></td>
+						<td>Equals to.</td>
+					</tr>
+					<tr>
+						<td align="center"><b><></b></td>
+						<td>Not equals to.</td>
+					</tr>
+					<tr>
+						<td align="center"><b><</b></td>
+						<td>Less than.</td>
+					</tr>
+					<tr>
+						<td align="center"><b>></b></td>
+						<td>Greater than.</td>
+					</tr>
+					<tr>
+						<td align="center"><b>>=</b></td>
+						<td>Greater than or equals to.</td>
+					</tr>
+					<tr>
+						<td align="center"><b><=</b></td>
+						<td>Less than or equals to.</td>
+					</tr>
+						<tr>
+						<td align="center"><b>|</b></td>
+						<td>Binary or.</td>
+					</tr>
+					<tr>
+						<td align="center"><b>||</b></td>
+						<td>Logical or.</td>
+					</tr>
+					<tr>
+						<td align="center"><b>^</b></td>
+						<td>Bitwise exclusive or.</td>
+					</tr>
+					<tr>
+						<td align="center"><b>&</b></td>
+						<td>Binary and.</td>
+					</tr>
+					<tr>
+						<td align="center"><b>&&</b></td>
+						<td>Logical and.</td>
+					</tr>
+					<tr>
+						<td align="center"><b><<</b></td>
+						<td>Left shift.</td>
+					</tr>
+					<tr>
+						<td align="center"><b>>></b></td>
+						<td>Right shift.</td>
+					</tr>
+					<tr>
+						<td align="center"><b>_</b></td>
+						<td>Ignore.</td>
+					</tr>
+					<tr>
+						<td align="center"><b>+=</b></td>
+						<td>Addition assignment.</td>
+					</tr>
+					<tr>
+						<td align="center"><b>-=</b></td>
+						<td>Subtraction assignment.</td>
+					</tr>
+					<tr>
+						<td align="center"><b>*=</b></td>
+						<td>Multiplication assignment.</td>
+					</tr>
+					<tr>
+						<td align="center"><b>**=</b></td>
+						<td>Exponentiation assignment.</td>
+					</tr>
+					<tr>
+						<td align="center"><b>/=</b></td>
+						<td>Division assignment.</td>
+					</tr>
+					<tr>
+						<td align="center"><b>%=</b></td>
+						<td>Modulus assignment.</td>
+					</tr>
+					<tr>
+						<td align="center"><b><<=</b></td>
+						<td>Left binary shift assignment.</td>
+					</tr>
+					<tr>
+						<td align="center"><b>>>=</b></td>
+						<td>Right binary shift assignment.</td>
+					</tr>
+					<tr>
+						<td align="center"><b>|=</b></td>
+						<td>Bitwise inclusive or assignment.</td>
+					</tr>
+					<tr>
+						<td align="center"><b>^=</b></td>
+						<td>Bitwise exclusive or assignment.</td>
+					</tr>
+					<tr>
+						<td align="center"><b>&=</b></td>
+						<td>Bitwise and assignment.</td>
+					</tr>
+				</table>
+
+				<br>
+				<br>
 				<h2 id="data_types">Data Types</h2>
 				Data types are the types provided so that the Fract understands what to do with that data.
 				<h3>Integer</h3>
 				It is an integer, no decimal value.
-				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">var integer = 890</div>
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">890</div>
 				<br>
 				You can give an integer value in hexadecimal format by starting with <x class="inline_code"> 0x </x>.
-				<div class="code" style="margin-top: 5px;">var integer = 0xAA90F # 43664</div>
+				<div class="code" style="margin-top: 5px;">0xAA90F # Equals to 43664</div>
 				<h3>Double</h3>
 				It is a double, can contains decimal value.
-				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">var double = 400.2387</div>
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">400.2387</div>
 				<h3>String</h3>
 				They are strings of characters, they hold text data.
-				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">var string = 'Fract!'; var str = "Fract!"</div>
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">'Fract!'; "Fract!"</div>
 				String provides a escape sequences and represents with <x class="inline_code"> \ </x>.
 				<h4>Escape Sequences</h4>
 				<table>
@@ -148,7 +300,7 @@ end</div>
 				<h2 id="arrays">Arrays</h2>
 				The array structure, which is useful for holding multiple values, is offered by many programming languages.
 				Once an array is defined, its size remains constant. Each element can be of a different data type.
-				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">var array = [1, 20., 'Fract', print]</div>
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">var array = [1, 20.3, 'Fract', print]</div>
 				An array is defined by writing the values ​​between the parentheses, separated by commas.
 				<br>
 				<br>
@@ -176,6 +328,19 @@ print(array[-2])
 				The index -2 of the array defined above is equal to index 4 by reverse indexing.
 				Since -1 represents the last index value, each decrease represents the index before it.
 				In other words, -2 index allows you to get the second-to-last element.
+
+				<br>
+				<br>
+				<h2 id="naming_conventions">Naming Conventions</h2>
+				A naming cannot begin with a number and a period. It cannot contain any special characters except underscores.
+				<h3> Correct Name Examples </h3>
+				<ul>
+					<li>name</li>
+					<li>name_</li>
+					<li>_name</li>
+					<li>na_me</li>
+					<li>n4m3</li>
+				</ul>
 
 				<br>
 				<br>
