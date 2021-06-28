@@ -40,6 +40,7 @@
 				<a href="#deferred_calls">Deferred Calls</a>
 				<a href="#memory_management">Memory Management</a>
 				<a href="#contains_checking">Contains Checking</a>
+				<a href="#imports">Imports</a>
 			</div>
 			<div class="main" style="width: 90%;">
 				<h1>A Tour of Fract</h1>
@@ -798,6 +799,43 @@ end
 			When the left value is an array, the value of the other side is searched directly in it, as with string values, when the right value is an array, it does not scroll through all its elements.
 			<x class="inline_code"> [4, 'Fract'] </x> evaluates to true because it is contained in the given array.
 			The order of the elements makes a difference in the comparison, if the value was <x class="inline_code"> ['Fract', 4] </x> the evaluation would result in false.
+
+			<br>
+			<br>
+			<h2 id="imports">Imports</h2>
+			<h3>Standard Library Import</h3>
+			Standard libraries can be imported with standard import.
+			<div class="code" style="margin-top: 5px; margin-bottom: 5px;">open std</div>
+			<div class="code" style="margin-top: 5px; margin-bottom: 5px;">open std.math</div>
+			<h3>Local Import</h3>
+			Your directory;
+			<div class="code" style="margin-top: 5px; margin-bottom: 5px;">myproject/
+├── bar
+|   ├── foo.fract
+└── main.fract</div>
+			You can import your other directories with local import.
+			<div class="code" style="margin-top: 5px; margin-bottom: 5px;">open "bar"</div>
+			<h3>Naming</h3>
+			The last name of the directory is assumed to be the package name.
+			<div class="code" style="margin-top: 5px; margin-bottom: 5px;">open std
+print(std.Foo)</div>
+			<div class="code" style="margin-top: 5px; margin-bottom: 5px;">open "foo/bar"
+print(bar.HelloMessage)</div>
+		<h3>Aliases</h3>
+		Are the names too long?
+		<div class="code" style="margin-top: 5px; margin-bottom: 5px;">open s std
+print(s.Foo)</div>
+		<div class="code" style="margin-top: 5px; margin-bottom: 5px;">open b "foo/bar"
+print(b.HelloMessage)</div>
+
+		<div class="warn">
+			<ul>
+				<li>Files in the same directory as your startup file are assumed to have been imported.</li>
+				<li>All fract files imports from directory if import a directory.</li>
+				<li>If you want it to be imported, you must start the define name with a capital letter, definitions that do not start with a capital letter are not imported!</li>
+			</ul>
+		</div>
+
 		</div>
 		</div>
 
