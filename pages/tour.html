@@ -38,6 +38,7 @@
 				<a href="#macro_control_flow">Macro Control Flow</a>
 				<a href="#pragmas">Pragmas</a>
 				<a href="#deferred_calls">Deferred Calls</a>
+				<a href="#concurrency">Concurrency</a>
 				<a href="#memory_management">Memory Management</a>
 				<a href="#contains_checking">Contains Checking</a>
 				<a href="#list_comprehension">List Comprehension</a>
@@ -748,6 +749,26 @@ print('done')
 # 1
 # 0</div>
 				Deferred function calls are pushed onto a stack. When a function returns, its deferred calls are executed in last-in-first-out order.
+
+				<br>
+				<br>
+				<h2 id="concurrency">Concurrency</h2>
+				Fract offers language-level concurrency.
+				The <x class="inline_code"> go </x> keyword is used to perform function calls concurrently.
+				Concurrent calls are performed by creating a lightweight thread managed by Fract.
+				<div class="warn" style="margin-top: 5px; margin-bottom: 5px;">Goroutines run in the different memory space.</div>
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func say(s)
+    for _, i in range(0, 4)
+        print(s)
+    end
+end
+
+go say("world")
+go say("hello")
+
+for _, a in range(10, 100)
+    print(a, fin=' ')
+end</div>
 
 				<br>
 				<br>
