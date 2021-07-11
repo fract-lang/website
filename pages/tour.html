@@ -35,7 +35,6 @@
 				<a href="#control_flow">Control Flow</a>
 				<a href="#functions">Functions</a>
 				<a href="#error_handling">Error Handling</a>
-				<a href="#macro_control_flow">Macro Control Flow</a>
 				<a href="#pragmas">Pragmas</a>
 				<a href="#deferred_calls">Deferred Calls</a>
 				<a href="#concurrency">Concurrency</a>
@@ -61,7 +60,7 @@
 				<br>
 				<div class="warn">
 					If you want to show it as a comment, a space or similar must be after
-					<x class="inline_code"> # </x> otherwise it will be accepted as a macro.
+					<x class="inline_code"> # </x> otherwise it will be accepted as a pragma.
 				</div>
 				<div class="code" style="margin-top: 5px;"># Comment
 #Macro</div>
@@ -71,9 +70,9 @@
     Say hello to name.
     x = Name.
 <#
-func Hello(name)
+func Hello(name) {
     print('Hello ' + name)
-end</div>
+}</div>
 				<div class="tip">
 					It is always advantageous to use a single line comment because the lexer it gives free space to the memory by deleting these comments from the lines that are read.
 				</div>
@@ -439,9 +438,9 @@ print(b)
 				An if statement allows you to branch your code based on conditions. You provide a condition and then write the algorithm that will run if the condition is met.
 				Optionally, you can also specify alternative conditions and situations where no conditions are met.
 				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">var n = 3
-if n < 5
+if n < 5 {
     print('condition is true')
-end
+}
 
 # OUTPUT: condition is true</div>
 				Each conditional statement begins with an <x class="inline_code"> if </x> by the condition.
@@ -449,25 +448,25 @@ end
 				<br>
 				<br>
 				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">var n = 50
-if n < 0
+if n < 0 {
     print('n is negative')
-elif n < 100
+} else if n < 100 {
     print('n is less than 100')
-end
+}
 
 # OUTPUT: n is less than 100</div>
-				You can add <x class="inline_code"> elif </x> statements after the <x class="inline_code"> if </x> expression for alternative conditions.
+				You can add <x class="inline_code"> else if </x> statements after the <x class="inline_code"> if </x> expression for alternative conditions.
 				It specifies an alternative condition that works if the previous conditions are not met.
 				<br>
 				<br>
 				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">var n = 300
-if n < 0
+if n < 0 {
     print('n is negative')
-elif n <= 100
+} else if n <= 100 {
     print('n is less than 100')
-else
+} else {
     print('n is greater than 100')
-end
+}
 
 # OUTPUT: n is greater than 100</div>
 				If you want to specify an algorithm that will run if no conditions are met, you can use the <x class="inline_code"> else </x> statement.
@@ -485,10 +484,10 @@ end
 				<h4>While Loop</h4>
 				While the condition is true, the loop runs.
 				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">var n = 0
-for n < 10
+for n < 10 {
     n += 1
     print(n, fin=' ')
-end</div>
+}</div>
 				The loop has a condition that will run as long as the variable <x class="inline_code"> n </x> is less than 10.
 				During the loop, the variable <x class="inline_code"> n </x> is incremented at each iteration, when it reaches 10, the loop ends as the condition is no longer met.
 				<div class="tip">The best way give an empty condition for infinite loop.</div>
@@ -496,18 +495,18 @@ end</div>
 				You can loop through the elements of an array with a while loop.
 				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">var t1 = [0, 3, 2, 1, 90]
 var i = 0
-for i < 5
+for i < 5 {
     print(t1[i])
     i += 1
-end</div>
+}</div>
 				As expected, this code will work correctly. The loop is set to rotate according to the length of the array and will print each element to the screen.
 				However, this approach is error-prone and requires a lot of code modification.
 				If the size of the known array changes in the future, this code will cause an error if its size is less than 5, and if it is large, it will print incompletely.
 				So in any change the condition also needs to be updated, forgetting to change it will cause problems.
 				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">var t1 = [0, 3, 2, 1, 90]
-for i in t1
+for i in t1 {
     print(t1[i])
-end</div>
+}</div>
 				You can eliminate these situations with the <x class="inline_code"> foreach </x> loop.
 				It adjusts itself according to the size of the array, and each element runs as a single repeat.
 				Also, the code now looks cleaner and more readable.
@@ -517,32 +516,32 @@ end</div>
 				If you want to get the element itself, you can add a second parameter.
 				If you don't need to use the index value, you can ignore it.
 				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">var t1 = [0, 3, 2, 1, 90]
-for _, i in t1
+for _, i in t1 {
     print(i)
-end</div>
+}</div>
 				The code now looks cleaner and performs better.
 				When the element is accessed with index, the element is read again from the memory according to the index value, but when you add the element parameter, you do not need to do an extra reading as it will already be pulled from the memory.
 				<h4>Loop Controlling</h4>
 				In various situations you may want to manage loops such as ending loops or switching to other loop iterations and this is a very useful method that is widely used.
 				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">var counter = 0
-for counter <= 10
+for counter <= 10 {
     counter = counter + 1
-    if counter > 5
+    if counter > 5 {
         break
-    end
+    }
     print(counter, fin=' ')
-end
+}
 
 # Output: 0 1 2 3 4 5</div>
 				With the keyword  <x class="inline_code"> break </x>, it is possible to override and terminate the entire loop even when the loop could still run.
 				<br>
 				<br>
-				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">for _, item in [ 0, 1, 2, 3, 4.0 ]
-    if item == 1 || item == 3
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">for _, item in [ 0, 1, 2, 3, 4.0 ] {
+    if item == 1 || item == 3 {
         continue
-    end
+    }
     print(item, fin=' ')
-end
+}
 
 # Output: 0, 2, 4</div>
 				The keyword <x class="inline_code"> continue </x> is used to pass the loop to the next iteration.
@@ -553,9 +552,9 @@ end
 				<h2 id="functions">Functions</h2>
 				Functions are very useful for adding functionality to your code, functions are very common in Fract code.
 				Functions are declared with the <x class="inline_code"> func </x> keyword.
-				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func helloWorld()
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func helloWorld() {
     print('Hello World!')
-end
+}
 
 helloWorld()</div>
 				This code is a simple function declaration. It can be called without parameters and write "Hello World!".
@@ -564,9 +563,9 @@ helloWorld()</div>
 				Functions can also be defined to have parameters, which are special variables that are part of a function’s signature.
 				When a function has parameters, you can provide it with concrete values for those parameters.
 				<div class="warn">If a parameter is equal to a different definition name, it will replace that definition.</div>
-				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func sum(a, b)
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func sum(a, b) {
     print(a + b)
-end
+}
 
 sum(5, 4)
 
@@ -576,9 +575,9 @@ sum(5, 4)
 				<br>
 				<br>
 				A parameter can take a default value. Parameters that take a default value do not have to take a value.
-				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func sum(a, b=90)
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func sum(a, b=90) {
     print(a + b)
-end
+}
 
 sum(5)
 sum(2, 10)
@@ -591,9 +590,9 @@ sum(2, 10)
 				<br>
 				<br>
 				Arguments can also be specified as names and their order can be ignored.
-				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func divide(a, b, c)
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func divide(a, b, c) {
     print((a + b) / c)
-end
+}
 
 divide(c=9, a=5, b=0)
 divide(2, c=10, b=0)
@@ -608,16 +607,16 @@ divide(2, c=10, b=0)
 				<br>
 				<br>
 				A parameter can be used with the <x class="inline_code"> ... </x> operator so that it can take multiple values. In this way, the parameter will take all values ​​as an array.
-				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func params(...a, ...b=[])
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func params(...a, ...b=[]) {
     var r = 0
-    for _, n in a
+    for _, n in a {
         r += n
-    end
-    for _, n in b
+    }
+    for _, n in b {
         r += n
-    end
+    }
     print(r)
-end
+}
 
 params(100, 110, 120)
 params(1, 4, 2, 6, b=0, 2, 5, 10)
@@ -632,9 +631,9 @@ params(1, 4, 2, 6, b=0, 2, 5, 10)
 				<br>
 				<br>
 				Functions can also return a value.
-				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func asHello(name)
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func asHello(name) {
     ret 'Hello ' + name + '!'
-end
+}
 
 print(asHello('Fract'))
 
@@ -650,47 +649,16 @@ print(asHello('Fract'))
 				In some cases, Fract code may panic, preventing current code execution.
 				Catching errors and handling them on a case-by-case basis is an approach offered by many programming languages.
 				Error catching in Fract is done with try-catch blocks.
-				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">try
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">try {
     var arr = [1, 2, 3, 10, 341, 0]
     print(arr[6]) # Out of range.
-catch
+} catch {
     print('Panic!')
-end</div>
+}</div>
 				You write the codes you want to debug in the try block, in case of a panic, the catch block will run.
 				<div class="tip" style="margin-top: 5px;">
 					If you don't want use catch blocks, you can use only try block.
 				</div>
-
-				<br>
-				<br>
-				<h2 id="macro_control_flow">Macro Control Flow</h2>
-				Macros can be quite useful in places.
-				They allow you to manipulate code based on certain conditions, but this is different from <x class="inline_code"> if </x> expressions.
-				The codes inside <x class="inline_code"> if </x> expressions are invalid outside those blocks, so if you define a variable inside, you will not be able to use this variable outside the block.
-				Macros don't count as a block, what they do is shape and structure code with conditions.
-				<br>
-				<br>
-				Variables in the code cannot be used in macros, the default macro variables are used.
-				<ul>
-					<li>OS</li>
-					Operating system name. Possible values: <x class="inline_code"> darwin </x>, <x class="inline_code"> windows </x>, <x class="inline_code"> linux </x>.
-					<li>ARC</li>
-					Architecture. Possible values: <x class="inline_code"> 386 </x>, <x class="inline_code"> amd64 </x>, <x class="inline_code"> amd64p32 </x>, <x class="inline_code"> arm </x>, <x class="inline_code"> arm64 </x>,
-					<x class="inline_code"> ppc64 </x>, <x class="inline_code"> ppc64le </x>, <x class="inline_code"> mips </x>, <x class="inline_code"> mipsle </x>, <x class="inline_code"> mips64 </x>, <x class="inline_code"> mips64le </x>,
-					<x class="inline_code"> mips64p32le </x>, <x class="inline_code"> ppc </x>, <x class="inline_code"> s390 </x>, <x class="inline_code"> s390x </x>, <x class="inline_code"> sparc </x>, <x class="inline_code"> sparc64 </x>.
-				</ul>
-				<div class="code" style="margin-bottom: 5px;">#if OS == 'windows'
-    const sz = 30
-#elif OS == 'darwin'
-    const sz = 35
-#else
-    print('ERROR: Invalid operating system!')
-    exit(1)
-#end
-
-print(sz)</div>
-				The code here gives the value 30 to the constant variable named <x class="inline_code"> sz </x> if the operating system is windows, and the value 35 for darwin and prints it.
-				If it's not windows or darwin it prints an error message and exit.
 
 				<br>
 				<br>
@@ -730,9 +698,9 @@ print('hello')
 				<br>
 				<br>
 				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">print('counting')
-for _, i in range(0, 9)
+for _, i in range(0, 9) {
     defer print(i)
-end
+}
 print('done')
 
 # OUTPUT
@@ -757,18 +725,18 @@ print('done')
 				The <x class="inline_code"> go </x> keyword is used to perform function calls concurrently.
 				Concurrent calls are performed by creating a lightweight thread managed by Fract.
 				<div class="warn" style="margin-top: 5px; margin-bottom: 5px;">Goroutines run in the different memory space.</div>
-				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func say(s)
-    for _, i in range(0, 4)
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func say(s) {
+    for _, i in range(0, 4) {
         print(s)
-    end
-end
+    }
+}
 
 go say("world")
 go say("hello")
 
-for _, a in range(10, 100)
+for _, a in range(10, 100) {
     print(a, fin=' ')
-end</div>
+}</div>
 
 				<br>
 				<br>
@@ -797,11 +765,11 @@ del var</div>
 				Checking whether there is a value in it is one of them, Fract has an approach that provides convenience in this regard.
 				With the <x class="inline_code"> in </x> keyword, it is also possible to check values ​​inside enumerable values.
 				The value on the left is searched within the value on the right.
-				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">if 'urk' in 'Turkey'
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">if 'urk' in 'Turkey' {
     print('Yes!')
-else
+} else {
     print('No!')
-end
+}
 
 # OUTPUT: Yes!</div>
 				In this code, the value on the left is a string value. The value on the right must also be a string.
@@ -809,33 +777,33 @@ end
 				Since <x class="inline_code"> urk </x> value is in <x class="inline_code"> Turkey </x>, it returns true.
 				<br>
 				<br>
-				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">if ['Hola', 'Bojour', 'Selam', 'Hello'] in 'Hi'
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">if ['Hola', 'Bojour', 'Selam', 'Hello'] in 'Hi' {
     print('Yes!')
-else
+} else {
     print('No!')
-end
+}
 
 # OUTPUT: No!</div>
 				An array can be given if it wants to be checked with more than one value. All elements of Array must be strings.
 				Since there is no value equal to or containing any value in the array in this code, the result is evaluated as false.
 				<br>
 				<br>
-				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">if 4 in [4, 2, 7]
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">if 4 in [4, 2, 7] {
     print('Yes!')
-else
+} else {
     print('No!')
-end
+}
 
 # OUTPUT: Yes!</div>
 				The left value can be a string, the value given on the right is compared with its elements of array and evaluates to true if it is equal to any of its elements, false otherwise.
 				In the code <x class="inline_code"> 4 </x> returns true because it exists in the given array.
 				<br>
 				<br>
-				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">if [4, 'Fract'] in [4, 2, [4, 'Fract'], 7]
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">if [4, 'Fract'] in [4, 2, [4, 'Fract'], 7] {
     print('Yes!')
-else
+} else {
     print('No!')
-end
+}
 
 # OUTPUT: Yes!</div>
 			When the left value is an array, the value of the other side is searched directly in it, as with string values, when the right value is an array, it does not scroll through all its elements.
