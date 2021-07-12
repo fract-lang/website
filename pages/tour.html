@@ -56,20 +56,13 @@
 				Comments serve a variety of purposes, such as commenting, annotating, and taking notes in code.
 				It is a convenient tool to understand the algorithm when you look at it later or when a different developer looks at it.
 				<h3>Singleline Comment</h3>
-				<x class="inline_code"> # </x> is used for singline comments. The rest of the line from the point of use is marked as a comment.
-				<br>
-				<div class="warn">
-					If you want to show it as a comment, a space or similar must be after
-					<x class="inline_code"> # </x> otherwise it will be accepted as a pragma.
-				</div>
-				<div class="code" style="margin-top: 5px;"># Comment
-#Macro</div>
+				<x class="inline_code"> // </x> is used for singline comments. The rest of the line from the point of use is marked as a comment.
 				<h3>Multiline Comment</h3>
-				<x class="inline_code"> #> ... <# </x> are used for multiline comments. It accepts the part from opening to closing as a comment.
-				<div class="code" style="margin-top: 5px;">#>
+				<x class="inline_code"> /* ... */ </x> are used for multiline comments. It accepts the part from opening to closing as a comment.
+				<div class="code" style="margin-top: 5px;">/*
     Say hello to name.
     x = Name.
-<#
+*/
 func Hello(name) {
     print('Hello ' + name)
 }</div>
@@ -116,18 +109,6 @@ func Hello(name) {
 					<tr>
 						<td align="center"><b>%</b></td>
 						<td>Modulus.</td>
-					</tr>
-					<tr>
-						<td align="center"><b>\</b></td>
-						<td>Divide with bigger.</td>
-					</tr>
-					<tr>
-						<td align="center"><b>//</b></td>
-						<td>Integer division.</td>
-					</tr>
-					<tr>
-						<td align="center"><b>\\</b></td>
-						<td>Integer division with bigger.</td>
 					</tr>
 					<tr>
 						<td align="center"><b>=</b></td>
@@ -244,7 +225,7 @@ func Hello(name) {
 				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">890</div>
 				<br>
 				You can give an integer value in hexadecimal format by starting with <x class="inline_code"> 0x </x>.
-				<div class="code" style="margin-top: 5px;">0xAA90F # Equals to 43664</div>
+				<div class="code" style="margin-top: 5px;">0xAA90F // Equals to 43664</div>
 				<h3>Double</h3>
 				It is a double, can contains decimal value.
 				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">400.2387</div>
@@ -312,10 +293,10 @@ print(array[2])
 array[2] = 200
 print(array)
 
-# OUTPUT
-# [1 10 2 20 3 30]
-# 2
-# [1 10 200 20 3 30]</div>
+// OUTPUT
+// [1 10 2 20 3 30]
+// 2
+// [1 10 200 20 3 30]</div>
 				Array allows to get and set values ​​with the help of index.
 				The index is specified as an integer in parentheses and access is provided.
 				Index 0 represents the first element, and it continues to increase by one for each subsequent element.
@@ -326,7 +307,7 @@ print(array)
 				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">var array = [1, 10, 2, 20, 3, 30]
 print(array[-2])
 
-# OUTPUT: 3</div>
+// OUTPUT: 3</div>
 				The index -2 of the array defined above is equal to index 4 by reverse indexing.
 				Since -1 represents the last index value, each decrease represents the index before it.
 				In other words, -2 index allows you to get the second-to-last element.
@@ -342,12 +323,12 @@ print(e9[[-1, -2, -3]])
 e9 = 'Fract Programming Language!'
 print(e9[[0, 1, 2, 3, 4, 5, -9, -8, -7, -6, -5, -4, -3, -2, -1]])
 
-#> OUTPUT
+/* OUTPUT
 [[90 19 20] 189 289 389 489 589]
 [[1 -70 -69] 189 200 300 489 500]
 [500 489 300]
 Fract Language!
-<#</div>
+*/</div>
 				Elements are selected and processed in multiple ways with the index values ​​given in the array.
 				It's just like a normal indexing, only this time you're selecting multiple elements.
 
@@ -394,8 +375,8 @@ Fract Language!
 				</div>
 				<h3>Setting Variables</h3>
 				Defined variables can be changed later. There is a pretty easy way to do this. You write the new value you want to give after the name of the variable.
-				<div class="code" style="margin-top: 5px;">var a = 45      # Value is 45
-a = 1           # Value is 1</div>
+				<div class="code" style="margin-top: 5px;">var a = 45      // Value is 45
+a = 1           // Value is 1</div>
 				<h3>Why immutability?</h3>
 				By default, mutable values ​​can cause undesirable results.
 				Variable values ​​represent a reference when used directly, and the same value now has more than one delegate. This may cause you to change a value that you do not want to change.
@@ -405,9 +386,9 @@ b[2] = 10
 print(a)
 print(b)
 
-# OUTPUT
-# [1 4 8]
-# [1 4 10]</div>
+// OUTPUT
+// [1 4 8]
+// [1 4 10]</div>
 				Since it is immutable by default, there is no referencing case here.
 				Variable <x class="inline_code"> b </x> takes the value of variable <x class="inline_code"> a </x> directly, it does not reference variable <x class="inline_code"> a </x>.
 				Therefore, when the second index is changed on variable <x class="inline_code"> b </x>, this change is not reflected in variable <x class="inline_code"> a </x>.
@@ -417,9 +398,9 @@ b[2] = 10
 print(a)
 print(b)
 
-# OUTPUT
-# [1 4 10]
-# [1 4 10]</div>
+// OUTPUT
+// [1 4 10]
+// [1 4 10]</div>
 				When you create a variable as mutable, it now means that it is referenceable.
 				Now variable <x class="inline_code"> b </x> takes the reference of variable <x class="inline_code"> a </x> instead of getting its value directly.
 				Therefore, changes on <x class="inline_code"> b </x> are directly reflected on variable <x class="inline_code"> a </x>.
@@ -442,7 +423,7 @@ if n < 5 {
     print('condition is true')
 }
 
-# OUTPUT: condition is true</div>
+// OUTPUT: condition is true</div>
 				Each conditional statement begins with an <x class="inline_code"> if </x> by the condition.
 				Then, the algorithm that will be realized if the condition is met is written into the block.
 				<br>
@@ -454,7 +435,7 @@ if n < 0 {
     print('n is less than 100')
 }
 
-# OUTPUT: n is less than 100</div>
+// OUTPUT: n is less than 100</div>
 				You can add <x class="inline_code"> else if </x> statements after the <x class="inline_code"> if </x> expression for alternative conditions.
 				It specifies an alternative condition that works if the previous conditions are not met.
 				<br>
@@ -468,7 +449,7 @@ if n < 0 {
     print('n is greater than 100')
 }
 
-# OUTPUT: n is greater than 100</div>
+// OUTPUT: n is greater than 100</div>
 				If you want to specify an algorithm that will run if no conditions are met, you can use the <x class="inline_code"> else </x> statement.
 				This statement is written at the bottom and should be the last statement of the block.
 				It works when no previous condition is met.
@@ -532,7 +513,7 @@ for counter <= 10 {
     print(counter, fin=' ')
 }
 
-# Output: 0 1 2 3 4 5</div>
+// Output: 0 1 2 3 4 5</div>
 				With the keyword  <x class="inline_code"> break </x>, it is possible to override and terminate the entire loop even when the loop could still run.
 				<br>
 				<br>
@@ -543,7 +524,7 @@ for counter <= 10 {
     print(item, fin=' ')
 }
 
-# Output: 0, 2, 4</div>
+// Output: 0, 2, 4</div>
 				The keyword <x class="inline_code"> continue </x> is used to pass the loop to the next iteration.
 				If there is no next loop iteration, the loop is finished.
 
@@ -573,7 +554,7 @@ helloWorld()</div>
 
 sum(5, 4)
 
-# OUTPUT: 9</div>
+// OUTPUT: 9</div>
 				The above function takes two values, sums them up and writes them to the screen.
 				Since the values ​​given as arguments are <x class="inline_code"> 5 </x> and <x class="inline_code"> 4 </x>, the <x class="inline_code"> a </x> parameter is <x class="inline_code"> 5 </x> and the <x class="inline_code"> b </x> parameter is <x class="inline_code"> 4 </x>, respectively.
 				<br>
@@ -586,9 +567,9 @@ sum(5, 4)
 sum(5)
 sum(2, 10)
 
-# OUTPUT
-# 95
-# 5.0</div>
+// OUTPUT
+// 95
+// 5.0</div>
 				Although no value was specified during the first call, <x class="inline_code"> 90 </x> was given instead of the <x class="inline_code"> b </x> parameter, which defaults to <x class="inline_code"> 90 </x>.
 				Because a custom value was specified in the next call, the value <x class="inline_code"> 90 </x> was overridden and the value of the argument became <x class="inline_code"> 10 </x>.
 				<br>
@@ -601,9 +582,9 @@ sum(2, 10)
 divide(c=9, a=5, b=0)
 divide(2, c=10, b=0)
 
-# OUTPUT
-# 0.5555555556
-# 0.2</div>
+// OUTPUT
+// 0.5555555556
+// 0.2</div>
 				After an argument is specified by name, all subsequent arguments must also be specified by name.
 				In the first call, all the arguments were specified in different order by name and received their values.
 				In the second call, the first argument is not specified with a name.
@@ -625,9 +606,9 @@ divide(2, c=10, b=0)
 params(100, 110, 120)
 params(1, 4, 2, 6, b=0, 2, 5, 10)
 
-# OUTPUT
-# 330
-# 30</div>
+// OUTPUT
+// 330
+// 30</div>
 				The code above has a function with two more than one parameter, and this function finds the total values ​​of the parameters, adds them together and prints them out.
 				The first call assigns all values ​​to parameter <x class="inline_code"> a </x>, parameter <x class="inline_code"> b </x> remains its default value, the empty array.
 				If a parameter that can take multiple values ​​is followed by another parameter, it must be specified with its name.
@@ -641,7 +622,7 @@ params(1, 4, 2, 6, b=0, 2, 5, 10)
 
 print(asHello('Fract'))
 
-# OUTPUT: Hello Fract!</div>
+// OUTPUT: Hello Fract!</div>
 				The above function converts the value given to it to a hello message and returns it as a value.
 				The <x class="inline_code"> ret </x> keyword is used to return a value.
 				When the function returns a value, the function returns the value and stops executing, if there is any code that follows it, they will never be reached.
@@ -655,7 +636,7 @@ print(asHello('Fract'))
 				Error catching in Fract is done with try-catch blocks.
 				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">try {
     var arr = [1, 2, 3, 10, 341, 0]
-    print(arr[6]) # Out of range.
+    print(arr[6]) // Out of range.
 } catch {
     print('Panic!')
 }</div>
@@ -695,9 +676,9 @@ const Code = '49R-er34-TGH'</div>
 				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">defer print('world')
 print('hello')
 
-# OUTPUT
-# hello
-# world</div>
+// OUTPUT
+// hello
+// world</div>
 				The "hello" is printed first because "world!" the print process waits for the block to finish before being called.
 				<br>
 				<br>
@@ -707,19 +688,19 @@ for _, i in range(0, 9) {
 }
 print('done')
 
-# OUTPUT
-# counting
-# done
-# 9
-# 8
-# 7
-# 6
-# 5
-# 4
-# 3
-# 2
-# 1
-# 0</div>
+// OUTPUT
+// counting
+// done
+// 9
+// 8
+// 7
+// 6
+// 5
+// 4
+// 3
+// 2
+// 1
+// 0</div>
 				Deferred function calls are pushed onto a stack. When a function returns, its deferred calls are executed in last-in-first-out order.
 
 				<br>
@@ -753,8 +734,8 @@ for _, a in range(10, 100) {
     a = 0
     b = 0
 )
-del a, b         # Remove 'a' and 'b' variables from memory
-                 # No defined variables</div>
+del a, b         // Remove 'a' and 'b' variables from memory
+                 // No defined variables</div>
 				<h3>Protected Definitions</h3>
 				If you're making a library or something different, there might be a definition you don't want to be erased from memory.
 				To specify this, you can prevent it from being deleted manually with the <x class="inline_code"> protected </x> keyword.
@@ -775,7 +756,7 @@ del var</div>
     print('No!')
 }
 
-# OUTPUT: Yes!</div>
+// OUTPUT: Yes!</div>
 				In this code, the value on the left is a string value. The value on the right must also be a string.
 				It is case sensitive and will return true if the value is in it and false otherwise.
 				Since <x class="inline_code"> urk </x> value is in <x class="inline_code"> Turkey </x>, it returns true.
@@ -787,7 +768,7 @@ del var</div>
     print('No!')
 }
 
-# OUTPUT: No!</div>
+// OUTPUT: No!</div>
 				An array can be given if it wants to be checked with more than one value. All elements of Array must be strings.
 				Since there is no value equal to or containing any value in the array in this code, the result is evaluated as false.
 				<br>
@@ -798,7 +779,7 @@ del var</div>
     print('No!')
 }
 
-# OUTPUT: Yes!</div>
+// OUTPUT: Yes!</div>
 				The left value can be a string, the value given on the right is compared with its elements of array and evaluates to true if it is equal to any of its elements, false otherwise.
 				In the code <x class="inline_code"> 4 </x> returns true because it exists in the given array.
 				<br>
@@ -809,7 +790,7 @@ del var</div>
     print('No!')
 }
 
-# OUTPUT: Yes!</div>
+// OUTPUT: Yes!</div>
 			When the left value is an array, the value of the other side is searched directly in it, as with string values, when the right value is an array, it does not scroll through all its elements.
 			<x class="inline_code"> [4, 'Fract'] </x> evaluates to true because it is contained in the given array.
 			The order of the elements makes a difference in the comparison, if the value was <x class="inline_code"> ['Fract', 4] </x> the evaluation would result in false.
@@ -822,10 +803,10 @@ del var</div>
 			<div class="code" style="margin-top: 5px; margin-bottom: 5px;">print([x*100 for x in range(1, 100)])
 print([x*100 for x in range(1, 100), x <= 50])
 
-#> OUTPUT
+/* OUTPUT
 [100 200 300 400 500 600 700 800 900 1000 1100 1200 1300 1400 1500 1600 1700 1800 1900 2000 2100 2200 2300 2400 2500 2600 2700 2800 2900 3000 3100 3200 3300 3400 3500 3600 3700 3800 3900 4000 4100 4200 4300 4400 4500 4600 4700 4800 4900 5000 5100 5200 5300 5400 5500 5600 5700 5800 5900 6000 6100 6200 6300 6400 6500 6600 6700 6800 6900 7000 7100 7200 7300 7400 7500 7600 7700 7800 7900 8000 8100 8200 8300 8400 8500 8600 8700 8800 8900 9000 9100 9200 9300 9400 9500 9600 9700 9800 9900 10000]
 [100 200 300 400 500 600 700 800 900 1000 1100 1200 1300 1400 1500 1600 1700 1800 1900 2000 2100 2200 2300 2400 2500 2600 2700 2800 2900 3000 3100 3200 3300 3400 3500 3600 3700 3800 3900 4000 4100 4200 4300 4400 4500 4600 4700 4800 4900 5000]
-<#</div>
+*/</div>
 			The first statement selects each element as a multiple of <x class="inline_code"> 100 </x> and does not apply any filters.
 			The second statement selects elements in the same way but applies a filter and only selects values ​<x class="inline_code">​ 50 </x> and below.
 			As seen from the examples, the filter statement is separated by a comma.
