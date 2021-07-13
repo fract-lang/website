@@ -46,7 +46,7 @@
 			<div class="main" style="width: 90%;">
 				<h1>A Tour of Fract</h1>
 				<h2 id="hello_world">Hello World!</h2>
-				<div class="code" style="margin-bottom: 5px;">print('Hello World!')</div>
+				<div class="code" style="margin-bottom: 5px;">println('Hello World!')</div>
 				Fract has built-in functions, you can print a value with the <x class="inline_code"> print </x> function, which is one of the built-in functions.
 
 				<br>
@@ -64,7 +64,7 @@
     x = Name.
 */
 func Hello(name) {
-    print('Hello ' + name)
+    println('Hello ' + name)
 }</div>
 				<div class="tip">
 					It is always advantageous to use a single line comment because the lexer it gives free space to the memory by deleting these comments from the lines that are read.
@@ -76,7 +76,7 @@ func Hello(name) {
 				It is available in many programming languages ​​and is generally mandated. Fract does not enforce this, but supports its use.
 				If you wanted to continue the line, it would be freedom-restricting not having that option.
 				Therefore, you can write multiple statements on a single line by separating the statements with the statement terminator.
-				<div class="code" style="margin-top: 5px;">print(5); print(2)</div>
+				<div class="code" style="margin-top: 5px;">println(5); println(2)</div>
 
 				<br>
 				<br>
@@ -288,10 +288,10 @@ func Hello(name) {
 				<br>
 				<br>
 				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">var array = [1, 10, 2, 20, 3, 30]
-print(array)
-print(array[2])
+println(array)
+println(array[2])
 array[2] = 200
-print(array)
+println(array)
 
 // OUTPUT
 // [1 10 2 20 3 30]
@@ -305,7 +305,7 @@ print(array)
 				<br>
 				<br>
 				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">var array = [1, 10, 2, 20, 3, 30]
-print(array[-2])
+println(array[-2])
 
 // OUTPUT: 3</div>
 				The index -2 of the array defined above is equal to index 4 by reverse indexing.
@@ -316,12 +316,12 @@ print(array[-2])
 				Multiple items can be selected with the help of an array.
 				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">var e9 = [89, 189, 289, 389, 489, 589]
 e9[0] = [90, 19, 20]
-print(e9)
+println(e9)
 e9[[0, 2, 3, -1]] -= 89
-print(e9)
-print(e9[[-1, -2, -3]])
+println(e9)
+println(e9[[-1, -2, -3]])
 e9 = 'Fract Programming Language!'
-print(e9[[0, 1, 2, 3, 4, 5, -9, -8, -7, -6, -5, -4, -3, -2, -1]])
+println(e9[[0, 1, 2, 3, 4, 5, -9, -8, -7, -6, -5, -4, -3, -2, -1]])
 
 /* OUTPUT
 [[90 19 20] 189 289 389 489 589]
@@ -383,8 +383,8 @@ a = 1           // Value is 1</div>
 				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">var a = [1, 4, 8]
 var b = a
 b[2] = 10
-print(a)
-print(b)
+println(a)
+println(b)
 
 // OUTPUT
 // [1 4 8]
@@ -395,8 +395,8 @@ print(b)
 				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">mut a = [1, 4, 8]
 var b = a
 b[2] = 10
-print(a)
-print(b)
+println(a)
+println(b)
 
 // OUTPUT
 // [1 4 10]
@@ -420,7 +420,7 @@ print(b)
 				Optionally, you can also specify alternative conditions and situations where no conditions are met.
 				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">var n = 3
 if n < 5 {
-    print('condition is true')
+    println('condition is true')
 }
 
 // OUTPUT: condition is true</div>
@@ -430,9 +430,9 @@ if n < 5 {
 				<br>
 				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">var n = 50
 if n < 0 {
-    print('n is negative')
+    println('n is negative')
 } else if n < 100 {
-    print('n is less than 100')
+    println('n is less than 100')
 }
 
 // OUTPUT: n is less than 100</div>
@@ -442,11 +442,11 @@ if n < 0 {
 				<br>
 				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">var n = 300
 if n < 0 {
-    print('n is negative')
+    println('n is negative')
 } else if n <= 100 {
-    print('n is less than 100')
+    println('n is less than 100')
 } else {
-    print('n is greater than 100')
+    println('n is greater than 100')
 }
 
 // OUTPUT: n is greater than 100</div>
@@ -467,7 +467,7 @@ if n < 0 {
 				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">var n = 0
 for n < 10 {
     n += 1
-    print(n, fin=' ')
+    println(n, fin=' ')
 }</div>
 				The loop has a condition that will run as long as the variable <x class="inline_code"> n </x> is less than 10.
 				During the loop, the variable <x class="inline_code"> n </x> is incremented at each iteration, when it reaches 10, the loop ends as the condition is no longer met.
@@ -477,7 +477,7 @@ for n < 10 {
 				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">var t1 = [0, 3, 2, 1, 90]
 var i = 0
 for i < 5 {
-    print(t1[i])
+    println(t1[i])
     i += 1
 }</div>
 				As expected, this code will work correctly. The loop is set to rotate according to the length of the array and will print each element to the screen.
@@ -486,7 +486,7 @@ for i < 5 {
 				So in any change the condition also needs to be updated, forgetting to change it will cause problems.
 				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">var t1 = [0, 3, 2, 1, 90]
 for i in t1 {
-    print(t1[i])
+    println(t1[i])
 }</div>
 				You can eliminate these situations with the <x class="inline_code"> foreach </x> loop.
 				It adjusts itself according to the size of the array, and each element runs as a single repeat.
@@ -498,7 +498,7 @@ for i in t1 {
 				If you don't need to use the index value, you can ignore it.
 				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">var t1 = [0, 3, 2, 1, 90]
 for _, i in t1 {
-    print(i)
+    println(i)
 }</div>
 				The code now looks cleaner and performs better.
 				When the element is accessed with index, the element is read again from the memory according to the index value, but when you add the element parameter, you do not need to do an extra reading as it will already be pulled from the memory.
@@ -510,7 +510,7 @@ for counter <= 10 {
     if counter > 5 {
         break
     }
-    print(counter, fin=' ')
+    print(counter, ' ')
 }
 
 // Output: 0 1 2 3 4 5</div>
@@ -521,7 +521,7 @@ for counter <= 10 {
     if item == 1 || item == 3 {
         continue
     }
-    print(item, fin=' ')
+    print(item, ' ')
 }
 
 // Output: 0, 2, 4</div>
@@ -534,7 +534,7 @@ for counter <= 10 {
 				Functions are very useful for adding functionality to your code, functions are very common in Fract code.
 				Functions are declared with the <x class="inline_code"> func </x> keyword.
 				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func helloWorld() {
-    print('Hello World!')
+    println('Hello World!')
 }
 
 helloWorld()</div>
@@ -549,7 +549,7 @@ helloWorld()</div>
 				When a function has parameters, you can provide it with concrete values for those parameters.
 				<div class="warn">If a parameter is equal to a different definition name, it will replace that definition.</div>
 				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func sum(a, b) {
-    print(a + b)
+    println(a + b)
 }
 
 sum(5, 4)
@@ -561,7 +561,7 @@ sum(5, 4)
 				<br>
 				A parameter can take a default value. Parameters that take a default value do not have to take a value.
 				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func sum(a, b=90) {
-    print(a + b)
+    println(a + b)
 }
 
 sum(5)
@@ -576,7 +576,7 @@ sum(2, 10)
 				<br>
 				Arguments can also be specified as names and their order can be ignored.
 				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func divide(a, b, c) {
-    print((a + b) / c)
+    println((a + b) / c)
 }
 
 divide(c=9, a=5, b=0)
@@ -600,7 +600,7 @@ divide(2, c=10, b=0)
     for _, n in b {
         r += n
     }
-    print(r)
+    println(r)
 }
 
 params(100, 110, 120)
@@ -620,7 +620,7 @@ params(1, 4, 2, 6, b=0, 2, 5, 10)
     ret 'Hello ' + name + '!'
 }
 
-print(asHello('Fract'))
+println(asHello('Fract'))
 
 // OUTPUT: Hello Fract!</div>
 				The above function converts the value given to it to a hello message and returns it as a value.
@@ -636,9 +636,9 @@ print(asHello('Fract'))
 				Error catching in Fract is done with try-catch blocks.
 				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">try {
     var arr = [1, 2, 3, 10, 341, 0]
-    print(arr[6]) // Out of range.
+    println(arr[6]) // Out of range.
 } catch {
-    print('Panic!')
+    println('Panic!')
 }</div>
 				You write the codes you want to debug in the try block, in case of a panic, the catch block will run.
 				<div class="tip" style="margin-top: 5px;">
@@ -673,8 +673,8 @@ const Code = '49R-er34-TGH'</div>
 						<li>Function body</li>
 					</ul>
 				</div>
-				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">defer print('world')
-print('hello')
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">defer println('world')
+println('hello')
 
 // OUTPUT
 // hello
@@ -682,11 +682,11 @@ print('hello')
 				The "hello" is printed first because "world!" the print process waits for the block to finish before being called.
 				<br>
 				<br>
-				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">print('counting')
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">println('counting')
 for _, i in range(0, 9) {
-    defer print(i)
+    defer println(i)
 }
-print('done')
+println('done')
 
 // OUTPUT
 // counting
@@ -712,7 +712,7 @@ print('done')
 				<div class="warn" style="margin-top: 5px; margin-bottom: 5px;">Goroutines run in the different memory space.</div>
 				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func say(s) {
     for _, i in range(0, 4) {
-        print(s)
+        println(s)
     }
 }
 
@@ -720,7 +720,7 @@ go say("world")
 go say("hello")
 
 for _, a in range(10, 100) {
-    print(a, fin=' ')
+    println(a, fin=' ')
 }</div>
 
 				<br>
@@ -751,9 +751,9 @@ del var</div>
 				With the <x class="inline_code"> in </x> keyword, it is also possible to check values ​​inside enumerable values.
 				The value on the left is searched within the value on the right.
 				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">if 'urk' in 'Turkey' {
-    print('Yes!')
+    println('Yes!')
 } else {
-    print('No!')
+    println('No!')
 }
 
 // OUTPUT: Yes!</div>
@@ -763,9 +763,9 @@ del var</div>
 				<br>
 				<br>
 				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">if ['Hola', 'Bojour', 'Selam', 'Hello'] in 'Hi' {
-    print('Yes!')
+    println('Yes!')
 } else {
-    print('No!')
+    println('No!')
 }
 
 // OUTPUT: No!</div>
@@ -774,9 +774,9 @@ del var</div>
 				<br>
 				<br>
 				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">if 4 in [4, 2, 7] {
-    print('Yes!')
+    println('Yes!')
 } else {
-    print('No!')
+    println('No!')
 }
 
 // OUTPUT: Yes!</div>
@@ -785,9 +785,9 @@ del var</div>
 				<br>
 				<br>
 				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">if [4, 'Fract'] in [4, 2, [4, 'Fract'], 7] {
-    print('Yes!')
+    println('Yes!')
 } else {
-    print('No!')
+    println('No!')
 }
 
 // OUTPUT: Yes!</div>
@@ -800,8 +800,8 @@ del var</div>
 			<h2 id="list_comprehension">List Comprehension</h2>
 			List comprehension is a syntactic construct that can be used to build a array based on existing arrays.
 			It allows to select existing items by editing or filtering in a shortcut.
-			<div class="code" style="margin-top: 5px; margin-bottom: 5px;">print([x*100 for x in range(1, 100)])
-print([x*100 for x in range(1, 100), x <= 50])
+			<div class="code" style="margin-top: 5px; margin-bottom: 5px;">println([x*100 for x in range(1, 100)])
+println([x*100 for x in range(1, 100), x <= 50])
 
 /* OUTPUT
 [100 200 300 400 500 600 700 800 900 1000 1100 1200 1300 1400 1500 1600 1700 1800 1900 2000 2100 2200 2300 2400 2500 2600 2700 2800 2900 3000 3100 3200 3300 3400 3500 3600 3700 3800 3900 4000 4100 4200 4300 4400 4500 4600 4700 4800 4900 5000 5100 5200 5300 5400 5500 5600 5700 5800 5900 6000 6100 6200 6300 6400 6500 6600 6700 6800 6900 7000 7100 7200 7300 7400 7500 7600 7700 7800 7900 8000 8100 8200 8300 8400 8500 8600 8700 8800 8900 9000 9100 9200 9300 9400 9500 9600 9700 9800 9900 10000]
@@ -831,15 +831,15 @@ print([x*100 for x in range(1, 100), x <= 50])
 			<h3>Naming</h3>
 			The last name of the directory is assumed to be the package name.
 			<div class="code" style="margin-top: 5px; margin-bottom: 5px;">open std
-print(std.Foo)</div>
+println(std.Foo)</div>
 			<div class="code" style="margin-top: 5px; margin-bottom: 5px;">open "foo/bar"
-print(bar.HelloMessage)</div>
+println(bar.HelloMessage)</div>
 		<h3>Aliases</h3>
 		Are the names too long?
 		<div class="code" style="margin-top: 5px; margin-bottom: 5px;">open s std
-print(s.Foo)</div>
+println(s.Foo)</div>
 		<div class="code" style="margin-top: 5px; margin-bottom: 5px;">open b "foo/bar"
-print(b.HelloMessage)</div>
+println(b.HelloMessage)</div>
 		<div class="warn">
 			<ul>
 				<li>Files in the same directory as your startup file are assumed to have been imported.</li>

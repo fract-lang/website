@@ -1,8 +1,8 @@
-const code_helloworld = `print('Hello, 世界!')`
+const code_helloworld = `println('Hello, 世界!')`
 const code_fibonacci =
 `func fib(a, b) {
     var val = a + b
-    print(val)
+    println(val)
     if val < 1000 {
         fib(b, val)
     }
@@ -26,19 +26,19 @@ const code_primecheck =
 
 for _, i in range(2, 100) {
     if prime(i) {
-        print(i)
+        println(i)
     }
 }`
 const code_fizzbuzz =
 `for _, number in range(1, 100) {
     if number % 3 == 0 && number % 5 == 0 {
-        print('FizzBuzz')
+        println('FizzBuzz')
     } else if number % 3 == 0 {
-        print('Fizz')
+        println('Fizz')
     } else if number % 5 == 0 {
-        print('Buzz')
+        println('Buzz')
     } else {
-        print(number)
+        println(number)
     }
 }`
 const code_factorial =
@@ -51,14 +51,14 @@ const code_factorial =
     ret x * fact(x - 1)
 }
 
-print(fact(12))`
+println(fact(12))`
 const code_hellocountries =
 `func hello(...countries) {
-    print('Hello', fin='')
+    print('Hello')
     for _, c in countries {
-        print(', ', fin=c)
+        print(', ', c)
     }
-    print('!')
+    println('!')
 }
 
 hello('Turkey', 'France', 'German', 'Japan', 'Canada')`
