@@ -276,18 +276,18 @@ func Hello(name) {
 						<td>ASCII Bell.</td>
 					</tr>
 				</table>
-				<div class="code">var str = 'Fract with\nNew Line!'</div>
+				<div class="code">str := 'Fract with\nNew Line!'</div>
 
 				<br>
 				<br>
 				<h2 id="arrays">Arrays</h2>
 				The array structure, which is useful for holding multiple values, is offered by many programming languages.
 				Once an array is defined, its size remains constant. Each element can be of a different data type.
-				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">var array = [1, 20.3, 'Fract', print]</div>
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">array := [1, 20.3, 'Fract', print]</div>
 				An array is defined by writing the values ​​between the parentheses, separated by commas.
 				<br>
 				<br>
-				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">var array = [1, 10, 2, 20, 3, 30]
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">array := [1, 10, 2, 20, 3, 30]
 println(array)
 println(array[2])
 array[2] = 200
@@ -304,7 +304,7 @@ println(array)
 				Negative indexing starts with -1 and continues to decrease one by one for each subsequent element.
 				<br>
 				<br>
-				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">var array = [1, 10, 2, 20, 3, 30]
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">array := [1, 10, 2, 20, 3, 30]
 println(array[-2])
 
 // OUTPUT: 3</div>
@@ -314,7 +314,7 @@ println(array[-2])
 				<br>
 				<br>
 				Multiple items can be selected with the help of an array.
-				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">var e9 = [89, 189, 289, 389, 489, 589]
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">e9 := [89, 189, 289, 389, 489, 589]
 e9[0] = [90, 19, 20]
 println(e9)
 e9[[0, 2, 3, -1]] -= 89
@@ -373,6 +373,11 @@ Fract Language!
     Hex            = 0x07EDD5E59A4E28C2
 )</div>
 				</div>
+				<h3>Short Variable Declaration</h3>
+				It is possible to define variables by shortcut, but this way does not allow marking the defined variable as mutable, const or protected.
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">binary := [0, 1]</div>
+				The definition above is equivalent to defining with the <x class="inline_code"> var </x> keyword.
+
 				<h3>Setting Variables</h3>
 				Defined variables can be changed later. There is a pretty easy way to do this. You write the new value you want to give after the name of the variable.
 				<div class="code" style="margin-top: 5px;">var a = 45      // Value is 45
@@ -380,8 +385,8 @@ a = 1           // Value is 1</div>
 				<h3>Why immutability?</h3>
 				By default, mutable values ​​can cause undesirable results.
 				Variable values ​​represent a reference when used directly, and the same value now has more than one delegate. This may cause you to change a value that you do not want to change.
-				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">var a = [1, 4, 8]
-var b = a
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">a := [1, 4, 8]
+b := a
 b[2] = 10
 println(a)
 println(b)
@@ -393,7 +398,7 @@ println(b)
 				Variable <x class="inline_code"> b </x> takes the value of variable <x class="inline_code"> a </x> directly, it does not reference variable <x class="inline_code"> a </x>.
 				Therefore, when the second index is changed on variable <x class="inline_code"> b </x>, this change is not reflected in variable <x class="inline_code"> a </x>.
 				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">mut a = [1, 4, 8]
-var b = a
+b := a
 b[2] = 10
 println(a)
 println(b)
@@ -418,7 +423,7 @@ println(b)
 				<h3><x class="inline_code"> if </x> Expressions</h3>
 				An if statement allows you to branch your code based on conditions. You provide a condition and then write the algorithm that will run if the condition is met.
 				Optionally, you can also specify alternative conditions and situations where no conditions are met.
-				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">var n = 3
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">n := 3
 if n < 5 {
     println('condition is true')
 }
@@ -428,7 +433,7 @@ if n < 5 {
 				Then, the algorithm that will be realized if the condition is met is written into the block.
 				<br>
 				<br>
-				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">var n = 50
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">n := 50
 if n < 0 {
     println('n is negative')
 } else if n < 100 {
@@ -440,7 +445,7 @@ if n < 0 {
 				It specifies an alternative condition that works if the previous conditions are not met.
 				<br>
 				<br>
-				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">var n = 300
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">n := 300
 if n < 0 {
     println('n is negative')
 } else if n <= 100 {
@@ -464,7 +469,7 @@ if n < 0 {
 				Fract has two different cycles: <x class="inline_code"> foreach </x> and <x class="inline_code"> while </x> loops.
 				<h4>While Loop</h4>
 				While the condition is true, the loop runs.
-				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">var n = 0
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">n := 0
 for n < 10 {
     n += 1
     println(n, fin=' ')
@@ -474,8 +479,8 @@ for n < 10 {
 				<div class="tip">The best way give an empty condition for infinite loop.</div>
 				<h4>Foreach Loop</h4>
 				You can loop through the elements of an array with a while loop.
-				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">var t1 = [0, 3, 2, 1, 90]
-var i = 0
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">t1 := [0, 3, 2, 1, 90]
+i := 0
 for i < 5 {
     println(t1[i])
     i += 1
@@ -484,7 +489,7 @@ for i < 5 {
 				However, this approach is error-prone and requires a lot of code modification.
 				If the size of the known array changes in the future, this code will cause an error if its size is less than 5, and if it is large, it will print incompletely.
 				So in any change the condition also needs to be updated, forgetting to change it will cause problems.
-				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">var t1 = [0, 3, 2, 1, 90]
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">t1 := [0, 3, 2, 1, 90]
 for i in t1 {
     println(t1[i])
 }</div>
@@ -496,7 +501,7 @@ for i in t1 {
 				The first parameter of the loop always returns an index of current element.
 				If you want to get the element itself, you can add a second parameter.
 				If you don't need to use the index value, you can ignore it.
-				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">var t1 = [0, 3, 2, 1, 90]
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">t1 := [0, 3, 2, 1, 90]
 for _, i in t1 {
     println(i)
 }</div>
@@ -504,7 +509,7 @@ for _, i in t1 {
 				When the element is accessed with index, the element is read again from the memory according to the index value, but when you add the element parameter, you do not need to do an extra reading as it will already be pulled from the memory.
 				<h4>Loop Controlling</h4>
 				In various situations you may want to manage loops such as ending loops or switching to other loop iterations and this is a very useful method that is widely used.
-				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">var counter = 0
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">counter := 0
 for counter <= 10 {
     counter = counter + 1
     if counter > 5 {
@@ -593,7 +598,7 @@ divide(2, c=10, b=0)
 				<br>
 				A parameter can be used with the <x class="inline_code"> ... </x> operator so that it can take multiple values. In this way, the parameter will take all values ​​as an array.
 				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func params(...a, ...b=[]) {
-    var r = 0
+    r := 0
     for _, n in a {
         r += n
     }
@@ -626,7 +631,14 @@ println(asHello('Fract'))
 				The above function converts the value given to it to a hello message and returns it as a value.
 				The <x class="inline_code"> ret </x> keyword is used to return a value.
 				When the function returns a value, the function returns the value and stops executing, if there is any code that follows it, they will never be reached.
-
+				<h3>Anonymous Functions</h3>
+				Anonymous functions can be easily defined. It's not much different from defining a normal function.
+				Anonymous functions can be very useful and a good choice.
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">b := func(x) { println('Hello ', x, '!') }
+b('Fract')
+// OUTPUT: Hello Fract!</div>
+				The example above is similar to passing a function as a value to a variable.
+				The only difference is that the function is currently defined as a direct value.
 
 				<br>
 				<br>
@@ -635,7 +647,7 @@ println(asHello('Fract'))
 				Catching errors and handling them on a case-by-case basis is an approach offered by many programming languages.
 				Error catching in Fract is done with try-catch blocks.
 				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">try {
-    var arr = [1, 2, 3, 10, 341, 0]
+    arr := [1, 2, 3, 10, 341, 0]
     println(arr[6]) // Out of range.
 } catch {
     println('Panic!')
@@ -654,7 +666,7 @@ println(asHello('Fract'))
 					This pragma ignores the rest from where it was written during import and does not import.
 				</ul>
 				<div class="code" style="margin-bottom: 5px;">const Token = '938493enmnlfm3o5305m36390öfd903fö390jm3t6'
-#pragma enofi
+#enofi
 const Code = '49R-er34-TGH'</div>
 				When importing this code, it takes the <x class="inline_code"> Token </x> definition but excludes the <x class="inline_code"> Code </x> definition.
 

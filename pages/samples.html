@@ -106,7 +106,7 @@ if nterms <= 0 {
     } else if x < 2 || x % 2 == 0 {
         continue
     }
-    var prime = true
+    prime := true
     for _, y in range(2, x - 1) {
         if x % y == 0 {
             prime = false

@@ -1,7 +1,7 @@
 const code_helloworld = `println('Hello, 世界!')`
 const code_fibonacci =
 `func fib(a, b) {
-    var val = a + b
+    val := a + b
     println(val)
     if val < 1000 {
         fib(b, val)
