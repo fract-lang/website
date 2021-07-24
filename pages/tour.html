@@ -43,6 +43,7 @@
 				<a href="#memory_management">Memory Management</a>
 				<a href="#contains_checking">Contains Checking</a>
 				<a href="#list_comprehension">List Comprehension</a>
+				<a href="#packages">Packages</a>
 				<a href="#imports">Imports</a>
 			</div>
 			<div class="main" style="width: 90%;">
@@ -860,11 +861,20 @@ println([x*100 for x in range(1, 100), x <= 50])
 
 			<br>
 			<br>
+			<h2 id="packages">Packages</h2>
+			Every Fract program is made up of packages.
+			Packages allow code to be segmented and organized.
+			Package names must be specified with the <x class="inline_code"> package </x> keyword at the beginning of the code.
+			These package names are used for access when packages are imported.
+			<div class="info">It is recommended that the package names be the same as the names of the directories they are in.</div>
+			<div class="warn">Each directory can contain only one package.</div>
+
+			<br>
+			<br>
 			<h2 id="imports">Imports</h2>
 			<h3>Standard Library Import</h3>
 			Standard libraries can be imported with standard import.
-			<div class="code" style="margin-top: 5px; margin-bottom: 5px;">open std</div>
-			<div class="code" style="margin-top: 5px; margin-bottom: 5px;">open std.math</div>
+			<div class="code" style="margin-top: 5px; margin-bottom: 5px;">open math</div>
 			<h3>Local Import</h3>
 			Your directory;
 			<div class="code" style="margin-top: 5px; margin-bottom: 5px;">myproject/
@@ -872,19 +882,13 @@ println([x*100 for x in range(1, 100), x <= 50])
 |   ├── foo.fract
 └── main.fract</div>
 			You can import your other directories with local import.
-			<div class="code" style="margin-top: 5px; margin-bottom: 5px;">open "bar"</div>
-			<h3>Naming</h3>
-			The last name of the directory is assumed to be the package name.
-			<div class="code" style="margin-top: 5px; margin-bottom: 5px;">open std
-println(std.Foo)</div>
-			<div class="code" style="margin-top: 5px; margin-bottom: 5px;">open "foo/bar"
-println(bar.HelloMessage)</div>
+			<div class="code" style="margin-top: 5px; margin-bottom: 5px;">open "./bar"</div>
 		<h3>Aliases</h3>
-		Are the names too long?
-		<div class="code" style="margin-top: 5px; margin-bottom: 5px;">open s std
-println(s.Foo)</div>
-		<div class="code" style="margin-top: 5px; margin-bottom: 5px;">open b "foo/bar"
-println(b.HelloMessage)</div>
+		Package name is too long or complex?
+		<div class="code" style="margin-top: 5px; margin-bottom: 5px;">open m math
+println(m.Pi)</div>
+		<div class="code" style="margin-top: 5px; margin-bottom: 5px;">open b "./foo/bar"
+println(b.Foo)</div>
 		<div class="warn">
 			<ul>
 				<li>Files in the same directory as your startup file are assumed to have been imported.</li>
