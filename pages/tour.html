@@ -40,7 +40,6 @@
 				<a href="#pragmas">Pragmas</a>
 				<a href="#deferred_calls">Deferred Calls</a>
 				<a href="#concurrency">Concurrency</a>
-				<a href="#memory_management">Memory Management</a>
 				<a href="#contains_checking">Contains Checking</a>
 				<a href="#list_comprehension">List Comprehension</a>
 				<a href="#packages">Packages</a>
@@ -769,26 +768,6 @@ go say("hello")
 for _, a in range(10, 100) {
     println(a, fin=' ')
 }</div>
-
-				<br>
-				<br>
-				<h2 id="memory_management">Memory Management</h2>
-				Memory management is handled automatically by the garbage collector within Fract.
-				Technically, Fract does not offer complete memory management, but it does allow you to manually delete definitions in memory.
-				The <x class="inline_code"> delete </x> keyword is used to delete from memory.
-				The names of the definitions to be deleted from the memory are written, you can separate more than one definition with a comma to delete it at the same time.
-				<div class="code" style="margin-top: 5px;">var (
-    a = 0
-    b = 0
-)
-del a, b         // Remove 'a' and 'b' variables from memory
-                 // No defined variables</div>
-				<h3>Protected Definitions</h3>
-				If you're making a library or something different, there might be a definition you don't want to be erased from memory.
-				To specify this, you can prevent it from being deleted manually with the <x class="inline_code"> protected </x> keyword.
-				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">protected var example = 4
-del var</div>
-				This code will throw an error because the variable you are trying to delete is a protected variable.
 
 				<br>
 				<br>
