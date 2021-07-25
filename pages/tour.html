@@ -33,6 +33,7 @@
 				<a href="#variables">Variables</a>
 				<a href="#arrays">Arrays</a>
 				<a href="#maps">Maps</a>
+				<a href="#structs">Structs</a>
 				<a href="#why_immutability">Why Immutability?</a>
 				<a href="#control_flow">Control Flow</a>
 				<a href="#functions">Functions</a>
@@ -407,6 +408,30 @@ Fract Language!
 				<br>
 				Delete key:
 				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">del(m, key)</div>
+
+				<br>
+				<br>
+				<h2 id="structs">Structs</h2>
+				Struct is a collection of fields.
+				Used to access fields from the struct instance with a period.
+				<br>
+				The keyword <x class="inline_code"> struct </x> is used to define a struct.
+				A struct can only contain field names.
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">struct Vertex {
+    Lat
+    Long
+}</div>
+				The default constructor function is used to create a struct instance.
+				All fields, including custom fields, must be specified as parameters in the constructor function.
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">v := Vertex(10, -10)
+println(v.Lat, ' ', v.Long)
+// OUTPUT: 10 -10</div>
+				<h3 id="anonymoud_struct">Anonymous Structs</h3>
+				A classic struct statement can be used anonymously to create anonymous structures without name.
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">s := struct{Lat, Long}
+v := s(10, -10)
+println(v.Lat, ' ', v.Long)
+// OUTPUT: 10 -10</div>
 
 				<br>
 				<br>
