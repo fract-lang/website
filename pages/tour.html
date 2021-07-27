@@ -398,7 +398,7 @@ Fract Language!
 }</div>
 				A map declaration can be made, first the keys, then the values.
 				<br><br>
-				Update value of key if exists, or insert key with value:
+				Update value of key if exists, or append key with value:
 				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">m[key] = val</div>
 				<br>
 				Retrieve element:
@@ -406,9 +406,6 @@ Fract Language!
 				<br>
 				Key exist check:
 				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">key in m</div>
-				<br>
-				Delete key:
-				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">del(m, key)</div>
 
 				<br>
 				<br>
@@ -508,7 +505,7 @@ if n < 0 {
 				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">n := 0
 for n < 10 {
     n += 1
-    println(n, fin=' ')
+    println(n)
 }</div>
 				The loop has a condition that will run as long as the variable <x class="inline_code"> n </x> is less than 10.
 				During the loop, the variable <x class="inline_code"> n </x> is incremented at each iteration, when it reaches 10, the loop ends as the condition is no longer met.
@@ -783,7 +780,7 @@ go say("world")
 go say("hello")
 
 for _, a in range(10, 100) {
-    println(a, fin=' ')
+    println(a)
 }</div>
 
 				<br>
