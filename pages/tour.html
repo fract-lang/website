@@ -901,7 +901,7 @@ println(v.Lat, ' ', v.Long)
     func string        { ret this.name + ' ' + this.surname + ' ' + string(this.salary) }
 }
 
-e := employee('Daniel', 'McVollo', '9000')
+e := employee('Daniel', 'McVollo', 9000)
 println(e.string())
 println(e.getName())
 e.setName('Dan')
@@ -926,6 +926,7 @@ println(e.string())</div>
 			<br>
 			<br>
 			<h2 id="imports">Imports</h2>
+			The <x class="inline_code"> open </x> keyword used for import packages.
 			<h3>Standard Library Import</h3>
 			Standard libraries can be imported with standard import.
 			<div class="code" style="margin-top: 5px; margin-bottom: 5px;">open math</div>
