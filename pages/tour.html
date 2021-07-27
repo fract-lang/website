@@ -33,7 +33,6 @@
 				<a href="#variables">Variables</a>
 				<a href="#arrays">Arrays</a>
 				<a href="#maps">Maps</a>
-				<a href="#structs">Structs</a>
 				<a href="#why_immutability">Why Immutability?</a>
 				<a href="#control_flow">Control Flow</a>
 				<a href="#functions">Functions</a>
@@ -43,6 +42,8 @@
 				<a href="#concurrency">Concurrency</a>
 				<a href="#contains_checking">Contains Checking</a>
 				<a href="#list_comprehension">List Comprehension</a>
+				<a href="#structs">Structs</a>
+				<a href="#classes">Classes</a>
 				<a href="#packages">Packages</a>
 				<a href="#imports">Imports</a>
 			</div>
@@ -411,30 +412,6 @@ Fract Language!
 
 				<br>
 				<br>
-				<h2 id="structs">Structs</h2>
-				Struct is a collection of fields.
-				Used to access fields from the struct instance with a period.
-				<br>
-				The keyword <x class="inline_code"> struct </x> is used to define a struct.
-				A struct can only contain field names.
-				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">struct Vertex {
-    Lat
-    Long
-}</div>
-				The default constructor function is used to create a struct instance.
-				All fields, including custom fields, must be specified as parameters in the constructor function.
-				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">v := Vertex(10, -10)
-println(v.Lat, ' ', v.Long)
-// OUTPUT: 10 -10</div>
-				<h3 id="anonymoud_struct">Anonymous Structs</h3>
-				A classic struct statement can be used anonymously to create anonymous structures without name.
-				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">s := struct{Lat, Long}
-v := s(10, -10)
-println(v.Lat, ' ', v.Long)
-// OUTPUT: 10 -10</div>
-
-				<br>
-				<br>
 				<h2 id="why_immutability">Why Immutability?</h2>
 				By default, mutable values ​​can cause undesirable results.
 				Variable values ​​represent a reference when used directly, and the same value now has more than one delegate. This may cause you to change a value that you do not want to change.
@@ -679,6 +656,18 @@ params(1, 4, 2, 6, b=0, 2, 5, 10)
 				As was done in the second call, the <x class="inline_code"> a </x> and <x class="inline_code"> b </x> parameters now have special values.
 				<br>
 				<br>
+				It can also be used when giving an argument to a parameter with this notation.
+				While giving arguments, it sends the elements of the array one by one, not the array itself.
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">println(['Fract', 'Programming', 'Language'])
+println(['Fract', ' ', 'Programming', ' ', 'Language']...)
+
+
+/* OUTPUT
+[Fract Programming Language]
+Fract Programming Language
+*/</div>
+				<br>
+				<br>
 				Functions can also return a value.
 				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func asHello(name) {
     ret 'Hello ' + name + '!'
@@ -862,6 +851,67 @@ println([x*100 for x in range(1, 100), x <= 50])
 			As seen from the examples, the filter statement is separated by a comma.
 			The loop does not support a double variable (index, element) like the classic foreach loop.
 			It can take a single variable and that variable represents the element in that loop step.
+
+			<br>
+			<br>
+			<h2 id="structs">Structs</h2>
+			Struct is a collection of fields.
+			Used to access fields from the struct instance with a period.
+			<br>
+			The keyword <x class="inline_code"> struct </x> is used to define a struct.
+			A struct can only contain field names.
+			<div class="code" style="margin-top: 5px; margin-bottom: 5px;">struct Vertex {
+Lat
+Long
+}</div>
+			The default constructor function is used to create a struct instance.
+			All fields, including custom fields, must be specified as parameters in the constructor function.
+			<div class="code" style="margin-top: 5px; margin-bottom: 5px;">v := Vertex(10, -10)
+println(v.Lat, ' ', v.Long)
+// OUTPUT: 10 -10</div>
+			<h3 id="anonymoud_struct">Anonymous Structs</h3>
+			A classic struct statement can be used anonymously to create anonymous structures without name.
+			<div class="code" style="margin-top: 5px; margin-bottom: 5px;">s := struct{Lat, Long}
+v := s(10, -10)
+println(v.Lat, ' ', v.Long)
+// OUTPUT: 10 -10</div>
+
+			<br>
+			<br>
+			<h2 id="classes">Classes</h2>
+			Classes can be thought of as a more advanced variant of structures.
+			It contains variables and methods. It can also have a constructor method.
+			The <x class="inline_code"> class </x> keyword is used to define a class.
+			<br><br>
+			If a constructor method is not defined, a default constructor method that takes no parameters is defined.
+			To define a constructor method, it is sufficient to define a method in the name of the class.
+			<div class="code" style="margin-top: 5px; margin-bottom: 5px;">class employee {
+    var name = ''
+    var surname = ''
+    var salary = ''
+
+    func employee(name, surname, salary) {
+        this.name = name
+        this.surname = surname
+        this.salary = salary
+    }
+
+    func getName       { ret this.name }
+    func setName(name) { this.name = name }
+    func string        { ret this.name + ' ' + this.surname + ' ' + string(this.salary) }
+}
+
+e := employee('Daniel', 'McVollo', '9000')
+println(e.string())
+println(e.getName())
+e.setName('Dan')
+println(e.getName())
+println(e.string())</div>
+			The <x class="inline_code"> this </x> keyword is used within the class to access the elements of the class.
+			It is a mutable reference of Class.
+			<br>
+			In most programming languages, the keyword <x class="inline_code"> this </x> (or equivalent keyword) is not mandatory unless there is a name conflict.
+			However, Fract requires this use for readability, class fields cannot be directly accessed by name within the class.
 
 			<br>
 			<br>
