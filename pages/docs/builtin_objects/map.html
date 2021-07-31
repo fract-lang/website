@@ -5,7 +5,7 @@
 			The Fract Programming Language
 		</title>
 		<link rel="icon" href="https://raw.githubusercontent.com/fract-lang/resources/main/logo/fract.svg">
-		<link rel="stylesheet" type="text/css" href="../../styles/main.css">
+		<link rel="stylesheet" type="text/css" href="../../../styles/main.css">
 	</head>
 	<body>
 		<div id="navigation">
@@ -15,32 +15,36 @@
 				</a>
 			</div>
 			<ul class="linktable">
-				<li><a href="../samples.html">Samples</a></li>
-				<li><a href="./docs.html">Documentation</a></li>
-				<li><a href="../tour.html">Tour</a></li>
+				<li><a href="../../samples.html">Samples</a></li>
+				<li><a href="../docs.html">Documentation</a></li>
+				<li><a href="../../tour.html">Tour</a></li>
 			</ul>
 		</div>
 
-		<div class="main" style="padding-top: 100px;">
-		<center>
-			<h2>Fract Documentations</h2>
+		<div class="main" style="width: 90%;">
+			<h1>Map</h1>
 			<table>
 				<tr style="font-size: larger;">
-					<td>Interpreter</td>
-					<td>Built-In Objects</td>
+					<td>Functions</td>
 				</tr>
 				<tr>
 					<td>
-						<li><a style="font-size: 18px; width: 150px;" href="interpreter/modules.html">Modules</a></li>
-					</td>
-					<td>
-						<li><a style="font-size: 18px; width: 150px;" href="builtin_objects/list.html">List</a></li>
-						<li><a style="font-size: 18px; width: 150px;" href="builtin_objects/map.html">Map</a></li>
+						<li><a style="font-size: 18px; width: 150px;" href="#keys">keys</a></li>
+						<li><a style="font-size: 18px; width: 150px;" href="#values">values</a></li>
+						<li><a style="font-size: 18px; width: 150px;" href="#removeKey">removeKey</a></li>
 					</td>
 				</tr>
 			</table>
-		</center>
-		</div> <!-- Main -->
+			<h2>Functions</h2>
+			<div id="keys" class="code" style="margin-top: 5px; margin-bottom: 5px;">fn keys()</div>
+			Returns keys in list.
+			<br><br>
+			<div id="values" class="code" style="margin-top: 5px; margin-bottom: 5px;">fn values()</div>
+			Returns values of keys in list.
+			<br><br>
+			<div id="removeKey" class="code" style="margin-top: 5px; margin-bottom: 5px;">fn removeKey(key)</div>
+			Remove key if exist. Returns true if key is exist and removed, returns false if not.
+		</div>
 
 		<div style="margin-top: 100px; margin-bottom: 50px;">
 			<center style="user-select: none;">
@@ -51,12 +55,12 @@
 						<td>Comminity</td>
 					</tr>
 					<tr>
-						<td><a href="../code_of_conduct.html">Code of Conduct</a></td>
+						<td><a href="../../code_of_conduct.html">Code of Conduct</a></td>
 						<td><a target="_blank" href="https://github.com/fract-lang/fract">Repository</a></td>
-						<td><a href="../license.html">License</a></td>
+						<td><a href="../../license.html">License</a></td>
 					</tr>
 					<tr>
-						<td><a href="../contributor_guide.html">Guide</td>
+						<td><a href="../../contributor_guide.html">Guide</td>
 						<td><a target="_blank" href="https://github.com/fract-lang">GitHub Organization</a></td>
 						<td><a target="_blank" href="https://github.com/fract-lang/fract/graphs/contributors">Contributors</a></td>
 					</tr>
@@ -75,7 +79,7 @@
 			</center>
 		</div>
 	</body>
-	<script src="../../scripts/background.js"></script>
-	<script src="../../scripts/example_algorithms.js"></script>
-	<script src="../../scripts/generic.js"></script>
+	<script src="../../../scripts/background.js"></script>
+	<script src="../../../scripts/example_algorithms.js"></script>
+	<script src="../../../scripts/generic.js"></script>
 </html>

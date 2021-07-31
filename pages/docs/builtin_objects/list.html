@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>
+			The Fract Programming Language
+		</title>
+		<link rel="icon" href="https://raw.githubusercontent.com/fract-lang/resources/main/logo/fract.svg">
+		<link rel="stylesheet" type="text/css" href="../../../styles/main.css">
+	</head>
+	<body>
+		<div id="navigation">
+			<div>
+				<a href="../../index.html">
+					<img width="70" height="70" src="https://raw.githubusercontent.com/fract-lang/resources/main/logo/fract.svg">
+				</a>
+			</div>
+			<ul class="linktable">
+				<li><a href="../../samples.html">Samples</a></li>
+				<li><a href="../docs.html">Documentation</a></li>
+				<li><a href="../../tour.html">Tour</a></li>
+			</ul>
+		</div>
+
+		<div class="main" style="width: 90%;">
+			<h1>List</h1>
+			<table>
+				<tr style="font-size: larger;">
+					<td>Functions</td>
+				</tr>
+				<tr>
+					<td>
+						<li><a style="font-size: 18px; width: 150px;" href="#pushFront">pushFront</a></li>
+						<li><a style="font-size: 18px; width: 150px;" href="#pushBack">pushBack</a></li>
+						<li><a style="font-size: 18px; width: 150px;" href="#insert">insert</a></li>
+						<li><a style="font-size: 18px; width: 150px;" href="#removeAt">removeAt</a></li>
+						<li><a style="font-size: 18px; width: 150px;" href="#remove">remove</a></li>
+						<li><a style="font-size: 18px; width: 150px;" href="#removeLast">removeLast</a></li>
+						<li><a style="font-size: 18px; width: 150px;" href="#removeAll">removeAll</a></li>
+						<li><a style="font-size: 18px; width: 150px;" href="#removeRange">removeRange</a></li>
+						<li><a style="font-size: 18px; width: 150px;" href="#index">index</a></li>
+						<li><a style="font-size: 18px; width: 150px;" href="#indexLast">indexLast</a></li>
+						<li><a style="font-size: 18px; width: 150px;" href="#include">include</a></li>
+						<li><a style="font-size: 18px; width: 150px;" href="#clear">clear</a></li>
+						<li><a style="font-size: 18px; width: 150px;" href="#sub">sub</a></li>
+						<li><a style="font-size: 18px; width: 150px;" href="#reverse">reverse</a></li>
+						<li><a style="font-size: 18px; width: 150px;" href="#sort">sort</a></li>
+						<li><a style="font-size: 18px; width: 150px;" href="#unqiue">unique</a></li>
+					</td>
+				</tr>
+			</table>
+			<h2>Functions</h2>
+			<div id="pushFront" class="code" style="margin-top: 5px; margin-bottom: 5px;">fn pushFront(...v)</div>
+			Append values to start of list.
+			<br><br>
+			<div id="pushBack" class="code" style="margin-top: 5px; margin-bottom: 5px;">fn pushBack(...v)</div>
+			Append values to end of list.
+			<br><br>
+			<div id="insert" class="code" style="margin-top: 5px; margin-bottom: 5px;">fn insert(i, v)</div>
+			Append values to list start at position.
+			<br><br>
+			<div id="removeAt" class="code" style="margin-top: 5px; margin-bottom: 5px;">fn removeAt(i)</div>
+			Remove element by index.
+			<br><br>
+			<div id="remove" class="code" style="margin-top: 5px; margin-bottom: 5px;">fn remove(v, start=0)</div>
+			Remove first matched element. Returns true value is removed, false if not.
+			Start parameter provides start position of search.
+			<br><br>
+			<div id="removeLast" class="code" style="margin-top: 5px; margin-bottom: 5px;">fn removeLast(v, start=$len-1)</div>
+			This function is same with <x class="inline_code"> remove </x> function.
+			Only difference is count down from list.
+			<br><br>
+			<div id="removeAll" class="code" style="margin-top: 5px; margin-bottom: 5px;">fn removeAll(v)</div>
+			Remove all matched elements.
+			<br><br>
+			<div id="removeRange" class="code" style="margin-top: 5px; margin-bottom: 5px;">fn removeRange(start, to)</div>
+			Remove elements between at start index and to specified end index.
+			<br><br>
+			<div id="index" class="code" style="margin-top: 5px; margin-bottom: 5px;">fn index(v, start=0)</div>
+			Returns index of first matched element if any matched element, <x class="inline_code"> -1 </x> if not.
+			Start parameter provides start position of search.
+			<br><br>
+			<div id="indexLast" class="code" style="margin-top: 5px; margin-bottom: 5px;">fn indexLast(v, start=$len-1)</div>
+			This function is same with <x class="inline_code"> index </x> function.
+			Only difference is count down from list.
+			<br><br>
+			<div id="include" class="code" style="margin-top: 5px; margin-bottom: 5px;">fn include(v, start=0)</div>
+			Returns true if any matched element, false if not. Start parameter provides start position of search.
+			<br><br>
+			<div id="clear" class="code" style="margin-top: 5px; margin-bottom: 5px;">fn clear()</div>
+			Remove all elements.
+			<br><br>
+			<div id="sub" class="code" style="margin-top: 5px; margin-bottom: 5px;">fn sub(start, len)</div>
+			Get elements between at start index and to specified end index in another list.
+			<br><br>
+			<div id="reverse" class="code" style="margin-top: 5px; margin-bottom: 5px;">fn reverse()</div>
+			Reverse elements.
+			<br><br>
+			<div id="sort" class="code" style="margin-top: 5px; margin-bottom: 5px;">fn sort()</div>
+			Sort elements.
+			<br><br>
+			<div id="unique" class="code" style="margin-top: 5px; margin-bottom: 5px;">fn unique()</div>
+			Returns each element maximum one repetition in another list.
+		</div>
+
+		<div style="margin-top: 100px; margin-bottom: 50px;">
+			<center style="user-select: none;">
+				<table class="linktable" style="margin: 100px;">
+					<tr>
+						<td>Contribute</td>
+						<td>Open Source</td>
+						<td>Comminity</td>
+					</tr>
+					<tr>
+						<td><a href="../../code_of_conduct.html">Code of Conduct</a></td>
+						<td><a target="_blank" href="https://github.com/fract-lang/fract">Repository</a></td>
+						<td><a href="../../license.html">License</a></td>
+					</tr>
+					<tr>
+						<td><a href="../../contributor_guide.html">Guide</td>
+						<td><a target="_blank" href="https://github.com/fract-lang">GitHub Organization</a></td>
+						<td><a target="_blank" href="https://github.com/fract-lang/fract/graphs/contributors">Contributors</a></td>
+					</tr>
+					<tr>
+						<td><a target="_blank" href="https://github.com/fract-lang/fract/discussions">Discussions</a></td>
+						<td><a target="_blank" href="https://github.com/fract-lang/website">Source Code</a></td>
+						<td><a target="_blank" href="https://github.com/fract-lang/resources">Resources</a></td>
+					</tr>
+					<tr>
+						<td><a target="_blank" href="https://github.com/fract-lang/fract/issues">Issues</a></td>
+						<td></td>
+						<td></td>
+					</tr>
+				</table>
+				<div id="endmsg"></div>
+			</center>
+		</div>
+	</body>
+	<script src="../../../scripts/background.js"></script>
+	<script src="../../../scripts/example_algorithms.js"></script>
+	<script src="../../../scripts/generic.js"></script>
+</html>

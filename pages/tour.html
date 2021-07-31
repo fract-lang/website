@@ -31,7 +31,7 @@
 				<a href="#data_types">Data Types</a>
 				<a href="#naming_conventions">Naming Conventions</a>
 				<a href="#variables">Variables</a>
-				<a href="#arrays">Arrays</a>
+				<a href="#lists">Lists</a>
 				<a href="#maps">Maps</a>
 				<a href="#why_immutability">Why Immutability?</a>
 				<a href="#control_flow">Control Flow</a>
@@ -339,37 +339,38 @@ a = 1           // Value is 1</div>
 
 				<br>
 				<br>
-				<h2 id="arrays">Arrays</h2>
-				The array structure, which is useful for holding multiple values, is offered by many programming languages.
-				Once an array is defined, its size remains constant. Each element can be of a different data type.
-				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">array := [1, 20.3, 'Fract', print]</div>
-				An array is defined by writing the values ​​between the parentheses, separated by commas.
+				<h2 id="lists">Lists</h2>
+				<li><a target="_blank" href="docs/builtin_objects/list.html">List Object</a></li><br>
+				The list structure, which is useful for holding multiple values, is offered by many programming languages.
+				Once an list is defined, its size remains constant. Each element can be of a different data type.
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">list := [1, 20.3, 'Fract', print]</div>
+				An list is defined by writing the values ​​between the parentheses, separated by commas.
 				<br><br>
-				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">array := [1, 10, 2, 20, 3, 30]
-println(array)
-println(array[2])
-array[2] = 200
-println(array)
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">list := [1, 10, 2, 20, 3, 30]
+println(list)
+println(list[2])
+list[2] = 200
+println(list)
 
 // OUTPUT
 // [1 10 2 20 3 30]
 // 2
 // [1 10 200 20 3 30]</div>
-				Array allows to get and set values ​​with the help of index.
+				List allows to get and set values ​​with the help of index.
 				The index is specified as an integer in parentheses and access is provided.
 				Index 0 represents the first element, and it continues to increase by one for each subsequent element.
 				It is also possible to access elements in reverse with negative indexing.
 				Negative indexing starts with -1 and continues to decrease one by one for each subsequent element.
 				<br><br>
-				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">array := [1, 10, 2, 20, 3, 30]
-println(array[-2])
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">list := [1, 10, 2, 20, 3, 30]
+println(list[-2])
 
 // OUTPUT: 3</div>
-				The index -2 of the array defined above is equal to index 4 by reverse indexing.
+				The index -2 of the list defined above is equal to index 4 by reverse indexing.
 				Since -1 represents the last index value, each decrease represents the index before it.
 				In other words, -2 index allows you to get the second-to-last element.
 				<br><br>
-				Multiple items can be selected with the help of an array.
+				Multiple items can be selected with the help of an list.
 				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">e9 := [89, 189, 289, 389, 489, 589]
 e9[0] = [90, 19, 20]
 println(e9)
@@ -385,12 +386,13 @@ println(e9[[0, 1, 2, 3, 4, 5, -9, -8, -7, -6, -5, -4, -3, -2, -1]])
 [500 489 300]
 Fract Language!
 */</div>
-				Elements are selected and processed in multiple ways with the index values ​​given in the array.
+				Elements are selected and processed in multiple ways with the index values ​​given in the list.
 				It's just like a normal indexing, only this time you're selecting multiple elements.
 
 				<br>
 				<br>
 				<h2 id="maps">Maps</h2>
+				<li><a target="_blank" href="docs/builtin_objects/map.html">Map Object</a></li><br>
 				Maps work as key-value. One of the most used data types in computer science is hash tables.
 				In general, hash tables offer fast lookups, adds, and deletes. Fract's maps are built-in hash tables.
 				<br><br>
@@ -514,23 +516,23 @@ for n < 10 {
 				During the loop, the variable <x class="inline_code"> n </x> is incremented at each iteration, when it reaches 10, the loop ends as the condition is no longer met.
 				<div class="tip">The best way give an empty condition for infinite loop.</div>
 				<h4>Foreach Loop</h4>
-				You can loop through the elements of an array with a while loop.
+				You can loop through the elements of an list with a while loop.
 				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">t1 := [0, 3, 2, 1, 90]
 i := 0
 for i < 5 {
     println(t1[i])
     i += 1
 }</div>
-				As expected, this code will work correctly. The loop is set to rotate according to the length of the array and will print each element to the screen.
+				As expected, this code will work correctly. The loop is set to rotate according to the length of the list and will print each element to the screen.
 				However, this approach is error-prone and requires a lot of code modification.
-				If the size of the known array changes in the future, this code will cause an error if its size is less than 5, and if it is large, it will print incompletely.
+				If the size of the known list changes in the future, this code will cause an error if its size is less than 5, and if it is large, it will print incompletely.
 				So in any change the condition also needs to be updated, forgetting to change it will cause problems.
 				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">t1 := [0, 3, 2, 1, 90]
 for i in t1 {
     println(t1[i])
 }</div>
 				You can eliminate these situations with the <x class="inline_code"> foreach </x> loop.
-				It adjusts itself according to the size of the array, and each element runs as a single repeat.
+				It adjusts itself according to the size of the list, and each element runs as a single repeat.
 				Also, the code now looks cleaner and more readable.
 				<br>
 				<br>
@@ -635,7 +637,7 @@ divide(2, c=10, b=0)
 				All values ​​until specified by name are assigned to the arguments in order, like a regular call.
 				<br>
 				<br>
-				A parameter can be used with the <x class="inline_code"> ... </x> operator so that it can take multiple values. In this way, the parameter will take all values ​​as an array.
+				A parameter can be used with the <x class="inline_code"> ... </x> operator so that it can take multiple values. In this way, the parameter will take all values ​​as an list.
 				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func params(...a, ...b=[]) {
     r := 0
     for _, n in a {
@@ -654,13 +656,13 @@ params(1, 4, 2, 6, b=0, 2, 5, 10)
 // 330
 // 30</div>
 				The code above has a function with two more than one parameter, and this function finds the total values ​​of the parameters, adds them together and prints them out.
-				The first call assigns all values ​​to parameter <x class="inline_code"> a </x>, parameter <x class="inline_code"> b </x> remains its default value, the empty array.
+				The first call assigns all values ​​to parameter <x class="inline_code"> a </x>, parameter <x class="inline_code"> b </x> remains its default value, the empty list.
 				If a parameter that can take multiple values ​​is followed by another parameter, it must be specified with its name.
 				As was done in the second call, the <x class="inline_code"> a </x> and <x class="inline_code"> b </x> parameters now have special values.
 				<br>
 				<br>
 				It can also be used when giving an argument to a parameter with this notation.
-				While giving arguments, it sends the elements of the array one by one, not the array itself.
+				While giving arguments, it sends the elements of the list one by one, not the list itself.
 				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">println(['Fract', 'Programming', 'Language'])
 println(['Fract', ' ', 'Programming', ' ', 'Language']...)
 
@@ -819,8 +821,8 @@ for _, a in range(10, 100) {
 }
 
 // OUTPUT: No!</div>
-				An array can be given if it wants to be checked with more than one value. All elements of Array must be strings.
-				Since there is no value equal to or containing any value in the array in this code, the result is evaluated as false.
+				An list can be given if it wants to be checked with more than one value. All elements of list must be strings.
+				Since there is no value equal to or containing any value in the list in this code, the result is evaluated as false.
 				<br>
 				<br>
 				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">if 4 in [4, 2, 7] {
@@ -830,8 +832,8 @@ for _, a in range(10, 100) {
 }
 
 // OUTPUT: Yes!</div>
-				The left value can be a string, the value given on the right is compared with its elements of array and evaluates to true if it is equal to any of its elements, false otherwise.
-				In the code <x class="inline_code"> 4 </x> returns true because it exists in the given array.
+				The left value can be a string, the value given on the right is compared with its elements of list and evaluates to true if it is equal to any of its elements, false otherwise.
+				In the code <x class="inline_code"> 4 </x> returns true because it exists in the given list.
 				<br>
 				<br>
 				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">if [4, 'Fract'] in [4, 2, [4, 'Fract'], 7] {
@@ -841,13 +843,13 @@ for _, a in range(10, 100) {
 }
 
 // OUTPUT: Yes!</div>
-			When the left value is an array, the value of the other side is searched directly in it, as with string values, when the right value is an array, it does not scroll through all its elements.
-			<x class="inline_code"> [4, 'Fract'] </x> evaluates to true because it is contained in the given array.
+			When the left value is an list, the value of the other side is searched directly in it, as with string values, when the right value is an list, it does not scroll through all its elements.
+			<x class="inline_code"> [4, 'Fract'] </x> evaluates to true because it is contained in the given list.
 			The order of the elements makes a difference in the comparison, if the value was <x class="inline_code"> ['Fract', 4] </x> the evaluation would result in false.
 			<br>
 			<br>
 			<h2 id="list_comprehension">List Comprehension</h2>
-			List comprehension is a syntactic construct that can be used to build a array based on existing arrays.
+			List comprehension is a syntactic construct that can be used to build a list based on existing lists.
 			It allows to select existing items by editing or filtering in a shortcut.
 			<div class="code" style="margin-top: 5px; margin-bottom: 5px;">println([x*100 for x in range(1, 100)])
 println([x*100 for x in range(1, 100), x <= 50])
