@@ -67,7 +67,7 @@
     Say hello to name.
     x = Name.
 */
-func Hello(name) {
+fn Hello(name) {
     println('Hello ' + name)
 }</div>
 				<div class="tip">
@@ -578,8 +578,8 @@ for counter <= 10 {
 				<br>
 				<h2 id="functions">Functions</h2>
 				Functions are very useful for adding functionality to your code, functions are very common in Fract code.
-				Functions are declared with the <x class="inline_code"> func </x> keyword.
-				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func helloWorld() {
+				Functions are declared with the <x class="inline_code"> fn </x> keyword.
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">fn helloWorld() {
     println('Hello World!')
 }
 
@@ -594,7 +594,7 @@ helloWorld()</div>
 				Functions can also be defined to have parameters, which are special variables that are part of a function’s signature.
 				When a function has parameters, you can provide it with concrete values for those parameters.
 				<div class="warn">If a parameter is equal to a different definition name, it will replace that definition.</div>
-				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func sum(a, b) {
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">fn sum(a, b) {
     println(a + b)
 }
 
@@ -606,7 +606,7 @@ sum(5, 4)
 				<br>
 				<br>
 				A parameter can take a default value. Parameters that take a default value do not have to take a value.
-				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func sum(a, b=90) {
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">fn sum(a, b=90) {
     println(a + b)
 }
 
@@ -621,7 +621,7 @@ sum(2, 10)
 				<br>
 				<br>
 				Arguments can also be specified as names and their order can be ignored.
-				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func divide(a, b, c) {
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">fn divide(a, b, c) {
     println((a + b) / c)
 }
 
@@ -638,7 +638,7 @@ divide(2, c=10, b=0)
 				<br>
 				<br>
 				A parameter can be used with the <x class="inline_code"> ... </x> operator so that it can take multiple values. In this way, the parameter will take all values ​​as an list.
-				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func params(...a, ...b=[]) {
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">fn params(...a, ...b=[]) {
     r := 0
     for _, n in a {
         r += n
@@ -674,7 +674,7 @@ Fract Programming Language
 				<br>
 				<br>
 				Functions can also return a value.
-				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func asHello(name) {
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">fn asHello(name) {
     ret 'Hello ' + name + '!'
 }
 
@@ -690,7 +690,7 @@ println(asHello('Fract'))
 				<h3>Anonymous Functions</h3>
 				Anonymous functions can be easily defined. It's not much different from defining a normal function.
 				Anonymous functions can be very useful and a good choice.
-				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">b := func(x) { println('Hello ', x, '!') }
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">b := fn(x) { println('Hello ', x, '!') }
 b('Fract')
 // OUTPUT: Hello Fract!</div>
 				The example above is similar to passing a function as a value to a variable.
@@ -782,7 +782,7 @@ println('done')
 				The <x class="inline_code"> go </x> keyword is used to perform function calls concurrently.
 				Concurrent calls are performed by creating a lightweight thread managed by Fract.
 				<div class="warn" style="margin-top: 5px; margin-bottom: 5px;">Goroutines run in the different memory space.</div>
-				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func say(s) {
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">fn say(s) {
     for _, i in range(0, 4) {
         println(s)
     }
@@ -902,15 +902,15 @@ println(v.Lat, ' ', v.Long)
     var surname = ''
     var salary = ''
 
-    func employee(name, surname, salary) {
+    fn employee(name, surname, salary) {
         this.name = name
         this.surname = surname
         this.salary = salary
     }
 
-    func getName       { ret this.name }
-    func setName(name) { this.name = name }
-    func string        { ret this.name + ' ' + this.surname + ' ' + string(this.salary) }
+    fn getName       { ret this.name }
+    fn setName(name) { this.name = name }
+    fn string        { ret this.name + ' ' + this.surname + ' ' + string(this.salary) }
 }
 
 e := employee('Daniel', 'McVollo', 9000)
