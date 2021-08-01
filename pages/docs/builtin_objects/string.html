@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>
+			The Fract Programming Language
+		</title>
+		<link rel="icon" href="https://raw.githubusercontent.com/fract-lang/resources/main/logo/fract.svg">
+		<link rel="stylesheet" type="text/css" href="../../../styles/main.css">
+	</head>
+	<body>
+		<div id="navigation">
+			<div>
+				<a href="../../index.html">
+					<img width="70" height="70" src="https://raw.githubusercontent.com/fract-lang/resources/main/logo/fract.svg">
+				</a>
+			</div>
+			<ul class="linktable">
+				<li><a href="../../samples.html">Samples</a></li>
+				<li><a href="../docs.html">Documentation</a></li>
+				<li><a href="../../tour.html">Tour</a></li>
+			</ul>
+		</div>
+
+		<div class="main" style="width: 90%;">
+			<h1>String</h1>
+			<table>
+				<tr style="font-size: larger;">
+					<td>Functions</td>
+				</tr>
+				<tr>
+					<td>
+						<li><a style="font-size: 18px; width: 150px;" href="#isLower">isLower</a></li>
+						<li><a style="font-size: 18px; width: 150px;" href="#isUpper">isUpper</a></li>
+						<li><a style="font-size: 18px; width: 150px;" href="#lower">lower</a></li>
+						<li><a style="font-size: 18px; width: 150px;" href="#upper">upper</a></li>
+						<li><a style="font-size: 18px; width: 150px;" href="#trim">trim</a></li>
+						<li><a style="font-size: 18px; width: 150px;" href="#trimLeft">trimLeft</a></li>
+						<li><a style="font-size: 18px; width: 150px;" href="#trimRight">trimRight</a></li>
+						<li><a style="font-size: 18px; width: 150px;" href="#sub">sub</a></li>
+						<li><a style="font-size: 18px; width: 150px;" href="#index">index</a></li>
+						<li><a style="font-size: 18px; width: 150px;" href="#indexLast">indexLast</a></li>
+						<li><a style="font-size: 18px; width: 150px;" href="#split">split</a></li>
+						<li><a style="font-size: 18px; width: 150px;" href="#hasPrefix">hasPrefix</a></li>
+						<li><a style="font-size: 18px; width: 150px;" href="#hasSuffix">hasSuffix</a></li>
+						<li><a style="font-size: 18px; width: 150px;" href="#replace">replace</a></li>
+						<li><a style="font-size: 18px; width: 150px;" href="#replaceAll">replaceAll</a></li>
+					</td>
+				</tr>
+			</table>
+			<h2>Functions</h2>
+			<div id="isLower" class="code" style="margin-top: 5px; margin-bottom: 5px;">fn isLower()</div>
+			Returns true if all chars is lowercase, false if not.
+			<br><br>
+			<div id="isUpper" class="code" style="margin-top: 5px; margin-bottom: 5px;">fn isUpper()</div>
+			Returns true if all chars is uppercase, false if not.
+			<br><br>
+			<div id="lower" class="code" style="margin-top: 5px; margin-bottom: 5px;">fn lower()</div>
+			Parse all characters to lowercase and returns in new string.
+			<br><br>
+			<div id="upper" class="code" style="margin-top: 5px; margin-bottom: 5px;">fn upper()</div>
+			Parse all characters to uppercase and returns in new string.
+			<br><br>
+			<div id="trim" class="code" style="margin-top: 5px; margin-bottom: 5px;">fn trim()</div>
+			Remove all space characters and returns in new string.
+			<br><br>
+			<div id="trimLeft" class="code" style="margin-top: 5px; margin-bottom: 5px;">fn trimLeft()</div>
+			Remove all space at left of string characters and returns in new string.
+			<br><br>
+			<div id="trimRight" class="code" style="margin-top: 5px; margin-bottom: 5px;">fn trimRight()</div>
+			Remove all space at right of string characters and returns in new string.
+			<br><br>
+			<div id="sub" class="code" style="margin-top: 5px; margin-bottom: 5px;">fn sub(start, len)</div>
+			Select charaters start at specified start index by specified selection length and returns as string.
+			<br><br>
+			<div id="index" class="code" style="margin-top: 5px; margin-bottom: 5px;">fn index(sub)</div>
+			Returns index of the first instance of sub in string, or -1 if sub is not present in string.
+			Start parameter provides start position of search.
+			<br><br>
+			<div id="indexLast" class="code" style="margin-top: 5px; margin-bottom: 5px;">fn indexLast(sub)</div>
+			Returns index of the last instance of sub in string, or -1 if sub is not present in string.
+			Start parameter provides start position of search.
+			<br><br>
+			<div id="split" class="code" style="margin-top: 5px; margin-bottom: 5px;">fn split(sep, count=1)</div>
+			String into substrings separated by sep and returns a list of the substrings between those separators.
+			If count less than 0, means unlimited.
+			<br><br>
+			<div id="hasPrefix" class="code" style="margin-top: 5px; margin-bottom: 5px;">fn hasPrefix(sub)</div>
+			Returns true string is startss with specified substring, false if not.
+			<br><br>
+			<div id="hasSuffix" class="code" style="margin-top: 5px; margin-bottom: 5px;">fn hasSuffix(sub)</div>
+			Returns true string is ends with specified substring, false if not.
+			<br><br>
+			<div id="replace" class="code" style="margin-top: 5px; margin-bottom: 5px;">fn replace(old, new, count=1)</div>
+			Replace old strings with specified new string by specified replacement count.
+			<br><br>
+			<div id="replaceAll" class="code" style="margin-top: 5px; margin-bottom: 5px;">fn replaceAll(old, new)</div>
+			Replace all matched old strings with specified new string.
+			<br><br>
+		</div>
+
+		<div style="margin-top: 100px; margin-bottom: 50px;">
+			<center style="user-select: none;">
+				<table class="linktable" style="margin: 100px;">
+					<tr>
+						<td>Contribute</td>
+						<td>Open Source</td>
+						<td>Comminity</td>
+					</tr>
+					<tr>
+						<td><a href="../../code_of_conduct.html">Code of Conduct</a></td>
+						<td><a target="_blank" href="https://github.com/fract-lang/fract">Repository</a></td>
+						<td><a href="../../license.html">License</a></td>
+					</tr>
+					<tr>
+						<td><a href="../../contributor_guide.html">Guide</td>
+						<td><a target="_blank" href="https://github.com/fract-lang">GitHub Organization</a></td>
+						<td><a target="_blank" href="https://github.com/fract-lang/fract/graphs/contributors">Contributors</a></td>
+					</tr>
+					<tr>
+						<td><a target="_blank" href="https://github.com/fract-lang/fract/discussions">Discussions</a></td>
+						<td><a target="_blank" href="https://github.com/fract-lang/website">Source Code</a></td>
+						<td><a target="_blank" href="https://github.com/fract-lang/resources">Resources</a></td>
+					</tr>
+					<tr>
+						<td><a target="_blank" href="https://github.com/fract-lang/fract/issues">Issues</a></td>
+						<td></td>
+						<td></td>
+					</tr>
+				</table>
+				<div id="endmsg"></div>
+			</center>
+		</div>
+	</body>
+	<script src="../../../scripts/background.js"></script>
+	<script src="../../../scripts/example_algorithms.js"></script>
+	<script src="../../../scripts/generic.js"></script>
+</html>
