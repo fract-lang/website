@@ -6,6 +6,18 @@
 		</title>
 		<link rel="icon" href="https://raw.githubusercontent.com/fract-lang/resources/main/logo/fract.svg">
 		<link rel="stylesheet" type="text/css" href="../../styles/main.css">
+		<style type="text/css">
+			li a {
+				color: rgb(255, 81, 0);
+				text-decoration: none;
+				transition: 350ms;
+			}
+
+			li a:hover {
+				transition: 350ms;
+				color: orange;
+			}
+		</style>
 	</head>
 	<body>
 		<div id="navigation">
@@ -22,25 +34,23 @@
 		</div>
 
 		<div class="main" style="padding-top: 100px;">
-		<center>
-			<h2>Fract Documentations</h2>
-			<table>
-				<tr style="font-size: larger;">
-					<td>Interpreter</td>
-					<td>Built-In Objects</td>
-				</tr>
-				<tr>
+			<center>
+				<h2>Fract Documentations</h2>
+				<table>
 					<td>
-						<li><a style="font-size: 18px; width: 150px;" href="interpreter/modules.html">Modules</a></li>
+						<h3>Interpreter</h3>
+						<li><a style="font-size: 18px;" href="interpreter/modules.html">Modules</a></li>
+
+						<h3>Built-ın Objects</h3>
+						<li><a style="font-size: 18px;" href="builtin_objects/list.html">List</a></li>
+						<li><a style="font-size: 18px;" href="builtin_objects/map.html">Map</a></li>
+						<li><a style="font-size: 18px;" href="builtin_objects/string.html">String</a></li>
+
+						<h3>Standard Library</h3>
+						<li><a style="font-size: 18px;" href="stdlib/reflect.html">reflect</a></li>
 					</td>
-					<td>
-						<li><a style="font-size: 18px; width: 150px;" href="builtin_objects/list.html">List</a></li>
-						<li><a style="font-size: 18px; width: 150px;" href="builtin_objects/map.html">Map</a></li>
-						<li><a style="font-size: 18px; width: 150px;" href="builtin_objects/string.html">String</a></li>
-					</td>
-				</tr>
-			</table>
-		</center>
+				</table>
+			</center>
 		</div> <!-- Main -->
 
 		<div style="margin-top: 100px; margin-bottom: 50px;">

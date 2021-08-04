@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>
+			The Fract Programming Language
+		</title>
+		<link rel="icon" href="https://raw.githubusercontent.com/fract-lang/resources/main/logo/fract.svg">
+		<link rel="stylesheet" type="text/css" href="../../../styles/main.css">
+	</head>
+	<body>
+		<div id="navigation">
+			<div>
+				<a href="../../index.html">
+					<img width="70" height="70" src="https://raw.githubusercontent.com/fract-lang/resources/main/logo/fract.svg">
+				</a>
+			</div>
+			<ul class="linktable">
+				<li><a href="../../samples.html">Samples</a></li>
+				<li><a href="../docs.html">Documentation</a></li>
+				<li><a href="../../tour.html">Tour</a></li>
+			</ul>
+		</div>
+
+		<div id="side_menu" class="side_menu">
+			<div class="linktable" style="width: 276px; position: sticky; top: 40px;">
+				<a href="#constants">Constants</a>
+				<a href="#functions">Functions</a>
+				<a href="#classes">Classes</a>
+			</div>
+			<div class="main" style="width: 90%;">
+				<h1>reflect</h1>
+				<h2 id="constants">Constants</h2>
+				<li><strong>None</strong></li>
+				<div style="margin-left: 50px;">Type code of None value.</div>
+				<li><strong>Int</strong></li>
+				<div style="margin-left: 50px;">Type code of Int value.</div>
+				<li><strong>Float</strong></li>
+				<div style="margin-left: 50px;">Type code of Float value.</div>
+				<li><strong>String</strong></li>
+				<div style="margin-left: 50px;">Type code of String value.</div>
+				<li><strong>Bool</strong></li>
+				<div style="margin-left: 50px;">Type code of Bool value.</div>
+				<li><strong>Func</strong></li>
+				<div style="margin-left: 50px;">Type code of Func value.</div>
+				<li><strong>List</strong></li>
+				<div style="margin-left: 50px;">Type code of List value.</div>
+				<li><strong>Map</strong></li>
+				<div style="margin-left: 50px;">Type code of Map value.</div>
+				<li><strong>Package</strong></li>
+				<div style="margin-left: 50px;">Type code of Package value.</div>
+				<li><strong>StructDef</strong></li>
+				<div style="margin-left: 50px;">Type code of StructDef value.</div>
+				<li><strong>StructIns</strong></li>
+				<div style="margin-left: 50px;">Type code of StructIns value.</div>
+				<li><strong>ClassDef</strong></li>
+				<div style="margin-left: 50px;">Type code of ClassDef value.</div>
+				<li><strong>ClassIns</strong></li>
+				<div style="margin-left: 50px;">Type code of ClassIns value.</div>
+
+				<br>
+				<br>
+				<h2 id="functions">Functions</h2>
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">fn NameOfType(obj)</div>
+				NameOfType is returns string name of specified object.
+
+				<br>
+				<br>
+				<h2 id="classes">Classes</h2>
+				<h3>TypeInfo</h3>
+					<h4>Constructor</h4>
+					<div class="code" style="margin-top: 5px; margin-bottom: 5px;">fn TypeInfo(obj)</div>
+					Create instance for type information of specified object.
+
+					<br>
+					<br>
+					<h4>Functions</h4>
+					<div class="code" style="margin-top: 5px; margin-bottom: 5px;">fn Name()</div>
+					Name is returns string name of type.
+					<br><br>
+					<div class="code" style="margin-top: 5px; margin-bottom: 5px;">fn Code()</div>
+					Code is returns code of type.
+					<br><br>
+					<div class="code" style="margin-top: 5px; margin-bottom: 5px;">fn IsEnumerable()</div>
+					IsEnumerable returns true if object is enumerable object, returns false if not.
+					<br><br>
+					<div class="code" style="margin-top: 5px; margin-bottom: 5px;">fn IsNumeric()</div>
+					IsNumeric is returns object is numeric type.
+					<br><br>
+					<div class="code" style="margin-top: 5px; margin-bottom: 5px;">fn IsInstance()</div>
+					IsInstance is returns object is instance of any class or struct.
+					<br><br>
+					<div class="code" style="margin-top: 5px; margin-bottom: 5px;">fn Value()</div>
+					Value is returns value of object.
+			</div>
+		</div>
+
+		<div style="margin-top: 100px; margin-bottom: 50px;">
+			<center style="user-select: none;">
+				<table class="linktable" style="margin: 100px;">
+					<tr>
+						<td>Contribute</td>
+						<td>Open Source</td>
+						<td>Comminity</td>
+					</tr>
+					<tr>
+						<td><a href="../../code_of_conduct.html">Code of Conduct</a></td>
+						<td><a target="_blank" href="https://github.com/fract-lang/fract">Repository</a></td>
+						<td><a href="../../license.html">License</a></td>
+					</tr>
+					<tr>
+						<td><a href="../../contributor_guide.html">Guide</td>
+						<td><a target="_blank" href="https://github.com/fract-lang">GitHub Organization</a></td>
+						<td><a target="_blank" href="https://github.com/fract-lang/fract/graphs/contributors">Contributors</a></td>
+					</tr>
+					<tr>
+						<td><a target="_blank" href="https://github.com/fract-lang/fract/discussions">Discussions</a></td>
+						<td><a target="_blank" href="https://github.com/fract-lang/website">Source Code</a></td>
+						<td><a target="_blank" href="https://github.com/fract-lang/resources">Resources</a></td>
+					</tr>
+					<tr>
+						<td><a target="_blank" href="https://github.com/fract-lang/fract/issues">Issues</a></td>
+						<td></td>
+						<td></td>
+					</tr>
+				</table>
+				<div id="endmsg"></div>
+			</center>
+		</div>
+	</body>
+	<script src="../../../scripts/background.js"></script>
+	<script src="../../../scripts/example_algorithms.js"></script>
+	<script src="../../../scripts/generic.js"></script>
+</html>
