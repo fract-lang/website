@@ -328,9 +328,23 @@ fn Hello(name) {
 )</div>
 				</div>
 				<h3>Short Variable Declaration</h3>
-				It is possible to define variables by shortcut, but this way does not allow marking the defined variable as mutable, const or protected.
-				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">x := <@expression></div>
-				The definition above is equivalent to defining with the <x class="inline_code"> var </x> keyword.
+				It is possible to define variables by shortcut.
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">x := 1</div>
+				The definition above is equivalent to: <x class="inline_code"> var x = 1 </x>
+				<br><br>
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">x mut := 1</div>
+				The definition above is equivalent to: <x class="inline_code"> mut x = 1 </x>
+				<br><br>
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">x const := 1</div>
+				The definition above is equivalent to: <x class="inline_code"> const x = 1 </x>
+				<br><br>
+				Also this way used for multiple variable declaration;
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">a, b const, c mut := 1, 2, 3</div>
+				The code above, create named <x class="inline_code"> a </x>,
+				constant named <x class="inline_code"> b </x> and mutable <x class="inline_code"> c </x> variables.
+				<div class="tip">
+					If given one value, set as value of all created variables.
+				</div>
 
 				<h3>Setting Variables</h3>
 				Defined variables can be changed later. There is a pretty easy way to do this. You write the new value you want to give after the name of the variable.
@@ -685,8 +699,19 @@ println(asHello('Fract'))
 				The above function converts the value given to it to a hello message and returns it as a value.
 				The <x class="inline_code"> ret </x> keyword is used to return a value.
 				When the function returns a value, the function returns the value and stops executing, if there is any code that follows it, they will never be reached.
+				<br><br>
+				Functions can returns multiple values;
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">fn example() {
+    ret 1, 2, 3
+}
+
+a, b, c := example()
+println(a, ' ', b, ' ', c)
+
+// OUTPUT: 1, 2, 3</div>
+
 				<div class="warn">
-					If function is not return any value, returns none.
+					If function is not return any value, returns <x class="inline_code"> none </x>.
 				</div>
 				<h3>Anonymous Functions</h3>
 				Anonymous functions can be easily defined. It's not much different from defining a normal function.
