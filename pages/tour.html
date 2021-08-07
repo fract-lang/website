@@ -67,7 +67,7 @@
     Say hello to name.
     x = Name.
 */
-fn Hello(name) {
+func Hello(name) {
     println('Hello ' + name)
 }</div>
 				<div class="tip">
@@ -593,8 +593,8 @@ for counter <= 10 {
 				<br>
 				<h2 id="functions">Functions</h2>
 				Functions are very useful for adding functionality to your code, functions are very common in Fract code.
-				Functions are declared with the <x class="inline_code"> fn </x> keyword.
-				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">fn helloWorld() {
+				Functions are declared with the <x class="inline_code"> func </x> keyword.
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func helloWorld() {
     println('Hello World!')
 }
 
@@ -609,7 +609,7 @@ helloWorld()</div>
 				Functions can also be defined to have parameters, which are special variables that are part of a function’s signature.
 				When a function has parameters, you can provide it with concrete values for those parameters.
 				<div class="warn">If a parameter is equal to a different definition name, it will replace that definition.</div>
-				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">fn sum(a, b) {
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func sum(a, b) {
     println(a + b)
 }
 
@@ -621,7 +621,7 @@ sum(5, 4)
 				<br>
 				<br>
 				A parameter can take a default value. Parameters that take a default value do not have to take a value.
-				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">fn sum(a, b=90) {
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func sum(a, b=90) {
     println(a + b)
 }
 
@@ -635,8 +635,26 @@ sum(2, 10)
 				Because a custom value was specified in the next call, the value <x class="inline_code"> 90 </x> was overridden and the value of the argument became <x class="inline_code"> 10 </x>.
 				<br>
 				<br>
+				Parameters can be marked as constant or mutable.
+				The value cannot be changed when marked as const.
+				When marked as mutable, the argument it will take is directly mutable, even though it is immutable.
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func set(mut list) {
+    list[0] = nan
+}
+
+list := [1, 2, 3, 4]
+println(list)
+set(list)
+println(list)
+
+// OUTPUT
+// [1 2 3 4]
+// [NaN 2 3 4]</div>
+				Although the list is created as immutable in the above code, the list is sent as a reference instead of being copied, as the function forces the argument to be mutable.
+				<br>
+				<br>
 				Arguments can also be specified as names and their order can be ignored.
-				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">fn divide(a, b, c) {
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func divide(a, b, c) {
     println((a + b) / c)
 }
 
@@ -653,7 +671,7 @@ divide(2, c=10, b=0)
 				<br>
 				<br>
 				A parameter can be used with the <x class="inline_code"> ... </x> operator so that it can take multiple values. In this way, the parameter will take all values ​​as an list.
-				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">fn params(...a, ...b=[]) {
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func params(...a, ...b=[]) {
     r := 0
     for _, n in a {
         r += n
@@ -689,20 +707,20 @@ Fract Programming Language
 				<br>
 				<br>
 				Functions can also return a value.
-				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">fn asHello(name) {
-    ret 'Hello ' + name + '!'
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func asHello(name) {
+    return 'Hello ' + name + '!'
 }
 
 println(asHello('Fract'))
 
 // OUTPUT: Hello Fract!</div>
 				The above function converts the value given to it to a hello message and returns it as a value.
-				The <x class="inline_code"> ret </x> keyword is used to return a value.
+				The <x class="inline_code"> return </x> keyword is used to return a value.
 				When the function returns a value, the function returns the value and stops executing, if there is any code that follows it, they will never be reached.
 				<br><br>
 				Functions can returns multiple values;
-				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">fn example() {
-    ret 1, 2, 3
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func example() {
+    return 1, 2, 3
 }
 
 a, b, c := example()
@@ -716,7 +734,7 @@ println(a, ' ', b, ' ', c)
 				<h3>Anonymous Functions</h3>
 				Anonymous functions can be easily defined. It's not much different from defining a normal function.
 				Anonymous functions can be very useful and a good choice.
-				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">b := fn(x) { println('Hello ', x, '!') }
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">b := func(x) { println('Hello ', x, '!') }
 b('Fract')
 // OUTPUT: Hello Fract!</div>
 				The example above is similar to passing a function as a value to a variable.
@@ -808,7 +826,7 @@ println('done')
 				The <x class="inline_code"> go </x> keyword is used to perform function calls concurrently.
 				Concurrent calls are performed by creating a lightweight thread managed by Fract.
 				<div class="warn" style="margin-top: 5px; margin-bottom: 5px;">Goroutines run in the different memory space.</div>
-				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">fn say(s) {
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func say(s) {
     for _, i in range(0, 4) {
         println(s)
     }
@@ -928,15 +946,15 @@ println(v.Lat, ' ', v.Long)
     var surname = ''
     var salary = ''
 
-    fn employee(name, surname, salary) {
+    func employee(name, surname, salary) {
         this.name = name
         this.surname = surname
         this.salary = salary
     }
 
-    fn getName       { ret this.name }
-    fn setName(name) { this.name = name }
-    fn string        { ret this.name + ' ' + this.surname + ' ' + string(this.salary) }
+    func getName       { return this.name }
+    func setName(name) { this.name = name }
+    func string        { return this.name + ' ' + this.surname + ' ' + string(this.salary) }
 }
 
 e := employee('Daniel', 'McVollo', 9000)

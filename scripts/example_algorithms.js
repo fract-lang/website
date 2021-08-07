@@ -4,7 +4,7 @@ println('Hello, 世界!')`
 const code_fibonacci =
 `package main
 
-fn fib(a, b) {
+func fib(a, b) {
     val := a + b
     println(val)
     if val < 1000 {
@@ -16,18 +16,18 @@ fib(0, 1)`
 const code_primecheck =
 `package main
 
-fn prime(x) {
+func prime(x) {
     if x == 2 {
-        ret true
+        return true
     } else if x < 2 || x % 2 == 0 {
-        ret false
+        return false
     }
     for _, y in range(2, x - 1) {
         if x % y == 0 {
-            ret false
+            return false
         }
     }
-    ret true
+    return true
 }
 
 for _, i in range(2, 100) {
@@ -52,20 +52,20 @@ for _, number in range(1, 100) {
 const code_factorial =
 `package main
 
-fn fact(x) {
+func fact(x) {
     if x < 0 {
-        ret NaN
+        return nan
     } else if x == 0 {
-        ret 1
+        return 1
     }
-    ret x * fact(x - 1)
+    return x * fact(x - 1)
 }
 
 println(fact(12))`
 const code_hellocountries =
 `package main
 
-fn hello(...countries) {
+func hello(...countries) {
     print('Hello')
     for _, c in countries {
         print(', ', c)
