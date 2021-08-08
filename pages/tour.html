@@ -465,10 +465,16 @@ println(b)
 					In order for it to reference, the reference variable must also be created as a mutable.
 				</div>
 				<div class="tip">
-					If somehow the value needs to be passed as mutable, but the variable you're storing is not mutable, you don't have to worry.
-					Every value you mark as mutable is copied as mutable.
+					If somehow the value needs to be passed as immutable, but the variable you're storing is mutable, you don't have to worry.
+					Every value you mark as immutable is copied as immutable.
 					<div class="code" style="margin-top: 5px; margin-bottom: 5px;">a := [1, 100, 1000, 10000]
 b := mut a</div>
+				</div>
+				<div class="tip">
+					If somehow the value needs to be passed as immutable, but the variable you're storing is not immutable, you don't have to worry.
+					Every value you mark as var is copied as immutable.
+					<div class="code" style="margin-top: 5px; margin-bottom: 5px;">a mut := [1, 100, 1000, 10000]
+b := var a</div>
 				</div>
 
 				<br>
@@ -635,9 +641,11 @@ sum(2, 10)
 				Because a custom value was specified in the next call, the value <x class="inline_code"> 90 </x> was overridden and the value of the argument became <x class="inline_code"> 10 </x>.
 				<br>
 				<br>
-				Parameters can be marked as constant or mutable.
+				Parameters can be marked as constant, mutable or immutable.
 				The value cannot be changed when marked as const.
 				When marked as mutable, the argument it will take is directly mutable, even though it is immutable.
+				<br>
+				Forcing to mutable copy;
 				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func set(mut list) {
     list[0] = nan
 }
@@ -651,6 +659,43 @@ println(list)
 // [1 2 3 4]
 // [NaN 2 3 4]</div>
 				Although the list is created as immutable in the above code, the list is sent as a reference instead of being copied, as the function forces the argument to be mutable.
+				<br>
+				<br>
+				Forcing to immutable copy;
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func set(var list) {
+    list[0] = nan
+}
+
+list mut := [1, 2, 3, 4]
+println(list)
+set(list)
+println(list)
+
+// OUTPUT
+// [1 2 3 4]
+// [1 2 3 4]</div>
+				Although the list is created as mutable in the above code, the list is sent as immutable copy, as the function forces the argument to be immutable.
+				<br>
+				<br>
+				Forcing to constant;
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func set(const list) {
+    list[0] = nan
+}
+
+list mut := [1, 2, 3, 4]
+println(list)
+set(list)
+println(list)</div>
+				This code is paniced, because argument is constant.
+				<br>
+				<br>
+				<div class="tip">
+					Extra types: <x class="inline_code"> const var </x>, <x class="inline_code"> const mut </x>.
+				</div>
+				<div class="info">
+					If you do not force the parameter to be mutable or immutable,
+					it is taken into account whether the given argument is mutable.
+				</div>
 				<br>
 				<br>
 				Arguments can also be specified as names and their order can be ignored.
