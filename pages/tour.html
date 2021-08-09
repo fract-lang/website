@@ -464,18 +464,6 @@ println(b)
 					An immutable variable that references a mutable variable, when given as a value to another variable, copies the value instead of giving a reference to the value it refers to.
 					In order for it to reference, the reference variable must also be created as a mutable.
 				</div>
-				<div class="tip">
-					If somehow the value needs to be passed as immutable, but the variable you're storing is mutable, you don't have to worry.
-					Every value you mark as immutable is copied as immutable.
-					<div class="code" style="margin-top: 5px; margin-bottom: 5px;">a := [1, 100, 1000, 10000]
-b := mut a</div>
-				</div>
-				<div class="tip">
-					If somehow the value needs to be passed as immutable, but the variable you're storing is not immutable, you don't have to worry.
-					Every value you mark as var is copied as immutable.
-					<div class="code" style="margin-top: 5px; margin-bottom: 5px;">a mut := [1, 100, 1000, 10000]
-b := var a</div>
-				</div>
 
 				<br>
 				<br>
