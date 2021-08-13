@@ -5,7 +5,7 @@ const code_fibonacci =
 `package main
 
 func fib(a, b) {
-    val := a + b
+    val = a + b
     println(val)
     if val < 1000 {
         fib(b, val)

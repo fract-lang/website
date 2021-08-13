@@ -287,7 +287,7 @@ func Hello(name) {
 						<td>ASCII Bell.</td>
 					</tr>
 				</table>
-				<div class="code">str := 'Fract with\nNew Line!'</div>
+				<div class="code">str = 'Fract with\nNew Line!'</div>
 
 				<br>
 				<br>
@@ -330,21 +330,24 @@ func Hello(name) {
     Hex            = 0x07EDD5E59A4E28C2
 )</div>
 				</div>
-				<h3>Short Variable Declaration</h3>
+				<h3>Short Variable Declaration and Setting</h3>
 				It is possible to define variables by shortcut.
-				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">x := 1</div>
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">x = 1</div>
 				The definition above is equivalent to: <x class="inline_code"> var x = 1 </x>
 				<br><br>
-				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">x mut := 1</div>
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">x mut = 1</div>
 				The definition above is equivalent to: <x class="inline_code"> mut x = 1 </x>
 				<br><br>
-				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">x const := 1</div>
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">x const = 1</div>
 				The definition above is equivalent to: <x class="inline_code"> const x = 1 </x>
 				<br><br>
 				Also this way used for multiple variable declaration;
-				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">a, b const, c mut := 1, 2, 3</div>
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">a, b const, c mut = 1, 2, 3</div>
 				The code above, create named <x class="inline_code"> a </x>,
 				constant named <x class="inline_code"> b </x> and mutable <x class="inline_code"> c </x> variables.
+				<br><br>
+				If there is a variable with the specified name, its value is set.
+				The new variable creation case occurs only when a variable with that name does not exist.
 				<div class="tip">
 					If given one value, set as value of all created variables.
 				</div>
@@ -352,22 +355,16 @@ func Hello(name) {
 					You can use <x class="inline_code"> _ </x> place of name for ignore value.
 				</div>
 
-				<h3>Setting Variables</h3>
-				Defined variables can be changed later. There is a pretty easy way to do this. You write the new value you want to give after the name of the variable.
-				<div class="code" style="margin-top: 5px;">var a = 45      // Value is 45
-a = 1           // Value is 1</div>
-
-
 				<br>
 				<br>
 				<h2 id="lists">Lists</h2>
 				<li><a target="_blank" href="docs/builtin_objects/list.html">List Object</a></li><br>
 				The list structure, which is useful for holding multiple values, is offered by many programming languages.
 				Once an list is defined, its size remains constant. Each element can be of a different data type.
-				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">list := [1, 20.3, 'Fract', print]</div>
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">list = [1, 20.3, 'Fract', print]</div>
 				An list is defined by writing the values ​​between the parentheses, separated by commas.
 				<br><br>
-				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">list := [1, 10, 2, 20, 3, 30]
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">list = [1, 10, 2, 20, 3, 30]
 println(list)
 println(list[2])
 list[2] = 200
@@ -383,7 +380,7 @@ println(list)
 				It is also possible to access elements in reverse with negative indexing.
 				Negative indexing starts with -1 and continues to decrease one by one for each subsequent element.
 				<br><br>
-				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">list := [1, 10, 2, 20, 3, 30]
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">list = [1, 10, 2, 20, 3, 30]
 println(list[-2])
 
 // OUTPUT: 3</div>
@@ -392,7 +389,7 @@ println(list[-2])
 				In other words, -2 index allows you to get the second-to-last element.
 				<br><br>
 				Multiple items can be selected with the help of an list.
-				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">e9 := [89, 189, 289, 389, 489, 589]
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">e9 = [89, 189, 289, 389, 489, 589]
 e9[0] = [90, 19, 20]
 println(e9)
 e9[[0, 2, 3, -1]] -= 89
@@ -428,7 +425,7 @@ Fract Language!
 				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">m[key] = val</div>
 				<br>
 				Retrieve element:
-				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">val := m[key]</div>
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">val = m[key]</div>
 				<br>
 				Key exist check:
 				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">key in m</div>
@@ -438,8 +435,8 @@ Fract Language!
 				<h2 id="why_immutability">Why Immutability?</h2>
 				By default, mutable values ​​can cause undesirable results.
 				Variable values ​​represent a reference when used directly, and the same value now has more than one delegate. This may cause you to change a value that you do not want to change.
-				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">a := [1, 4, 8]
-b := a
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">a = [1, 4, 8]
+b = a
 b[2] = 10
 println(a)
 println(b)
@@ -451,7 +448,7 @@ println(b)
 				Variable <x class="inline_code"> b </x> takes the value of variable <x class="inline_code"> a </x> directly, it does not reference variable <x class="inline_code"> a </x>.
 				Therefore, when the second index is changed on variable <x class="inline_code"> b </x>, this change is not reflected in variable <x class="inline_code"> a </x>.
 				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">mut a = [1, 4, 8]
-b := a
+b = a
 b[2] = 10
 println(a)
 println(b)
@@ -476,7 +473,7 @@ println(b)
 				<h3><x class="inline_code"> if </x> Expressions</h3>
 				An if statement allows you to branch your code based on conditions. You provide a condition and then write the algorithm that will run if the condition is met.
 				Optionally, you can also specify alternative conditions and situations where no conditions are met.
-				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">n := 3
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">n = 3
 if n < 5 {
     println('condition is true')
 }
@@ -486,7 +483,7 @@ if n < 5 {
 				Then, the algorithm that will be realized if the condition is met is written into the block.
 				<br>
 				<br>
-				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">n := 50
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">n = 50
 if n < 0 {
     println('n is negative')
 } else if n < 100 {
@@ -498,7 +495,7 @@ if n < 0 {
 				It specifies an alternative condition that works if the previous conditions are not met.
 				<br>
 				<br>
-				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">n := 300
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">n = 300
 if n < 0 {
     println('n is negative')
 } else if n <= 100 {
@@ -511,8 +508,10 @@ if n < 0 {
 				If you want to specify an algorithm that will run if no conditions are met, you can use the <x class="inline_code"> else </x> statement.
 				This statement is written at the bottom and should be the last statement of the block.
 				It works when no previous condition is met.
-				<div class="tip">
-					Preferably, you can also use 0 instead of false and 1 instead of true as the keyword true represents 1 and the keyword false represents 0.
+				<div class="warn">
+					In if blocks, all <x class="inline_code"> else if </x> and <x class="inline_code"> else </x> blocks of the
+					if block must begin after the closing parenthesis of the previous block.
+					Starting on the next line is invalid syntax.
 				</div>
 				<h3 id="loops">Loops</h3>
 				It is useful to execute a block of code more than once. Fract provides various loops to do this.
@@ -522,7 +521,7 @@ if n < 0 {
 				Fract has two different cycles: <x class="inline_code"> foreach </x> and <x class="inline_code"> while </x> loops.
 				<h4>While Loop</h4>
 				While the condition is true, the loop runs.
-				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">n := 0
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">n = 0
 for n < 10 {
     n += 1
     println(n)
@@ -532,8 +531,8 @@ for n < 10 {
 				<div class="tip">The best way give an empty condition for infinite loop.</div>
 				<h4>Foreach Loop</h4>
 				You can loop through the elements of an list with a while loop.
-				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">t1 := [0, 3, 2, 1, 90]
-i := 0
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">t1 = [0, 3, 2, 1, 90]
+i = 0
 for i < 5 {
     println(t1[i])
     i += 1
@@ -542,7 +541,7 @@ for i < 5 {
 				However, this approach is error-prone and requires a lot of code modification.
 				If the size of the known list changes in the future, this code will cause an error if its size is less than 5, and if it is large, it will print incompletely.
 				So in any change the condition also needs to be updated, forgetting to change it will cause problems.
-				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">t1 := [0, 3, 2, 1, 90]
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">t1 = [0, 3, 2, 1, 90]
 for i in t1 {
     println(t1[i])
 }</div>
@@ -554,7 +553,7 @@ for i in t1 {
 				The first parameter of the loop always returns an index of current element.
 				If you want to get the element itself, you can add a second parameter.
 				If you don't need to use the index value, you can ignore it.
-				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">t1 := [0, 3, 2, 1, 90]
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">t1 = [0, 3, 2, 1, 90]
 for _, i in t1 {
     println(i)
 }</div>
@@ -562,7 +561,7 @@ for _, i in t1 {
 				When the element is accessed with index, the element is read again from the memory according to the index value, but when you add the element parameter, you do not need to do an extra reading as it will already be pulled from the memory.
 				<h4>Loop Controlling</h4>
 				In various situations you may want to manage loops such as ending loops or switching to other loop iterations and this is a very useful method that is widely used.
-				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">counter := 0
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">counter = 0
 for counter <= 10 {
     counter = counter + 1
     if counter > 5 {
@@ -641,7 +640,7 @@ sum(2, 10)
     list[0] = nan
 }
 
-list := [1, 2, 3, 4]
+list = [1, 2, 3, 4]
 println(list)
 set(list)
 println(list)
@@ -657,7 +656,7 @@ println(list)
     list[0] = nan
 }
 
-list mut := [1, 2, 3, 4]
+list mut = [1, 2, 3, 4]
 println(list)
 set(list)
 println(list)
@@ -673,7 +672,7 @@ println(list)
     list[0] = nan
 }
 
-list mut := [1, 2, 3, 4]
+list mut = [1, 2, 3, 4]
 println(list)
 set(list)
 println(list)</div>
@@ -708,7 +707,7 @@ divide(2, c=10, b=0)
 				<br>
 				A parameter can be used with the <x class="inline_code"> ... </x> operator so that it can take multiple values. In this way, the parameter will take all values ​​as an list.
 				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func params(...a, ...b=[]) {
-    r := 0
+    r = 0
     for _, n in a {
         r += n
     }
@@ -759,7 +758,7 @@ println(asHello('Fract'))
     return 1, 2, 3
 }
 
-a, b, c := example()
+a, b, c = example()
 println(a, ' ', b, ' ', c)
 
 // OUTPUT: 1, 2, 3</div>
@@ -770,7 +769,7 @@ println(a, ' ', b, ' ', c)
 				<h3>Anonymous Functions</h3>
 				Anonymous functions can be easily defined. It's not much different from defining a normal function.
 				Anonymous functions can be very useful and a good choice.
-				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">b := func(x) { println('Hello ', x, '!') }
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">b = func(x) { println('Hello ', x, '!') }
 b('Fract')
 // OUTPUT: Hello Fract!</div>
 				The example above is similar to passing a function as a value to a variable.
@@ -783,7 +782,7 @@ b('Fract')
 				Catching errors and handling them on a case-by-case basis is an approach offered by many programming languages.
 				Error catching in Fract is done with try-catch blocks.
 				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">try {
-    arr := [1, 2, 3, 10, 341, 0]
+    arr = [1, 2, 3, 10, 341, 0]
     println(arr[6]) // Out of range.
 } catch {
     println('Panic!')
@@ -958,13 +957,13 @@ Long
 }</div>
 			The default constructor function is used to create a struct instance.
 			All fields, including custom fields, must be specified as parameters in the constructor function.
-			<div class="code" style="margin-top: 5px; margin-bottom: 5px;">v := Vertex(10, -10)
+			<div class="code" style="margin-top: 5px; margin-bottom: 5px;">v = Vertex(10, -10)
 println(v.Lat, ' ', v.Long)
 // OUTPUT: 10 -10</div>
 			<h3 id="anonymoud_struct">Anonymous Structs</h3>
 			A classic struct statement can be used anonymously to create anonymous structures without name.
-			<div class="code" style="margin-top: 5px; margin-bottom: 5px;">s := struct{Lat, Long}
-v := s(10, -10)
+			<div class="code" style="margin-top: 5px; margin-bottom: 5px;">s = struct{Lat, Long}
+v = s(10, -10)
 println(v.Lat, ' ', v.Long)
 // OUTPUT: 10 -10</div>
 
@@ -993,7 +992,7 @@ println(v.Lat, ' ', v.Long)
     func string        { return this.name + ' ' + this.surname + ' ' + string(this.salary) }
 }
 
-e := employee('Daniel', 'McVollo', 9000)
+e = employee('Daniel', 'McVollo', 9000)
 println(e.string())
 println(e.getName())
 e.setName('Dan')
