@@ -96,7 +96,7 @@ func Hello(name) {
 					</tr>
 					<tr>
 						<td align="center"><b>-</b></td>
-						<td>Subtraction.</td>
+						<td>Subtraction, unary.</td>
 					</tr>
 					<tr>
 						<td align="center"><b>*</b></td>
@@ -117,6 +117,10 @@ func Hello(name) {
 					<tr>
 						<td align="center"><b>=</b></td>
 						<td>Set with value.</td>
+					</tr>
+					<tr>
+						<td align="center"><b>!</b></td>
+						<td>Logical not.</td>
 					</tr>
 					<tr>
 						<td align="center"><b>==</b></td>
@@ -325,9 +329,9 @@ func Hello(name) {
 				<div class="tip">
 					Variable declarations can be provided by grouping.
 					<div class="code" style="margin-top: 5px">var (
-    FiboFirst      = 1
-    Ln2Hi          = 6.93147180369123816490e-01
-    Hex            = 0x07EDD5E59A4E28C2
+    FiboFirst = 1
+    Ln2Hi     = 6.93147180369123816490e-01
+    Hex       = 0x07EDD5E59A4E28C2
 )</div>
 				</div>
 				<h3>Short Variable Declaration and Setting</h3>
@@ -415,9 +419,9 @@ Fract Language!
 				In general, hash tables offer fast lookups, adds, and deletes. Fract's maps are built-in hash tables.
 				<br><br>
 				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">mut m = {
-    'name': 'Mason Vollo',
-    'mail': 'mason.vollo@abc.xyz',
-    'title': 'Software Engineer',
+  'name': 'Mason Vollo',
+  'mail': 'mason.vollo@abc.xyz',
+  'title': 'Software Engineer',
 }</div>
 				A map declaration can be made, first the keys, then the values.
 				<br><br>
@@ -475,7 +479,7 @@ println(b)
 				Optionally, you can also specify alternative conditions and situations where no conditions are met.
 				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">n = 3
 if n < 5 {
-    println('condition is true')
+  println('condition is true')
 }
 
 // OUTPUT: condition is true</div>
@@ -485,9 +489,9 @@ if n < 5 {
 				<br>
 				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">n = 50
 if n < 0 {
-    println('n is negative')
+  println('n is negative')
 } else if n < 100 {
-    println('n is less than 100')
+  println('n is less than 100')
 }
 
 // OUTPUT: n is less than 100</div>
@@ -497,11 +501,11 @@ if n < 0 {
 				<br>
 				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">n = 300
 if n < 0 {
-    println('n is negative')
+  println('n is negative')
 } else if n <= 100 {
-    println('n is less than 100')
+  println('n is less than 100')
 } else {
-    println('n is greater than 100')
+  println('n is greater than 100')
 }
 
 // OUTPUT: n is greater than 100</div>
@@ -523,8 +527,8 @@ if n < 0 {
 				While the condition is true, the loop runs.
 				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">n = 0
 for n < 10 {
-    n += 1
-    println(n)
+  n += 1
+  println(n)
 }</div>
 				The loop has a condition that will run as long as the variable <x class="inline_code"> n </x> is less than 10.
 				During the loop, the variable <x class="inline_code"> n </x> is incremented at each iteration, when it reaches 10, the loop ends as the condition is no longer met.
@@ -534,8 +538,8 @@ for n < 10 {
 				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">t1 = [0, 3, 2, 1, 90]
 i = 0
 for i < 5 {
-    println(t1[i])
-    i += 1
+  println(t1[i])
+  i += 1
 }</div>
 				As expected, this code will work correctly. The loop is set to rotate according to the length of the list and will print each element to the screen.
 				However, this approach is error-prone and requires a lot of code modification.
@@ -543,7 +547,7 @@ for i < 5 {
 				So in any change the condition also needs to be updated, forgetting to change it will cause problems.
 				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">t1 = [0, 3, 2, 1, 90]
 for i in t1 {
-    println(t1[i])
+  println(t1[i])
 }</div>
 				You can eliminate these situations with the <x class="inline_code"> foreach </x> loop.
 				It adjusts itself according to the size of the list, and each element runs as a single repeat.
@@ -555,7 +559,7 @@ for i in t1 {
 				If you don't need to use the index value, you can ignore it.
 				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">t1 = [0, 3, 2, 1, 90]
 for _, i in t1 {
-    println(i)
+  println(i)
 }</div>
 				The code now looks cleaner and performs better.
 				When the element is accessed with index, the element is read again from the memory according to the index value, but when you add the element parameter, you do not need to do an extra reading as it will already be pulled from the memory.
@@ -563,11 +567,11 @@ for _, i in t1 {
 				In various situations you may want to manage loops such as ending loops or switching to other loop iterations and this is a very useful method that is widely used.
 				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">counter = 0
 for counter <= 10 {
-    counter = counter + 1
-    if counter > 5 {
-        break
-    }
-    print(counter, ' ')
+  counter = counter + 1
+  if counter > 5 {
+    break
+  }
+  print(counter, ' ')
 }
 
 // Output: 0 1 2 3 4 5</div>
@@ -575,10 +579,10 @@ for counter <= 10 {
 				<br>
 				<br>
 				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">for _, item in [ 0, 1, 2, 3, 4.0 ] {
-    if item == 1 || item == 3 {
-        continue
-    }
-    print(item, ' ')
+  if item == 1 || item == 3 {
+    continue
+  }
+  print(item, ' ')
 }
 
 // Output: 0, 2, 4</div>
@@ -591,7 +595,7 @@ for counter <= 10 {
 				Functions are very useful for adding functionality to your code, functions are very common in Fract code.
 				Functions are declared with the <x class="inline_code"> func </x> keyword.
 				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func helloWorld() {
-    println('Hello World!')
+  println('Hello World!')
 }
 
 helloWorld()</div>
@@ -606,7 +610,7 @@ helloWorld()</div>
 				When a function has parameters, you can provide it with concrete values for those parameters.
 				<div class="warn">If a parameter is equal to a different definition name, it will replace that definition.</div>
 				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func sum(a, b) {
-    println(a + b)
+  println(a + b)
 }
 
 sum(5, 4)
@@ -618,7 +622,7 @@ sum(5, 4)
 				<br>
 				A parameter can take a default value. Parameters that take a default value do not have to take a value.
 				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func sum(a, b=90) {
-    println(a + b)
+  println(a + b)
 }
 
 sum(5)
@@ -637,7 +641,7 @@ sum(2, 10)
 				<br>
 				Forcing to mutable copy;
 				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func set(mut list) {
-    list[0] = nan
+  list[0] = nan
 }
 
 list = [1, 2, 3, 4]
@@ -653,7 +657,7 @@ println(list)
 				<br>
 				Forcing to immutable copy;
 				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func set(var list) {
-    list[0] = nan
+  list[0] = nan
 }
 
 list mut = [1, 2, 3, 4]
@@ -669,7 +673,7 @@ println(list)
 				<br>
 				Forcing to constant;
 				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func set(const list) {
-    list[0] = nan
+  list[0] = nan
 }
 
 list mut = [1, 2, 3, 4]
@@ -690,7 +694,7 @@ println(list)</div>
 				<br>
 				Arguments can also be specified as names and their order can be ignored.
 				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func divide(a, b, c) {
-    println((a + b) / c)
+  println((a + b) / c)
 }
 
 divide(c=9, a=5, b=0)
@@ -707,14 +711,14 @@ divide(2, c=10, b=0)
 				<br>
 				A parameter can be used with the <x class="inline_code"> ... </x> operator so that it can take multiple values. In this way, the parameter will take all values ​​as an list.
 				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func params(...a, ...b=[]) {
-    r = 0
-    for _, n in a {
-        r += n
-    }
-    for _, n in b {
-        r += n
-    }
-    println(r)
+  r = 0
+  for _, n in a {
+    r += n
+  }
+  for _, n in b {
+    r += n
+  }
+  println(r)
 }
 
 params(100, 110, 120)
@@ -743,7 +747,7 @@ Fract Programming Language
 				<br>
 				Functions can also return a value.
 				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func asHello(name) {
-    return 'Hello ' + name + '!'
+  return 'Hello ' + name + '!'
 }
 
 println(asHello('Fract'))
@@ -755,7 +759,7 @@ println(asHello('Fract'))
 				<br><br>
 				Functions can returns multiple values;
 				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func example() {
-    return 1, 2, 3
+  return 1, 2, 3
 }
 
 a, b, c = example()
@@ -782,10 +786,10 @@ b('Fract')
 				Catching errors and handling them on a case-by-case basis is an approach offered by many programming languages.
 				Error catching in Fract is done with try-catch blocks.
 				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">try {
-    arr = [1, 2, 3, 10, 341, 0]
-    println(arr[6]) // Out of range.
+  arr = [1, 2, 3, 10, 341, 0]
+  println(arr[6]) // Out of range.
 } catch {
-    println('Panic!')
+  println('Panic!')
 }</div>
 				You write the codes you want to debug in the try block, in case of a panic, the catch block will run.
 				<div class="tip" style="margin-top: 5px;">
@@ -835,7 +839,7 @@ println('hello')
 				<br>
 				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">println('counting')
 for _, i in range(0, 9) {
-    defer println(i)
+  defer println(i)
 }
 println('done')
 
@@ -862,16 +866,16 @@ println('done')
 				Concurrent calls are performed by creating a lightweight thread managed by Fract.
 				<div class="warn" style="margin-top: 5px; margin-bottom: 5px;">Goroutines run in the different memory space.</div>
 				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func say(s) {
-    for _, i in range(0, 4) {
-        println(s)
-    }
+  for _, i in range(0, 4) {
+    println(s)
+  }
 }
 
 go say("world")
 go say("hello")
 
 for _, a in range(10, 100) {
-    println(a)
+  println(a)
 }</div>
 
 				<br>
@@ -882,9 +886,9 @@ for _, a in range(10, 100) {
 				With the <x class="inline_code"> in </x> keyword, it is also possible to check values ​​inside enumerable values.
 				The value on the left is searched within the value on the right.
 				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">if 'urk' in 'Turkey' {
-    println('Yes!')
+  println('Yes!')
 } else {
-    println('No!')
+  println('No!')
 }
 
 // OUTPUT: Yes!</div>
@@ -894,9 +898,9 @@ for _, a in range(10, 100) {
 				<br>
 				<br>
 				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">if ['Hola', 'Bojour', 'Selam', 'Hello'] in 'Hi' {
-    println('Yes!')
+  println('Yes!')
 } else {
-    println('No!')
+  println('No!')
 }
 
 // OUTPUT: No!</div>
@@ -905,9 +909,9 @@ for _, a in range(10, 100) {
 				<br>
 				<br>
 				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">if 4 in [4, 2, 7] {
-    println('Yes!')
+  println('Yes!')
 } else {
-    println('No!')
+  println('No!')
 }
 
 // OUTPUT: Yes!</div>
@@ -916,9 +920,9 @@ for _, a in range(10, 100) {
 				<br>
 				<br>
 				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">if [4, 'Fract'] in [4, 2, [4, 'Fract'], 7] {
-    println('Yes!')
+  println('Yes!')
 } else {
-    println('No!')
+  println('No!')
 }
 
 // OUTPUT: Yes!</div>
@@ -952,8 +956,8 @@ println([x*100 for x in range(1, 100), x <= 50])
 			The keyword <x class="inline_code"> struct </x> is used to define a struct.
 			A struct can only contain field names.
 			<div class="code" style="margin-top: 5px; margin-bottom: 5px;">struct Vertex {
-Lat
-Long
+  Lat
+  Long
 }</div>
 			The default constructor function is used to create a struct instance.
 			All fields, including custom fields, must be specified as parameters in the constructor function.
@@ -977,19 +981,19 @@ println(v.Lat, ' ', v.Long)
 			If a constructor method is not defined, a default constructor method that takes no parameters is defined.
 			To define a constructor method, it is sufficient to define a method in the name of the class.
 			<div class="code" style="margin-top: 5px; margin-bottom: 5px;">class employee {
-    var name = ''
-    var surname = ''
-    var salary = ''
+  var name = ''
+  var surname = ''
+  var salary = ''
 
-    func employee(name, surname, salary) {
-        this.name = name
-        this.surname = surname
-        this.salary = salary
-    }
+  func employee(name, surname, salary) {
+    this.name = name
+    this.surname = surname
+    this.salary = salary
+  }
 
-    func getName       { return this.name }
-    func setName(name) { this.name = name }
-    func string        { return this.name + ' ' + this.surname + ' ' + string(this.salary) }
+  func getName       { return this.name }
+  func setName(name) { this.name = name }
+  func string        { return this.name + ' ' + this.surname + ' ' + string(this.salary) }
 }
 
 e = employee('Daniel', 'McVollo', 9000)

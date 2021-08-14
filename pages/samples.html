@@ -41,50 +41,46 @@ println('4 - Divide')
 println('0 - Exit')
 
 for {
-    const choice = input('Select your operation: ')
-    if choice == '0' {
-        break
-    } else if choice in ['1', '2', '3', '4'] {
-        const (
-            first  = float(input('Enter first number: '))
-            second = float(input('Enter second number: '))
-        )
-        if choice == '1' {
-            println(first + second)
-        } else if choice == '2' {
-            println(first - second)
-        } else if choice == '3' {
-            println(first * second)
-        } else {
-            println(first / second)
-        }
+  choice = input('Select your operation: ')
+  if choice == '0' {
+    break
+  } else if choice in ['1', '2', '3', '4'] {
+    first  = float(input('Enter first number: '))
+    second = float(input('Enter second number: '))
+    if choice == '1' {
+      println(first + second)
+    } else if choice == '2' {
+      println(first - second)
+    } else if choice == '3' {
+      println(first * second)
     } else {
-        println('Invalid choice!')
+      println(first / second)
     }
+  } else {
+    println('Invalid choice!')
+  }
 }</div>
 				<br>
 				<br>
 				<div id="fibonacci" class="section_title">Fibonacci</div>
 				<div class="code">package main
 
-var (
-    nterms = int(input('How many terms: '))
-    n1     = 0
-    n2     = 1
-    count  = 0
-)
+nterms = int(input('How many terms: '))
+n1     = 0
+n2     = 1
+count  = 0
 if nterms <= 0 {
-    println('Please enter a positive integer!')
+  println('Please enter a positive integer!')
 } else {
-    println('Fibonacci sequence;')
-    for count < nterms {
-        println(n1)
-        const nth = n1 + n2
-        # update values
-        n1 = n2
-        n2 = nth
-        count += 1
-    }
+  println('Fibonacci sequence;')
+  for count < nterms {
+    println(n1)
+    nth = n1 + n2
+    # update values
+    n1 = n2
+    n2 = nth
+    count += 1
+  }
 }</div>
 				<br>
 				<br>
@@ -92,15 +88,15 @@ if nterms <= 0 {
 				<div class="code">package main
 
 for _, number in range(1, 100) {
-    if number % 3 == 0 && number % 5 == 0 {
-        println('FizzBuzz')
-    } else if number % 3 == 0 {
-        println('Fizz')
-    } else if number % 5 == 0 {
-        println('Buzz')
-    } else {
-        println(number)
-    }
+  if number % 3 == 0 && number % 5 == 0 {
+    println('FizzBuzz')
+  } else if number % 3 == 0 {
+    println('Fizz')
+  } else if number % 5 == 0 {
+    println('Buzz')
+  } else {
+    println(number)
+  }
 }</div>
 				<br>
 				<br>
@@ -108,22 +104,22 @@ for _, number in range(1, 100) {
 				<div class="code">package main
 
 for _, x in range(2, 100) {
-    if x ==  2 {
-        println(x)
-        continue
-    } else if x < 2 || x % 2 == 0 {
-        continue
+  if x ==  2 {
+    println(x)
+    continue
+  } else if x < 2 || x % 2 == 0 {
+    continue
+  }
+  prime = true
+  for _, y in range(2, x - 1) {
+    if x % y == 0 {
+      prime = false
+      break
     }
-    prime = true
-    for _, y in range(2, x - 1) {
-        if x % y == 0 {
-            prime = false
-            break
-        }
-    }
-    if prime {
-        println(x)
-    }
+  }
+  if prime {
+    println(x)
+  }
 }</div>
 			</div>
 		</div>
