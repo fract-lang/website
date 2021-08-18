@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>
+			The Fract Programming Language
+		</title>
+		<link rel="icon" href="https://raw.githubusercontent.com/fract-lang/resources/main/logo/fract.svg">
+		<link rel="stylesheet" type="text/css" href="../../../styles/main.css">
+	</head>
+	<body>
+		<div id="navigation">
+			<div>
+				<a href="../../index.html">
+					<img width="70" height="70" src="https://raw.githubusercontent.com/fract-lang/resources/main/logo/fract.svg">
+				</a>
+			</div>
+			<ul class="linktable">
+				<li><a href="../../samples.html">Samples</a></li>
+				<li><a href="../docs.html">Documentation</a></li>
+				<li><a href="../../tour.html">Tour</a></li>
+			</ul>
+		</div>
+
+		<div id="side_menu" class="side_menu">
+			<div class="linktable" style="width: 276px; position: sticky; top: 40px;">
+				<a href="#constants">Constants</a>
+				<a href="#functions">Functions</a>
+			</div>
+			<div class="main" style="width: 90%;">
+				<h1>math</h1>
+				<h2 id="constants">Constants</h2>
+				<li><strong>E</strong></li>
+				<li><strong>Pi</strong></li>
+				<li><strong>Phi</strong></li>
+				<li><strong>Tau</strong></li>
+				<li><strong>Sqrt2</strong></li>
+				<li><strong>SqrtE</strong></li>
+				<li><strong>SqrtPi</strong></li>
+				<li><strong>SqrtTau</strong></li>
+				<li><strong>SqrtPhi</strong></li>
+				<li><strong>Ln2</strong></li>
+				<li><strong>Log2E</strong></li>
+				<li><strong>Ln10</strong></li>
+				<li><strong>Log10E</strong></li>
+				<li><strong>MaxFloat32</strong></li>
+				<li><strong>SmallestNonzeroFloat32</strong></li>
+				<li><strong>MaxFloat64</strong></li>
+				<li><strong>SmallestNonzeroFloat64</strong></li>
+				<li><strong>MaxInt8</strong></li>
+				<li><strong>MinInt8</strong></li>
+				<li><strong>MaxInt16</strong></li>
+				<li><strong>MinInt16</strong></li>
+				<li><strong>MaxInt32</strong></li>
+				<li><strong>MinInt32</strong></li>
+				<li><strong>MaxInt64</strong></li>
+				<li><strong>MinInt64</strong></li>
+				<li><strong>MaxUInt8</strong></li>
+				<li><strong>MaxUInt16</strong></li>
+				<li><strong>MaxUInt32</strong></li>
+				<li><strong>MaxUInt64</strong></li>
+				<br>
+				<br>
+				<h2 id="functions">Functions</h2>
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func Abs(x)</div>
+				Abs returns the absolute value of x.
+				<br>
+				Special cases are:
+				<li>Abs(±Inf) = +Inf</li>
+				<li>Abs(NaN) = NaN</li>
+				<br><br>
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func Asin(x)</div>
+				Asin returns the arcsine, in radians, of x.
+				<br>
+				Special cases are:
+				<li>Asin(±0) = ±0</li>
+				<li>Asin(x) = NaN if x < -1 or x > 1</li>
+				<br><br>
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func Asinh(x)</div>
+				Asinh returns the inverse hyperbolic sine of x.
+				<br>
+				Special cases are:
+				<li>Asinh(±0) = ±0</li>
+				<li>Asinh(±Inf) = ±Inf</li>
+				<li>Asinh(NaN) = NaN</li>
+				<br><br>
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func Acos(x)</div>
+				Acos returns the arccosine, in radians, of x.
+				<br>
+				Special cases are:
+				<li>Acos(x) = NaN if x < -1 or x > 1</li>
+				<br><br>
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func Acosh(x)</div>
+				Acosh returns the inverse hyperbolic cosine of x.
+				<br>
+				Special cases are:
+				<li>Acosh(+Inf) = +Inf</li>
+				<li>Acosh(x) = NaN if x < 1</li>
+				<li>Acosh(NaN) = NaN</li>
+				<br><br>
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func Atan(x)</div>
+				Atan returns the arctangent, in radians, of x.
+				<br>
+				Special cases are:
+				<li>Atan(±0) = ±0</li>
+				<li>Atan(±Inf) = ±Pi/2</li>
+				<br><br>
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func Atan2(y, x)</div>
+				Atan2 returns the arc tangent of y/x, using the signs of the two to determine the quadrant of the return value.
+				<br>
+				Special cases are:
+				<li>Atan2(y, NaN) = NaN</li>
+				<li>Atan2(NaN, x) = NaN</li>
+				<li>Atan2(+0, x>=0) = +0</li>
+				<li>Atan2(-0, x>=0) = -0</li>
+				<li>Atan2(+0, x<=-0) = +Pi</li>
+				<li>Atan2(-0, x<=-0) = -Pi</li>
+				<li>Atan2(y>0, 0) = +Pi/2</li>
+				<li>Atan2(y<0, 0) = -Pi/2</li>
+				<li>Atan2(+Inf, +Inf) = +Pi/4</li>
+				<li>Atan2(-Inf, +Inf) = -Pi/4</li>
+				<li>Atan2(+Inf, -Inf) = 3Pi/4</li>
+				<li>Atan2(-Inf, -Inf) = -3Pi/4</li>
+				<li>Atan2(y, +Inf) = 0</li>
+				<li>Atan2(y>0, -Inf) = +Pi</li>
+				<li>Atan2(y<0, -Inf) = -Pi</li>
+				<li>Atan2(+Inf, x) = +Pi/2</li>
+				<li>Atan2(-Inf, x) = -Pi/2</li>
+				<br><br>
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func Atanh(x)</div>
+				Atanh returns the inverse hyperbolic tangent of x.
+				<br>
+				Special cases are:
+				<li>Atanh(1) = +Inf</li>
+				<li>Atanh(±0) = ±0</li>
+				<li>Atanh(-1) = -Inf</li>
+				<li>Atanh(x) = NaN if x < -1 or x > 1</li>
+				<li>Atanh(NaN) = NaN</li>
+				<br><br>
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func NaN()</div>
+				NaN returns an IEEE 754 ``not-a-number'' value.
+				<br><br>
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func Inf(sign)</div>
+				Inf returns positive infinity if sign >= 0, negative infinity if sign < 0.
+				<br><br>
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func IsNaN(x)</div>
+				IsNaN reports whether f is an IEEE 754 ``not-a-number'' value.
+				<br><br>
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func IsInf(x, sign)</div>
+				IsInf reports whether f is an infinity, according to sign.<br>
+				If sign > 0, IsInf reports whether f is positive infinity.<br>
+				If sign < 0, IsInf reports whether f is negative infinity.<br>
+				If sign == 0, IsInf reports whether f is either infinity.
+				<br><br>
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func Cbrt(x)</div>
+				Cbrt returns the cube root of x.
+				<br>
+				Special cases are:
+				<li>Cbrt(±0) = ±0</li>
+				<li>Cbrt(±Inf) = ±Inf</li>
+				<li>Cbrt(NaN) = NaN</li>
+				<br><br>
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func Dim(x, y)</div>
+				Dim returns the maximum of x-y or 0.
+				<br>
+				Special cases are:
+				<li>Dim(+Inf, +Inf) = NaN</li>
+				<li>Dim(-Inf, -Inf) = NaN</li>
+				<li>Dim(x, NaN) = Dim(NaN, x) = NaN</li>
+				<br><br>
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func Max(x, y)</div>
+				Max returns the larger of x or y.
+				<br>
+				Special cases are:
+				<li>Max(x, +Inf) = Max(+Inf, x) = +Inf</li>
+				<li>Max(x, NaN) = Max(NaN, x) = NaN</li>
+				<li>Max(+0, ±0) = Max(±0, +0) = +0</li>
+				<li>Max(-0, -0) = -0</li>
+				<br><br>
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func Min(x, y)</div>
+				Min returns the smaller of x or y.
+				<br>
+				Special cases are:
+				<li>Min(x, -Inf) = Min(-Inf, x) = -Inf</li>
+				<li>Min(x, NaN) = Min(NaN, x) = NaN</li>
+				<li>Min(-0, ±0) = Min(±0, -0) = -0</li>
+				<br><br>
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func Erf(x)</div>
+				Erf returns the error function of x.
+				<br>
+				Special cases are:
+				<li>Erf(+Inf) = 1</li>
+				<li>Erf(-Inf) = -1</li>
+				<li>Erf(NaN) = NaN</li>
+				<br><br>
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func Erfc(x)</div>
+				Erfc returns the complementary error function of x.
+				<br>
+				Special cases are:
+				<li>Erfc(+Inf) = 0</li>
+				<li>Erfc(-Inf) = 2</li>
+				<li>Erfc(NaN) = NaN</li>
+				<br><br>
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func Erfinv(x)</div>
+				Erfinv returns the inverse error function of x.
+				<br>
+				Special cases are:
+				<li>Erfinv(1) = +Inf</li>
+				<li>Erfinv(-1) = -Inf</li>
+				<li>Erfinv(x) = NaN if x < -1 or x > 1</li>
+				<li>Erfinv(NaN) = NaN</li>
+				<br><br>
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func Erfcinv(x)</div>
+				Erfcinv returns the inverse of Erfc(x).
+				<br>
+				Special cases are:
+				<li>Erfcinv(0) = +Inf</li>
+				<li>Erfcinv(2) = -Inf</li>
+				<li>Erfcinv(x) = NaN if x < 0 or x > 2</li>
+				<li>Erfcinv(NaN) = NaN</li>
+				<br><br>
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func Exp(x)</div>
+				Exp returns e**x, the base-e exponential of x.
+				<br>
+				Special cases are:
+				<li>Exp(+Inf) = +Inf</li>
+				<li>Exp(NaN) = NaN</li>
+				<br>
+				Very large values overflow to 0 or +Inf.<br>
+				Very small values underflow to 1.
+				<br><br>
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func Exp2(x)</div>
+				Exp2 returns 2**x, the base-2 exponential of x.
+				<br>
+				Special cases are the same as Exp.
+				<br><br>
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func Ldexp(frac, exp)</div>
+				Ldexp is the inverse of Frexp. It returns frac × 2**exp.
+				<br>
+				Special cases are:
+				<li>Ldexp(±0, exp) = ±0</li>
+				<li>Ldexp(±Inf, exp) = ±Inf</li>
+				<li>Ldexp(NaN, exp) = NaN</li>
+				<br><br>
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func Expm1(x)</div>
+				Expm1 returns e**x - 1, the base-e exponential of x minus 1.<br>
+				It is more accurate than Exp(x) - 1 when x is near zero.
+				<br>
+				Special cases are:
+				<li>Expm1(+Inf) = +Inf</li>
+				<li>Expm1(-Inf) = -1</li>
+				<li>Expm1(NaN) = NaN</li>
+				<br>
+				Very large values overflow to -1 or +Inf.
+				<br><br>
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func Floor(x)</div>
+				Floor returns the greatest integer value less than or equal to x.
+				<br>
+				Special cases are:
+				<li>Floor(±0) = ±0</li>
+				<li>Floor(±Inf) = ±Inf</li>
+				<li>Floor(NaN) = NaN</li>
+				<br><br>
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func Ceil(x)</div>
+				Ceil returns the least integer value greater than or equal to x.
+				<br>
+				Special cases are:
+				<li>Ceil(±0) = ±0</li>
+				<li>Ceil(±Inf) = ±Inf</li>
+				<li>Ceil(NaN) = NaN</li>
+				<br><br>
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func Trunc(x)</div>
+				Trunc returns the integer value of x.
+				<br>
+				Special cases are:
+				<li>Trunc(±0) = ±0</li>
+				<li>Trunc(±Inf) = ±Inf</li>
+				<li>Trunc(NaN) = NaN</li>
+				<br><br>
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func Round(x)</div>
+				Round returns the nearest integer, rounding half away from zero.
+				<br>
+				Special cases are:
+				<li>Round(±0) = ±0</li>
+				<li>Round(±Inf) = ±Inf</li>
+				<li>Round(NaN) = NaN</li>
+				<br><br>
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func RoundToEvent(x)</div>
+				RoundToEven returns the nearest integer, rounding ties to even.
+				<br>
+				Special cases are:
+				<li>RoundToEven(±0) = ±0</li>
+				<li>RoundToEven(±Inf) = ±Inf</li>
+				<li>RoundToEven(NaN) = NaN</li>
+				<br><br>
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func FMA(x, y, z)</div>
+				FMA returns x * y + z, computed with only one rounding.<br>
+				(That is, FMA returns the fused multiply-add of x, y, and z.)
+				<br><br>
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func Frexp(x)</div>
+				Frexp breaks f into a normalized fraction and an integral power of two.<br>
+				It returns frac and exp satisfying f == frac × 2**exp,  with the absolute value of frac in the interval [½, 1).
+				<br>
+				Special cases are:
+				<li>Frexp(±0) = ±0, 0</li>
+				<li>Frexp(±Inf) = ±Inf, 0</li>
+				<li>Frexp(NaN) = NaN, 0</li>
+				<br><br>
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func Gamma(x)</div>
+				Gamma returns the Gamma function of x.
+				<br>
+				Special cases are:
+				<li>Gamma(+Inf) = +Inf</li>
+				<li>Gamma(+0) = +Inf</li>
+				<li>Gamma(-0) = -Inf</li>
+				<li>Gamma(x) = NaN for integer x < 0</li>
+				<li>Gamma(-Inf) = NaN</li>
+				<li>Gamma(NaN) = NaN</li>
+				<br><br>
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func Hypot(p, q)</div>
+				Hypot returns Sqrt(p*p + q*q), taking care to avoid unnecessary overflow and underflow.
+				<br>
+				Special cases are:
+				<li>Hypot(±Inf, q) = +Inf</li>
+				<li>Hypot(p, ±Inf) = +Inf</li>
+				<li>Hypot(NaN, q) = NaN</li>
+				<li>Hypot(p, NaN) = NaN</li>
+				<br><br>
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func J0(x)</div>
+				J0 returns the order-zero Bessel function of the first kind.
+				<br>
+				Special cases are:
+				<li>J0(±Inf) = 0</li>
+				<li>J0(0) = 1</li>
+				<li>J0(NaN) = NaN</li>
+				<br><br>
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func J1(x)</div>
+				J1 returns the order-one Bessel function of the first kind.
+				<br>
+				Special cases are:
+				<li>J1(±Inf) = 0</li>
+				<li>J1(NaN) = NaN</li>
+				<br><br>
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func Jn(n, x)</div>
+				Jn returns the order-n Bessel function of the first kind.
+				<br>
+				Special cases are:
+				<li>Jn(n, ±Inf) = 0</li>
+				<li>Jn(n, NaN) = NaN</li>
+				<br><br>
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func Log(x)</div>
+				Log returns the natural logarithm of x.
+				<br>
+				Special cases are:
+				<li>Log(+Inf) = +Inf</li>
+				<li>Log(0) = -Inf</li>
+				<li>Log(x < 0) = NaN</li>
+				<li>Log(NaN) = NaN</li>
+				<br><br>
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func Log10(x)</div>
+				Log10 returns the decimal logarithm of x.
+				<br>
+				The special cases are the same as for Log.
+				<br><br>
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func Log2(x)</div>
+				Log2 returns the binary logarithm of x.
+				<br>
+				The special cases are the same as for Log.
+				<br><br>
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func Log1p(x)</div>
+				Log1p returns the natural logarithm of 1 plus its argument x.<br>
+				It is more accurate than Log(1 + x) when x is near zero.
+				<br>
+				Special cases are:
+				<li>Log1p(+Inf) = +Inf</li>
+				<li>Log1p(±0) = ±0</li>
+				<li>Log1p(-1) = -Inf</li>
+				<li>Log1p(x < -1) = NaN</li>
+				<li>Log1p(NaN) = NaN</li>
+				<br><br>
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func Lgamma(x)</div>
+				Lgamma returns the natural logarithm and sign (-1 or +1) of Gamma(x).
+				<br>
+				Special cases are:
+				<li>Lgamma(+Inf) = +Inf</li>
+				<li>Lgamma(0) = +Inf</li>
+				<li>Lgamma(-integer) = +Inf</li>
+				<li>Lgamma(-Inf) = -Inf</li>
+				<li>Lgamma(NaN) = NaN</li>
+				<br><br>
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func Logb(x)</div>
+				Logb returns the binary exponent of x.
+				<br>
+				Special cases are:
+				<li>Logb(±Inf) = +Inf</li>
+				<li>Logb(0) = -Inf</li>
+				<li>Logb(NaN) = NaN</li>
+				<br><br>
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func Ilogb(x)</div>
+				Ilogb returns the binary exponent of x as an integer.
+				<br>
+				Special cases are:
+				<li>Ilogb(±Inf) = MaxInt32</li>
+				<li>Ilogb(0) = MinInt32</li>
+				<li>Ilogb(NaN) = MaxInt32</li>
+				<br><br>
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func Modf(x)</div>
+				Modf returns integer and fractional floating-point numbers that sum to f. Both values have the same sign as f.
+				<br>
+				Special cases are:
+				<li>Modf(±Inf) = ±Inf, NaN</li>
+				<li>Modf(NaN) = NaN, NaN</li>
+				<br><br>
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func Nextafter(x, y)</div>
+				Nextafter returns the next representable float64 value after x towards y.
+				<br>
+				Special cases are:
+				<li>Nextafter(x, x)   = x</li>
+				<li>Nextafter(NaN, y) = NaN</li>
+				<li>Nextafter(x, NaN) = NaN</li>
+				<br><br>
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func Pow10(n)</div>
+				Pow10 returns 10**n, the base-10 exponential of n.
+				<br>
+				Special cases are:
+				<li>Pow10(n) =    0 for n < -323</li>
+				<li>Pow10(n) = +Inf for n > 308</li>
+				<br><br>
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func Radians(x)</div>
+				Radians converts angle x from degrees to radians.
+				<br>
+				Special cases are:
+				<li>Radians(±Inf) = ±Inf, NaN</li>
+				<li>Radians(NaN) = NaN, NaN</li>
+				<br><br>
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func Degrees(x)</div>
+				Degrees converts angle x from radians to degrees.
+				<br>
+				Special cases are:
+				<li>Degrees(±Inf) = ±Inf, NaN</li>
+				<li>Degrees(NaN) = NaN, NaN</li>
+				<br><br>
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func Remainder(x, y)</div>
+				Remainder returns the IEEE 754 floating-point remainder of x/y.
+				<br>
+				Special cases are:
+				<li>Remainder(±Inf, y) = NaN</li>
+				<li>Remainder(NaN, y) = NaN</li>
+				<li>Remainder(x, 0) = NaN</li>
+				<li>Remainder(x, ±Inf) = x</li>
+				<li>Remainder(x, NaN) = NaN</li>
+				<br><br>
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func Signbit(x)</div>
+				Signbit reports whether x is negative or negative zero.
+				<br><br>
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func Copysign(x, y)</div>
+				Copysign returns a value with the magnitude of x and the sign of y.
+				<br><br>
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func Cos(x)</div>
+				Cos returns the cosine of the radian argument x.
+				<br>
+				Special cases are:
+				<li>Cos(±Inf) = NaN</li>
+				<li>Cos(NaN) = NaN</li>
+				<br><br>
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func Sin(x)</div>
+				Sin returns the sine of the radian argument x.
+				<br>
+				Special cases are:
+				<li>Sin(±0) = ±0</li>
+				<li>Sin(±Inf) = NaN</li>
+				<li>Sin(NaN) = NaN</li>
+				<br><br>
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func Sincos(x)</div>
+				Sincos returns Sin(x), Cos(x).
+				<br>
+				Special cases are:
+				<li>Sincos(±0) = ±0, 1</li>
+				<li>Sincos(±Inf) = NaN, NaN</li>
+				<li>Sincos(NaN) = NaN, NaN</li>
+				<br><br>
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func Sinh(x)</div>
+				Sinh returns the hyperbolic sine of x.
+				<br>
+				Special cases are:
+				<li>Sinh(±0) = ±0</li>
+				<li>Sinh(±Inf) = ±Inf</li>
+				<li>Sinh(NaN) = NaN</li>
+				<br><br>
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func Cosh(x)</div>
+				Cosh returns the hyperbolic cosine of x.
+				<br>
+				Special cases are:
+				<li>Cosh(±0) = 1</li>
+				<li>Cosh(±Inf) = +Inf</li>
+				<li>Cosh(NaN) = NaN</li>
+				<br><br>
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func Sqrt(x)</div>
+				Sqrt returns the square root of x.
+				<br>
+				Special cases are:
+				<li>Sqrt(+Inf) = +Inf</li>
+				<li>Sqrt(±0) = ±0</li>
+				<li>Sqrt(x < 0) = NaN</li>
+				<li>Sqrt(NaN) = NaN</li>
+				<br><br>
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func Tan(x)</div>
+				Tan returns the tangent of the radian argument x.
+				<br>
+				Special cases are:
+				<li>Tan(±0) = ±0</li>
+				<li>Tan(±Inf) = NaN</li>
+				<br>Tan(NaN) = NaN<br>
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func Tanh(x)</div>
+				Tanh returns the hyperbolic tangent of x.
+				<br>
+				Special cases are:
+				<li>Tanh(±0) = ±0</li>
+				<li>Tanh(±Inf) = ±1</li>
+				<li>Tanh(NaN) = NaN</li>
+				<br><br>
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func Floatbits(f)</div>
+				Floatbits returns the IEEE 754 binary representation of f,
+				with the sign bit of f and the result in the same bit position,
+				and Floatbits(Floatfrombits(x)) == x.
+				<br><br>
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func Floatfrombits(b)</div>
+				Floatfrombits returns the floating-point number corresponding
+				to the IEEE 754 binary representation b, with the sign bit of b
+				and the result in the same bit position.<br>
+				Floatfrombits(Floatbits(x)) == x.
+				<br><br>
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func Y0(x)</div>
+				Y0 returns the order-zero Bessel function of the second kind.
+				<br>
+				Special cases are:
+				<li>Y0(+Inf) = 0</li>
+				<li>Y0(0) = -Inf</li>
+				<li>Y0(x < 0) = NaN</li>
+				<li>Y0(NaN) = NaN</li>
+				<br><br>
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func Y1(x)</div>
+				Y1 returns the order-one Bessel function of the second kind.
+				<br>
+				Special cases are:
+				<li>Y1(+Inf) = 0</li>
+				<li>Y1(0) = -Inf</li>
+				<li>Y1(x < 0) = NaN</li>
+				<li>Y1(NaN) = NaN</li>
+				<br><br>
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func Yn(n, x)</div>
+				Yn returns the order-n Bessel function of the second kind.
+				<br>
+				Special cases are:
+				<li>Yn(n, +Inf) = 0</li>
+				<li>Yn(n ≥ 0, 0) = -Inf</li>
+				<li>Yn(n < 0, 0) = +Inf if n is odd, -Inf if n is even</li>
+				<li>Yn(n, x < 0) = NaN</li>
+				<li>Yn(n, NaN) = NaN</li>
+			</div>
+		</div>
+
+		<div style="margin-top: 100px; margin-bottom: 50px;">
+			<center style="user-select: none;">
+				<table class="linktable" style="margin: 100px;">
+					<tr>
+						<td>Contribute</td>
+						<td>Open Source</td>
+						<td>Comminity</td>
+					</tr>
+					<tr>
+						<td><a href="../../code_of_conduct.html">Code of Conduct</a></td>
+						<td><a target="_blank" href="https://github.com/fract-lang/fract">Repository</a></td>
+						<td><a href="../../license.html">License</a></td>
+					</tr>
+					<tr>
+						<td><a href="../../contributor_guide.html">Guide</td>
+						<td><a target="_blank" href="https://github.com/fract-lang">GitHub Organization</a></td>
+						<td><a target="_blank" href="https://github.com/fract-lang/fract/graphs/contributors">Contributors</a></td>
+					</tr>
+					<tr>
+						<td><a target="_blank" href="https://github.com/fract-lang/fract/discussions">Discussions</a></td>
+						<td><a target="_blank" href="https://github.com/fract-lang/website">Source Code</a></td>
+						<td><a target="_blank" href="https://github.com/fract-lang/resources">Resources</a></td>
+					</tr>
+					<tr>
+						<td><a target="_blank" href="https://github.com/fract-lang/fract/issues">Issues</a></td>
+						<td></td>
+						<td></td>
+					</tr>
+				</table>
+				<div id="endmsg"></div>
+			</center>
+		</div>
+	</body>
+	<script src="../../../scripts/background.js"></script>
+	<script src="../../../scripts/example_algorithms.js"></script>
+	<script src="../../../scripts/generic.js"></script>
+</html>
