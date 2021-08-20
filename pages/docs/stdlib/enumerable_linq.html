@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>
+			The Fract Programming Language
+		</title>
+		<link rel="icon" href="https://raw.githubusercontent.com/fract-lang/resources/main/logo/fract.svg">
+		<link rel="stylesheet" type="text/css" href="../../../styles/main.css">
+	</head>
+	<body>
+		<div id="navigation">
+			<div>
+				<a href="../../index.html">
+					<img width="70" height="70" src="https://raw.githubusercontent.com/fract-lang/resources/main/logo/fract.svg">
+				</a>
+			</div>
+			<ul class="linktable">
+				<li><a href="../../samples.html">Samples</a></li>
+				<li><a href="../docs.html">Documentation</a></li>
+				<li><a href="../../tour.html">Tour</a></li>
+			</ul>
+		</div>
+
+		<div id="side_menu" class="side_menu">
+			<div class="linktable" style="width: 276px; position: sticky; top: 40px;">
+				<a href="#functions">Functions</a>
+			</div>
+			<div class="main" style="width: 90%;">
+				<h1>enumerable.linq</h1>
+				<h2 id="functions">Functions</h2>
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func Max(lst, filter=none)</div>
+				Max returns maximum value in list by filter.
+				<br>
+				Special cases are:
+				<li>Max(lst)       = none if lst is not list</li>
+				<li>Max(lst)       = none if lst is empty</li>
+				<li>Max(lst, none) = Not filter elements</li>
+				<br>
+				Panics if filter function is not compatible.<br>
+				Filter function: <x class="inline_code"> func(x) -> bool </x>
+				<br><br>
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func Min(lst, filter=none)</div>
+				Min returns minimum value in list by filter.
+				<br>
+				Special cases are:
+				<li>Max(lst)       = none if lst is not list</li>
+				<li>Max(lst)       = none if lst is empty</li>
+				<li>Max(lst, none) = Not filter elements</li>
+				<br>
+				Panics if filter function is not compatible.<br>
+				Filter function: <x class="inline_code"> func(x) -> bool </x>
+				<br><br>
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func Sum(lst, filter=none)</div>
+				Sum returns sum of all elements by filter.
+				<br>
+				Special cases are:
+				<li>Sum(lst)       = none if lst is not list</li>
+				<li>Sum(lst)       = none if lst is empty</li>
+				<li>Sum(lst, none) = Not filter elements</li>
+				<br>
+				Panics if filter function is not compatible.<br>
+				Filter function: <x class="inline_code"> func(x) -> bool </x>
+				<br><br>
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func Avg(lst, filter=none)</div>
+				Avg returns average of all elements by filter.
+				<br>
+				Special cases are:
+				<li>Avg(lst)       = none if lst is not list</li>
+				<li>Avg(lst)       = none if lst is empty</li>
+				<li>Avg(lst, none) = Not filter elements</li>
+				<li>Avg(lst)       = 0 if result is zero</li>
+				<br>
+				Panics if filter function is not compatible.<br>
+				Filter function: <x class="inline_code"> func(x) -> bool </x>
+				<br><br>
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func Any(lst, filter=none)</div>
+				Any returns true if list have a any element by filter, returns false if not.
+				<br>
+				Special cases are:
+				<li>Any(lst, fiter)  = false if lst is not list</li>
+				<li>Any(lst, filter) = false if lst is empty</li>
+				<li>Any(lst, none)   = Not filter elements</li>
+				<br>
+				Panics if filter function is not compatible.<br>
+				Filter function: <x class="inline_code"> func(x) -> bool </x>
+				<br><br>
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func Count(lst, filter=none)</div>
+				Count returns count of matched elements by filter.
+				<br>
+				Special cases are:
+				<li>Count(lst, fiter)  = 0 if lst is not list</li>
+				<li>Count(lst, filter) = 0 if lst is empty</li>
+				<li>Count(lst, none)   = Length of lst</li>
+				<br>
+				Panics if filter function is not compatible.<br>
+				Filter function: <x class="inline_code"> func(x) -> bool </x>
+				<br><br>
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func Select(lst, selector)</div>
+				Select projects each element of a sequence into a new form.
+				<br>
+				Special cases are:
+				<li>Select(lst, selector) = empty list if lst is not list</li>
+				<li>Select(lst, selector) = empty list if lst is empty</li>
+				<li>Select(lst, none)     = lst</li>
+				<br>
+				Panics if selector function is not compatible. <br>
+				Selector function: <x class="inline_code"> func(x) -> any </x>
+				<br><br>
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func Where(lst, filter)</div>
+				Where filter each element by filter.
+				<br>
+				Special cases are:
+				<li>Where(lst, filter) = empty list if lst is not list</li>
+				<li>Where(lst, filter) = empty list if lst is empty</li>
+				<li>Where(lst, none)   = lst</li>
+				<br>
+				Panics if filter function is not compatible.<br>
+				Filter function: <x class="inline_code"> func(x) -> bool </x>
+				<br><br>
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func Index(lst, filter)</div>
+				Index returns index of first matched element, returns -1 if not matched any element.
+				<br>
+				Special cases are:
+				<li>Index(lst, filter) = -1 if lst is not list</li>
+				<li>Index(lst, filter) = -1 if lst is empty</li>
+				<li>Index(lst, none)   = -1</li>
+				<br>
+				Panics if filter function is not compatible.<br>
+				Filter function: <x class="inline_code"> func(x) -> bool </x>
+				<br><br>
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func IndexLast(lst, filter)</div>
+				IndexLast returns index of first matched element at last of list, returns -1 if not matched any element.
+				<br>
+				Special cases are:
+				<li>IndexLast(lst, filter) = -1 if lst is not list</li>
+				<li>IndexLast(lst, filter) = -1 if lst is empty</li>
+				<li>IndexLast(lst, none)   = -1</li>
+				<br>
+				Panics if filter function is not compatible.<br>
+				Filter function: <x class="inline_code"> func(x) -> bool </x>
+				<br><br>
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func Order(lst, comparer=none)</div>
+				Order returns ordered copy of list by comparer.
+				<br>
+				Special cases are:
+				<li>Order(lst, comparer) = empty list if lst is not list</li>
+				<li>Order(lst, none)     = Use default ascending comparer</li>
+				<br>
+				Panics if comparer function is not compatible.
+				Comparer function: <x class="inline_code"> func(a, b) -> bool </x>
+				<br><br>
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func Match(lst, filter)</div>
+				Match returns true if all elements is returns true from filter, false if not.
+				<br>
+				Special cases are:
+				<li>Match(lst, fiter)  = false if lst is not list</li>
+				<li>Match(lst, filter) = true if lst is empty</li>
+				<li>Match(lst, none)   = true</li>
+				<br>
+				Panics if filter function is not compatible.<br>
+				Filter function: <x class="inline_code"> func(x) -> bool </x>
+			</div>
+		</div>
+
+		<div style="margin-top: 100px; margin-bottom: 50px;">
+			<center style="user-select: none;">
+				<table class="linktable" style="margin: 100px;">
+					<tr>
+						<td>Contribute</td>
+						<td>Open Source</td>
+						<td>Comminity</td>
+					</tr>
+					<tr>
+						<td><a href="../../code_of_conduct.html">Code of Conduct</a></td>
+						<td><a target="_blank" href="https://github.com/fract-lang/fract">Repository</a></td>
+						<td><a href="../../license.html">License</a></td>
+					</tr>
+					<tr>
+						<td><a href="../../contributor_guide.html">Guide</td>
+						<td><a target="_blank" href="https://github.com/fract-lang">GitHub Organization</a></td>
+						<td><a target="_blank" href="https://github.com/fract-lang/fract/graphs/contributors">Contributors</a></td>
+					</tr>
+					<tr>
+						<td><a target="_blank" href="https://github.com/fract-lang/fract/discussions">Discussions</a></td>
+						<td><a target="_blank" href="https://github.com/fract-lang/website">Source Code</a></td>
+						<td><a target="_blank" href="https://github.com/fract-lang/resources">Resources</a></td>
+					</tr>
+					<tr>
+						<td><a target="_blank" href="https://github.com/fract-lang/fract/issues">Issues</a></td>
+						<td></td>
+						<td></td>
+					</tr>
+				</table>
+				<div id="endmsg"></div>
+			</center>
+		</div>
+	</body>
+	<script src="../../../scripts/background.js"></script>
+	<script src="../../../scripts/example_algorithms.js"></script>
+	<script src="../../../scripts/generic.js"></script>
+</html>
