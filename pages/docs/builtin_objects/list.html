@@ -21,81 +21,65 @@
 			</ul>
 		</div>
 
-		<div class="main" style="width: 90%;">
+		<div id="side_menu" class="side_menu">
+			<div class="linktable" style="width: 276px; position: sticky; top: 40px;">
+				<a href="#constants">Constants</a>
+				<a href="#functions">Functions</a>
+			</div>
+			<div class="main" style="width: 90%;">
 			<h1>List</h1>
-			<table>
-				<tr style="font-size: larger;">
-					<td>Functions</td>
-				</tr>
-				<tr>
-					<td>
-						<li><a style="font-size: 18px; width: 150px;" href="#pushFront">pushFront</a></li>
-						<li><a style="font-size: 18px; width: 150px;" href="#pushBack">pushBack</a></li>
-						<li><a style="font-size: 18px; width: 150px;" href="#insert">insert</a></li>
-						<li><a style="font-size: 18px; width: 150px;" href="#removeAt">removeAt</a></li>
-						<li><a style="font-size: 18px; width: 150px;" href="#remove">remove</a></li>
-						<li><a style="font-size: 18px; width: 150px;" href="#removeLast">removeLast</a></li>
-						<li><a style="font-size: 18px; width: 150px;" href="#removeAll">removeAll</a></li>
-						<li><a style="font-size: 18px; width: 150px;" href="#removeRange">removeRange</a></li>
-						<li><a style="font-size: 18px; width: 150px;" href="#index">index</a></li>
-						<li><a style="font-size: 18px; width: 150px;" href="#indexLast">indexLast</a></li>
-						<li><a style="font-size: 18px; width: 150px;" href="#include">include</a></li>
-						<li><a style="font-size: 18px; width: 150px;" href="#clear">clear</a></li>
-						<li><a style="font-size: 18px; width: 150px;" href="#reverse">reverse</a></li>
-						<li><a style="font-size: 18px; width: 150px;" href="#sort">sort</a></li>
-						<li><a style="font-size: 18px; width: 150px;" href="#unqiue">unique</a></li>
-					</td>
-				</tr>
-			</table>
-			<h2>Functions</h2>
-			<div id="pushFront" class="code" style="margin-top: 5px; margin-bottom: 5px;">func pushFront(...v)</div>
+			<h2 id="constants">Constants</h2>
+			<li><strong>length</strong></li>
+			<h2 id="functions">Functions</h2>
+			<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func pushFront(...v)</div>
 			Append values to start of list.
 			<br><br>
-			<div id="pushBack" class="code" style="margin-top: 5px; margin-bottom: 5px;">func pushBack(...v)</div>
+			<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func pushBack(...v)</div>
 			Append values to end of list.
 			<br><br>
-			<div id="insert" class="code" style="margin-top: 5px; margin-bottom: 5px;">func insert(i, v)</div>
+			<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func insert(i, v)</div>
 			Append values to list start at position.
 			<br><br>
-			<div id="removeAt" class="code" style="margin-top: 5px; margin-bottom: 5px;">func removeAt(i)</div>
+			<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func removeAt(i)</div>
 			Remove element by index.
 			<br><br>
-			<div id="remove" class="code" style="margin-top: 5px; margin-bottom: 5px;">func remove(v, start=0)</div>
+			<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func remove(v, start=0)</div>
 			Remove first matched element. Returns true value is removed, false if not.
 			Start parameter provides start position of search.
 			<br><br>
-			<div id="removeLast" class="code" style="margin-top: 5px; margin-bottom: 5px;">func removeLast(v, start=$len-1)</div>
+			<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func removeLast(v, start=$len-1)</div>
 			This function is same with <x class="inline_code"> remove </x> function.
 			Only difference is count down from list.
 			<br><br>
-			<div id="removeAll" class="code" style="margin-top: 5px; margin-bottom: 5px;">func removeAll(v)</div>
+			<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func removeAll(v)</div>
 			Remove all matched elements.
 			<br><br>
-			<div id="removeRange" class="code" style="margin-top: 5px; margin-bottom: 5px;">func removeRange(start, to)</div>
+			<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func removeRange(start, to)</div>
 			Remove elements between at start index and to specified end index.
 			<br><br>
-			<div id="index" class="code" style="margin-top: 5px; margin-bottom: 5px;">func index(v, start=0)</div>
+			<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func index(v, start=0)</div>
 			Returns index of first matched element if any matched element, <x class="inline_code"> -1 </x> if not.
 			Start parameter provides start position of search.
 			<br><br>
-			<div id="indexLast" class="code" style="margin-top: 5px; margin-bottom: 5px;">func indexLast(v, start=$len-1)</div>
+			<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func indexLast(v, start=$len-1)</div>
 			This function is same with <x class="inline_code"> index </x> function.
 			Only difference is count down from list.
 			<br><br>
-			<div id="include" class="code" style="margin-top: 5px; margin-bottom: 5px;">func include(v, start=0)</div>
+			<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func include(v, start=0)</div>
 			Returns true if any matched element, false if not. Start parameter provides start position of search.
 			<br><br>
-			<div id="clear" class="code" style="margin-top: 5px; margin-bottom: 5px;">func clear()</div>
+			<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func clear()</div>
 			Remove all elements.
 			<br><br>
-			<div id="reverse" class="code" style="margin-top: 5px; margin-bottom: 5px;">func reverse()</div>
+			<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func reverse()</div>
 			Reverse elements.
 			<br><br>
-			<div id="sort" class="code" style="margin-top: 5px; margin-bottom: 5px;">func sort()</div>
+			<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func sort()</div>
 			Sort elements.
 			<br><br>
-			<div id="unique" class="code" style="margin-top: 5px; margin-bottom: 5px;">func unique()</div>
+			<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func unique()</div>
 			Returns each element maximum one repetition in another list.
+			</div>
 		</div>
 
 		<div style="margin-top: 100px; margin-bottom: 50px;">

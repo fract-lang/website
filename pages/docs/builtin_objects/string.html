@@ -21,77 +21,61 @@
 			</ul>
 		</div>
 
-		<div class="main" style="width: 90%;">
-			<h1>String</h1>
-			<table>
-				<tr style="font-size: larger;">
-					<td>Functions</td>
-				</tr>
-				<tr>
-					<td>
-						<li><a style="font-size: 18px; width: 150px;" href="#isLower">isLower</a></li>
-						<li><a style="font-size: 18px; width: 150px;" href="#isUpper">isUpper</a></li>
-						<li><a style="font-size: 18px; width: 150px;" href="#lower">lower</a></li>
-						<li><a style="font-size: 18px; width: 150px;" href="#upper">upper</a></li>
-						<li><a style="font-size: 18px; width: 150px;" href="#trim">trim</a></li>
-						<li><a style="font-size: 18px; width: 150px;" href="#trimLeft">trimLeft</a></li>
-						<li><a style="font-size: 18px; width: 150px;" href="#trimRight">trimRight</a></li>
-						<li><a style="font-size: 18px; width: 150px;" href="#index">index</a></li>
-						<li><a style="font-size: 18px; width: 150px;" href="#indexLast">indexLast</a></li>
-						<li><a style="font-size: 18px; width: 150px;" href="#split">split</a></li>
-						<li><a style="font-size: 18px; width: 150px;" href="#hasPrefix">hasPrefix</a></li>
-						<li><a style="font-size: 18px; width: 150px;" href="#hasSuffix">hasSuffix</a></li>
-						<li><a style="font-size: 18px; width: 150px;" href="#replace">replace</a></li>
-						<li><a style="font-size: 18px; width: 150px;" href="#replaceAll">replaceAll</a></li>
-					</td>
-				</tr>
-			</table>
-			<h2>Functions</h2>
-			<div id="isLower" class="code" style="margin-top: 5px; margin-bottom: 5px;">func isLower()</div>
+		<div id="side_menu" class="side_menu">
+			<div class="linktable" style="width: 276px; position: sticky; top: 40px;">
+				<a href="#constants">Constants</a>
+				<a href="#functions">Functions</a>
+			</div>
+			<div class="main" style="width: 90%;">
+			<h1>string</h1>
+			<h2 id="constants">Constants</h2>
+			<li><strong>length</strong></li>
+			<h2 id="functions">Functions</h2>
+			<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func isLower()</div>
 			Returns true if all chars is lowercase, false if not.
 			<br><br>
-			<div id="isUpper" class="code" style="margin-top: 5px; margin-bottom: 5px;">func isUpper()</div>
+			<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func isUpper()</div>
 			Returns true if all chars is uppercase, false if not.
 			<br><br>
-			<div id="lower" class="code" style="margin-top: 5px; margin-bottom: 5px;">func lower()</div>
+			<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func lower()</div>
 			Parse all characters to lowercase and returns in new string.
 			<br><br>
-			<div id="upper" class="code" style="margin-top: 5px; margin-bottom: 5px;">func upper()</div>
+			<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func upper()</div>
 			Parse all characters to uppercase and returns in new string.
 			<br><br>
-			<div id="trim" class="code" style="margin-top: 5px; margin-bottom: 5px;">func trim()</div>
+			<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func trim()</div>
 			Remove all space characters and returns in new string.
 			<br><br>
-			<div id="trimLeft" class="code" style="margin-top: 5px; margin-bottom: 5px;">func trimLeft()</div>
+			<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func trimLeft()</div>
 			Remove all space at left of string characters and returns in new string.
 			<br><br>
-			<div id="trimRight" class="code" style="margin-top: 5px; margin-bottom: 5px;">func trimRight()</div>
+			<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func trimRight()</div>
 			Remove all space at right of string characters and returns in new string.
 			<br><br>
-			<div id="index" class="code" style="margin-top: 5px; margin-bottom: 5px;">func index(sub)</div>
+			<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func index(sub)</div>
 			Returns index of the first instance of sub in string, or -1 if sub is not present in string.
 			Start parameter provides start position of search.
 			<br><br>
-			<div id="indexLast" class="code" style="margin-top: 5px; margin-bottom: 5px;">func indexLast(sub)</div>
+			<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func indexLast(sub)</div>
 			Returns index of the last instance of sub in string, or -1 if sub is not present in string.
 			Start parameter provides start position of search.
 			<br><br>
-			<div id="split" class="code" style="margin-top: 5px; margin-bottom: 5px;">func split(sep, count=1)</div>
+			<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func split(sep, count=1)</div>
 			String into substrings separated by sep and returns a list of the substrings between those separators.
 			If count less than 0, means unlimited.
 			<br><br>
-			<div id="hasPrefix" class="code" style="margin-top: 5px; margin-bottom: 5px;">func hasPrefix(sub)</div>
+			<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func hasPrefix(sub)</div>
 			Returns true string is startss with specified substring, false if not.
 			<br><br>
-			<div id="hasSuffix" class="code" style="margin-top: 5px; margin-bottom: 5px;">func hasSuffix(sub)</div>
+			<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func hasSuffix(sub)</div>
 			Returns true string is ends with specified substring, false if not.
 			<br><br>
-			<div id="replace" class="code" style="margin-top: 5px; margin-bottom: 5px;">func replace(old, new, count=1)</div>
+			<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func replace(old, new, count=1)</div>
 			Replace old strings with specified new string by specified replacement count.
 			<br><br>
-			<div id="replaceAll" class="code" style="margin-top: 5px; margin-bottom: 5px;">func replaceAll(old, new)</div>
+			<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func replaceAll(old, new)</div>
 			Replace all matched old strings with specified new string.
-			<br><br>
+			</div>
 		</div>
 
 		<div style="margin-top: 100px; margin-bottom: 50px;">
