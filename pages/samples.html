@@ -40,7 +40,7 @@ println('3 - Multiple')
 println('4 - Divide')
 println('0 - Exit')
 
-for {
+while {
   choice = input('Select your operation: ')
   if choice == '0' {
     break
@@ -73,7 +73,7 @@ if nterms <= 0 {
   println('Please enter a positive integer!')
 } else {
   println('Fibonacci sequence;')
-  for count < nterms {
+  while count < nterms {
     println(n1)
     nth = n1 + n2
     # update values
@@ -87,7 +87,7 @@ if nterms <= 0 {
 				<div id="fizzbuzz" class="section_title">FizzBuzz</div>
 				<div class="code">package main
 
-for _, number in range(1, 100) {
+foreach _, number in range(1, 100) {
   if number % 3 == 0 && number % 5 == 0 {
     println('FizzBuzz')
   } else if number % 3 == 0 {
@@ -103,7 +103,7 @@ for _, number in range(1, 100) {
 				<div id="primenumber" class="section_title">Prime Number</div>
 				<div class="code">package main
 
-for _, x in range(2, 100) {
+foreach _, x in range(2, 100) {
   if x ==  2 {
     println(x)
     continue
@@ -111,7 +111,7 @@ for _, x in range(2, 100) {
     continue
   }
   prime = true
-  for _, y in range(2, x - 1) {
+  foreach _, y in range(2, x - 1) {
     if x % y == 0 {
       prime = false
       break

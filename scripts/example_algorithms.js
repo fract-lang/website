@@ -22,7 +22,7 @@ func prime(x) {
   } else if x < 2 || x % 2 == 0 {
     return false
   }
-  for _, y in range(2, x - 1) {
+  foreach _, y in range(2, x - 1) {
     if x % y == 0 {
       return false
     }
@@ -30,7 +30,7 @@ func prime(x) {
   return true
 }
 
-for _, i in range(2, 100) {
+foreach _, i in range(2, 100) {
   if prime(i) {
     println(i)
   }
@@ -38,7 +38,7 @@ for _, i in range(2, 100) {
 const code_fizzbuzz =
 `package main
 
-for _, number in range(1, 100) {
+foreach _, number in range(1, 100) {
   if number % 3 == 0 && number % 5 == 0 {
     println('FizzBuzz')
   } else if number % 3 == 0 {
@@ -67,7 +67,7 @@ const code_hellocountries =
 
 func hello(...countries) {
   print('Hello')
-  for _, c in countries {
+  foreach _, c in countries {
     print(', ', c)
   }
   println('!')

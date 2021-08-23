@@ -554,7 +554,7 @@ if n < 0 {
 				<h4>While Loop</h4>
 				While the condition is true, the loop runs.
 				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">n = 0
-for n < 10 {
+while n < 10 {
   n++
   println(n)
 }</div>
@@ -565,7 +565,7 @@ for n < 10 {
 				You can loop through the elements of an list with a while loop.
 				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">t1 = [0, 3, 2, 1, 90]
 i = 0
-for i < 5 {
+while i < 5 {
   println(t1[i])
   i++
 }</div>
@@ -574,7 +574,7 @@ for i < 5 {
 				If the size of the known list changes in the future, this code will cause an error if its size is less than 5, and if it is large, it will print incompletely.
 				So in any change the condition also needs to be updated, forgetting to change it will cause problems.
 				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">t1 = [0, 3, 2, 1, 90]
-for i in t1 {
+foreach i in t1 {
   println(t1[i])
 }</div>
 				You can eliminate these situations with the <x class="inline_code"> foreach </x> loop.
@@ -586,7 +586,7 @@ for i in t1 {
 				If you want to get the element itself, you can add a second parameter.
 				If you don't need to use the index value, you can ignore it.
 				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">t1 = [0, 3, 2, 1, 90]
-for _, i in t1 {
+foreach _, i in t1 {
   println(i)
 }</div>
 				The code now looks cleaner and performs better.
@@ -594,7 +594,7 @@ for _, i in t1 {
 				<h4>Loop Controlling</h4>
 				In various situations you may want to manage loops such as ending loops or switching to other loop iterations and this is a very useful method that is widely used.
 				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">counter = 0
-for counter <= 10 {
+while counter <= 10 {
   counter = counter + 1
   if counter > 5 {
     break
@@ -606,7 +606,7 @@ for counter <= 10 {
 				With the keyword  <x class="inline_code"> break </x>, it is possible to override and terminate the entire loop even when the loop could still run.
 				<br>
 				<br>
-				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">for _, item in [ 0, 1, 2, 3, 4.0 ] {
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">foreach _, item in [ 0, 1, 2, 3, 4.0 ] {
   if item == 1 || item == 3 {
     continue
   }
@@ -740,10 +740,10 @@ divide(2, c=10, b=0)
 				A parameter can be used with the <x class="inline_code"> ... </x> operator so that it can take multiple values. In this way, the parameter will take all values ​​as an list.
 				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func params(...a, ...b=[]) {
   r = 0
-  for _, n in a {
+  foreach _, n in a {
     r += n
   }
-  for _, n in b {
+  foreach _, n in b {
     r += n
   }
   println(r)
@@ -866,7 +866,7 @@ println('hello')
 				<br>
 				<br>
 				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">println('counting')
-for _, i in range(0, 9) {
+foreach _, i in range(0, 9) {
   defer println(i)
 }
 println('done')
@@ -894,7 +894,7 @@ println('done')
 				Concurrent calls are performed by creating a lightweight thread managed by Fract.
 				<div class="warn" style="margin-top: 5px; margin-bottom: 5px;">Goroutines run in the different memory space.</div>
 				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func say(s) {
-  for _, i in range(0, 4) {
+  foreach _, i in range(0, 4) {
     println(s)
   }
 }
@@ -902,7 +902,7 @@ println('done')
 go say("world")
 go say("hello")
 
-for _, a in range(10, 100) {
+foreach _, a in range(10, 100) {
   println(a)
 }</div>
 
@@ -962,8 +962,8 @@ for _, a in range(10, 100) {
 			<h2 id="list_comprehension">List Comprehension</h2>
 			List comprehension is a syntactic construct that can be used to build a list based on existing lists.
 			It allows to select existing items by editing or filtering in a shortcut.
-			<div class="code" style="margin-top: 5px; margin-bottom: 5px;">println([x*100 for x in range(1, 100)])
-println([x*100 for x in range(1, 100), x <= 50])
+			<div class="code" style="margin-top: 5px; margin-bottom: 5px;">println([x*100 foreach x in range(1, 100)])
+println([x*100 foreach x in range(1, 100), x <= 50])
 
 /* OUTPUT
 [100 200 300 400 500 600 700 800 900 1000 1100 1200 1300 1400 1500 1600 1700 1800 1900 2000 2100 2200 2300 2400 2500 2600 2700 2800 2900 3000 3100 3200 3300 3400 3500 3600 3700 3800 3900 4000 4100 4200 4300 4400 4500 4600 4700 4800 4900 5000 5100 5200 5300 5400 5500 5600 5700 5800 5900 6000 6100 6200 6300 6400 6500 6600 6700 6800 6900 7000 7100 7200 7300 7400 7500 7600 7700 7800 7900 8000 8100 8200 8300 8400 8500 8600 8700 8800 8900 9000 9100 9200 9300 9400 9500 9600 9700 9800 9900 10000]
