@@ -6,11 +6,12 @@
 		</title>
 		<link rel="icon" href="https://raw.githubusercontent.com/fract-lang/resources/main/logo/fract.svg">
 		<link rel="stylesheet" type="text/css" href="../../../styles/main.css">
+		<link rel="stylesheet" type="text/css" href="../../../styles/syntax.css">
 	</head>
 	<body>
 		<div id="navigation">
 			<div>
-				<a href="../../index.html">
+				<a href="../../../index.html">
 					<img width="70" height="70" src="https://raw.githubusercontent.com/fract-lang/resources/main/logo/fract.svg">
 				</a>
 			</div>
@@ -31,53 +32,53 @@
 			<h2 id="constants">Constants</h2>
 			<li><strong>length</strong></li>
 			<h2 id="functions">Functions</h2>
-			<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func pushFront(...v)</div>
+			<div class="code" style="margin-top: 5px; margin-bottom: 5px;"><keyword>func</keyword> <func>pushFront</func>(<operator>...</operator><name>v</name>)</div>
 			Append values to start of list.
 			<br><br>
-			<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func pushBack(...v)</div>
+			<div class="code" style="margin-top: 5px; margin-bottom: 5px;"><keyword>func</keyword> <func>pushBack</func>(<operator>...</operator><name>v</name>)</div>
 			Append values to end of list.
 			<br><br>
-			<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func insert(i, v)</div>
+			<div class="code" style="margin-top: 5px; margin-bottom: 5px;"><keyword>func</keyword> <func>insert</func>(<name>i</name>, <name>v</name>)</div>
 			Append values to list start at position.
 			<br><br>
-			<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func removeAt(i)</div>
+			<div class="code" style="margin-top: 5px; margin-bottom: 5px;"><keyword>func</keyword> <func>removeAt</func>(<name>i</name>)</div>
 			Remove element by index.
 			<br><br>
-			<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func remove(v, start=0)</div>
+			<div class="code" style="margin-top: 5px; margin-bottom: 5px;"><keyword>func</keyword> <func>remove</func>(<name>v</name>, <name>start</name><operator>=</operator><numeric>0</numeric>)</div>
 			Remove first matched element. Returns true value is removed, false if not.
 			Start parameter provides start position of search.
 			<br><br>
-			<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func removeLast(v, start=$len-1)</div>
+			<div class="code" style="margin-top: 5px; margin-bottom: 5px;"><keyword>func</keyword> <func>removeLast</func>(<name>v</name>, <name>start</name><operator>=</operator><name>$len</name><operator>-</operator><numeric>1</numeric>)</div>
 			This function is same with <x class="inline_code"> remove </x> function.
 			Only difference is count down from list.
 			<br><br>
-			<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func removeAll(v)</div>
+			<div class="code" style="margin-top: 5px; margin-bottom: 5px;"><keyword>func</keyword> <func>removeAll</func>(<name>v</name>)</div>
 			Remove all matched elements.
 			<br><br>
-			<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func removeRange(start, to)</div>
+			<div class="code" style="margin-top: 5px; margin-bottom: 5px;"><keyword>func</keyword> <func>removeRange</func>(<name>start</name>, <name>to</name>)</div>
 			Remove elements between at start index and to specified end index.
 			<br><br>
-			<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func index(v, start=0)</div>
+			<div class="code" style="margin-top: 5px; margin-bottom: 5px;"><keyword>func</keyword> <func>index</func>(<name>v<name>, <name>start</name><operator>=</operator><numeric>0</numeric>)</div>
 			Returns index of first matched element if any matched element, <x class="inline_code"> -1 </x> if not.
 			Start parameter provides start position of search.
 			<br><br>
-			<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func indexLast(v, start=$len-1)</div>
+			<div class="code" style="margin-top: 5px; margin-bottom: 5px;"><keyword>func</keyword> <func>indexLast</func>(<name>v</name>, <name>start</name><operator>=</operator><name>$len</name><operator>-</operator><numeric>1</numeric>)</div>
 			This function is same with <x class="inline_code"> index </x> function.
 			Only difference is count down from list.
 			<br><br>
-			<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func include(v, start=0)</div>
+			<div class="code" style="margin-top: 5px; margin-bottom: 5px;"><keyword>func</keyword> <func>include</func>(<name>v</name>, <name>start</name><operator>=</operator><numeric>0</numeric>)</div>
 			Returns true if any matched element, false if not. Start parameter provides start position of search.
 			<br><br>
-			<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func clear()</div>
+			<div class="code" style="margin-top: 5px; margin-bottom: 5px;"><keyword>func</keyword> <func>clear</func>()</div>
 			Remove all elements.
 			<br><br>
-			<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func reverse()</div>
+			<div class="code" style="margin-top: 5px; margin-bottom: 5px;"><keyword>func</keyword> <func>reverse</func>()</div>
 			Reverse elements.
 			<br><br>
-			<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func sort()</div>
+			<div class="code" style="margin-top: 5px; margin-bottom: 5px;"><keyword>func</keyword> <func>sort</func>()</div>
 			Sort elements.
 			<br><br>
-			<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func unique()</div>
+			<div class="code" style="margin-top: 5px; margin-bottom: 5px;"><keyword>func</keyword> <func>unique</func>()</div>
 			Returns each element maximum one repetition in another list.
 			</div>
 		</div>

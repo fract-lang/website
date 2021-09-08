@@ -6,6 +6,7 @@
 		</title>
 		<link rel="icon" href="https://raw.githubusercontent.com/fract-lang/resources/main/logo/fract.svg">
 		<link rel="stylesheet" type="text/css" href="./styles/main.css">
+		<link rel="stylesheet" type="text/css" href="./styles/syntax.css">
 	</head>
 	<body>
 		<div id="navigation">
@@ -20,7 +21,6 @@
 				<li><a href="./pages/tour.html">Tour</a></li>
 			</ul>
 		</div>
-
 		<div class="main" style="padding-top: 100px;">
 			<div style="display: flex;">
 				<div>
@@ -40,7 +40,7 @@
 								<a id="example_primecheck">Prime Check</a>
 								<a id="example_fizzbuzz">FizzBuzz</a>
 								<a id="example_factorial">Factorial</a>
-								<a id="example_hellocountries">Hello Countries</a>
+								<a id="example_listordering">List ordering</a>
 							</div>
 						</div>
 					</div>
@@ -188,7 +188,7 @@
 							For example, the body of an if block, the body of a loop that is never executed, the body of a function that is never called... These are not included in debugging.
 						</div>
 						<div style="margin-left: 70px;">
-							<div class="code">func a() {
+							<div class="code"><keyword>func</keyword>  <name>a</name>() {
   Unreachable code.
 }
 							</div>

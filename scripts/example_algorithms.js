@@ -1,104 +1,126 @@
-const code_helloworld = `package main
+const code_helloworld = `<keyword>package</keyword> <name>main</name>
 
-println('Hello, 世界!')`
+<func>println</func>(<string>'Hello, 世界!'</string>)`
+
 const code_fibonacci =
-`package main
+`<keyword>package</keyword> <name>main</name>
 
-func fib(a, b) {
-  val = a + b
-  println(val)
-  if val < 1000 {
-    fib(b, val)
+<keyword>func</keyword> <func>fib</func>(<name>a</name>, <name>b</name>) {
+  <name>val</name> <operator>=</operator> <name>a</name> <operator>+</operator> <name>b</name>
+  <func>println</func>(<name>val</name>)
+  <keyword>if</keyword> <name>val</name> <operator><</operator> <numeric>1000</numeric> {
+    <func>fib</func>(<name>b</name>, <name>val</name>)
   }
 }
 
-fib(0, 1)`
-const code_primecheck =
-`package main
+<func>fib</func>(<numeric>0</numeric>, <numeric>1</numeric>)`
 
-func prime(x) {
-  if x == 2 {
-    return true
-  } else if x < 2 || x % 2 == 0 {
-    return false
+const code_primecheck =
+`<keyword>package</keyword> <name>main</name>
+
+<keyword>func</keyword> <func>prime</func>(<name>x</name>) {
+  <keyword>if</keyword> <name>x</name> <operator>==</operator> <numeric>2</numeric> {
+    <keyword>return</keyword> <valkeyword>true</valkeyword>
+  } <keyword>else if</keyword> <name>x</name> <operator><</operator> <numeric>2</numeric> <operator>||</operator> <name>x</name> <operator>%</operator> <numeric>2</numeric> <operator>==</operator> <numeric>0</numeric> {
+    <keyword>return</keyword> <valkeyword>false</valkeyword>
   }
-  foreach _, y in range(2, x - 1) {
-    if x % y == 0 {
-      return false
+  <keyword>foreach</keyword> _, <name>y</name> <keyword>in</keyword> <func>range</func>(<numeric>2</numeric>, <name>x</name> <operator>-</operator> <numeric>1</numeric>) {
+    <keyword>if</keyword> <name>x</name> <operator>%</operator> <name>y</name> <operator>==</operator> <numeric>0</numeric> {
+      <keyword>return</keyword> <valkeyword>false</valkeyword>
     }
   }
-  return true
+  <keyword>return</keyword> <valkeyword>true</valkeyword>
 }
 
-foreach _, i in range(2, 100) {
-  if prime(i) {
-    println(i)
+<keyword>foreach</keyword> _, <name>i</name> <keyword>in</keyword> <func>range</func>(<numeric>2</numeric>, <numeric>100</numeric>) {
+  <keyword>if</keyword> <func>prime</func>(<name>i</name>) {
+    <func>println</func>(<name>i</name>)
   }
 }`
+
 const code_fizzbuzz =
-`package main
+`<keyword>package</keyword> <name>main</name>
 
-foreach _, number in range(1, 100) {
-  if number % 3 == 0 && number % 5 == 0 {
-    println('FizzBuzz')
-  } else if number % 3 == 0 {
-    println('Fizz')
-  } else if number % 5 == 0 {
-    println('Buzz')
-  } else {
-    println(number)
+<keyword>foreach</keyword> _, <name>number</name> <keyword>in</keyword> <func>range</func>(<numeric>1</numeric>, <numeric>100</numeric>) {
+  <keyword>if</keyword> <name>number</name> <operator>%</operator> <numeric>3</numeric> <operator>==</operator> <numeric>0</numeric> <operator>&&</operator> <name>number</name> <operator>%</operator> <numeric>5</numeric> <operator>==</operator> <numeric>0</numeric> {
+    <func>println</func>(<string>'FizzBuzz'</string>)
+  } <keyword>else if</keyword> <name>number</name> <operator>%</operator> <numeric>3</numeric> <operator>==</operator> <numeric>0</numeric> {
+    <func>println</func>(<string>'Fizz'</string>)
+  } <keyword>else if</keyword> <name>number</name> <operator>%</operator> <numeric>5</numeric> <operator>==</operator> <numeric>0</numeric> {
+    <func>println</func>(<string>'Buzz'</string>)
+  } <keyword>else</keyword> {
+    <func>println</func>(<name>number</name>)
   }
 }`
+
 const code_factorial =
-`package main
+`<keyword>package</keyword> <name>main</name>
 
-func fact(x) {
-  if x < 0 {
-    return nan
-  } else if x == 0 {
-    return 1
+<keyword>func</keyword> <func>fact</func>(<name>x</name>) {
+  <keyword>if</keyword> <name>x</name> <operator><</operator> <numeric>0</numeric> {
+    <keyword>return</keyword> <numeric>0</numeric>
+  } <keyword>else if</keyword> <name>x</name> <operator>==</operator> <numeric>0</numeric> {
+    <keyword>return</keyword> <numeric>1</numeric>
   }
-  return x * fact(x - 1)
+  <keyword>return</keyword> <name>x</name> <operator>*</operator> <func>fact</func>(<name>x</name> <operator>-</operator> <numeric>1</numeric>)
 }
 
-println(fact(12))`
-const code_hellocountries =
-`package main
+<func>println</func>(<func>fact</func>(<numeric>12</numeric>))`
 
-func hello(...countries) {
-  print('Hello')
-  foreach _, c in countries {
-    print(', ', c)
+const code_listordering =
+`<keyword>package</keyword> <name>main</name>
+
+<keyword>func</keyword> <func>order</func>(<keyword>var</keyword> <name>lst</name>, <name>comparer</name><operator>=</operator><keyword>none</keyword>) {
+  <name>length</name> <operator>=</operator> <name>lst</name>.<name>length</name>-<numeric>1</numeric>
+  <keyword>foreach</keyword> <name>i</name> <keyword>in</keyword> <name>lst</name> {
+    <name>j</name> <operator>=</operator> <numeric>0</numeric>
+    <keyword>while</keyword> <name>j</name> <operator><</operator> <name>length</name>-<name>i</name> {
+      <name>a</name>, <name>b</name> <operator>=</operator> <operator>&</operator><name>lst</name>[<name>j</name><operator>+</operator><numeric>1</numeric>], <operator>&</operator><name>lst</name>[<name>j</name>]
+      <keyword>if</keyword> (<name>comparer</name> <operator>==</operator> <keyword>none</keyword> <operator>&&</operator>
+        <operator>*</operator><name>a</name> <operator><</operator> <operator>*</operator><name>b</name> <operator>||</operator> <name>comparer</name> <operator>!=</operator> <keyword>none</keyword> <operator>&&</operator> <func>comparer</func>(<operator>*</operator><name>a</name>, <operator>*</operator><name>b</name>)) {
+        <operator>*</operator><name>a</name>, <operator>*</operator><name>b</name> <operator>=</operator> <operator>*</operator><name>b</name>, <operator>*</operator><name>a</name>
+      }
+      <name>j</name><operator>++</operator>
+    }
   }
-  println('!')
+  <keyword>return</keyword> <name>lst</name>
 }
 
-hello('Turkey', 'France', 'German', 'Japan', 'Canada')`
+<name>myList</name> <operator>=</operator> [<numeric>9</numeric>, <numeric>2</numeric>, <numeric>56</numeric>, <numeric>3</numeric>, <numeric>3</numeric>, <numeric>2</numeric>, <numeric>7</numeric>, <numeric>537</numeric>, <numeric>36</numeric>, <numeric>5</numeric>]
+<func>println</func>(<name>myList</name>)
+<func>println</func>(<func>order</func>(<name>myList</name>, <keyword>func</keyword> (<name>x</name>, <name>y</name>) { <keyword>return</keyword> <name>x</name> <operator><</operator> <name>y</name> }))
+<func>println</func>(<func>order</func>(<name>myList</name>, <keyword>func</keyword> (<name>x</name>, <name>y</name>) { <keyword>return</keyword> <name>x</name> <operator>></operator> <name>y</name> }))`
 
-const codeblock = document.getElementById('algorithm_example_block')
+const codeblock            = document.getElementById('algorithm_example_block')
+const example_helloworld   = document.getElementById('example_helloworld')
+const example_fibonacci    = document.getElementById('example_fibonacci')
+const example_primecheck   = document.getElementById('example_primecheck')
+const example_fizzbuzz     = document.getElementById('example_fizzbuzz')
+const example_factorial    = document.getElementById('example_factorial')
+const example_listordering = document.getElementById('example_listordering')
 
-codeblock.textContent = code_helloworld
+codeblock.innerHTML = code_helloworld
 
-document.getElementById('example_helloworld').addEventListener('click', function() {
-  codeblock.textContent = code_helloworld
+example_helloworld.addEventListener('click', function() {
+  codeblock.innerHTML = code_helloworld
 })
 
-document.getElementById('example_fibonacci').addEventListener('click', function() {
-  codeblock.textContent = code_fibonacci
+example_fibonacci.addEventListener('click', function() {
+  codeblock.innerHTML = code_fibonacci
 })
 
-document.getElementById('example_primecheck').addEventListener('click', function() {
-  codeblock.textContent = code_primecheck
+example_primecheck.addEventListener('click', function() {
+  codeblock.innerHTML = code_primecheck
 })
 
-document.getElementById('example_fizzbuzz').addEventListener('click', function() {
-  codeblock.textContent = code_fizzbuzz
+example_fizzbuzz.addEventListener('click', function() {
+  codeblock.innerHTML = code_fizzbuzz
 })
 
-document.getElementById('example_factorial').addEventListener('click', function() {
-  codeblock.textContent = code_factorial
+example_factorial.addEventListener('click', function() {
+  codeblock.innerHTML = code_factorial
 })
 
-document.getElementById('example_hellocountries').addEventListener('click', function() {
-  codeblock.textContent = code_hellocountries
+example_listordering.addEventListener('click', function() {
+  codeblock.innerHTML = code_listordering
 })

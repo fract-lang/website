@@ -1,0 +1,31 @@
+comment {
+  color: #919191;
+}
+
+string {
+  color: goldenrod;
+}
+
+name {
+  color: #f5ce9e;
+}
+
+func {
+  color: #94bfe3
+}
+
+keyword {
+  color: #f25c5c;
+}
+
+valkeyword {
+  color: #ba94e3;
+}
+
+numeric {
+  color: darkkhaki;
+}
+
+operator {
+  color: plum;
+}

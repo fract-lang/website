@@ -6,6 +6,7 @@
 		</title>
 		<link rel="icon" href="https://raw.githubusercontent.com/fract-lang/resources/main/logo/fract.svg">
 		<link rel="stylesheet" type="text/css" href="../styles/main.css">
+		<link rel="stylesheet" type="text/css" href="../styles/syntax.css">
 		<link rel="stylesheet" type="text/css" href="../styles/smooth.heads.css">
 	</head>
 	<body>
@@ -51,7 +52,7 @@
 			<div class="main" style="width: 90%;">
 				<h1>A Tour of Fract</h1>
 				<h2 id="hello_world">Hello World!</h2>
-				<div class="code" style="margin-bottom: 5px;">println('Hello World!')</div>
+				<div class="code" style="margin-bottom: 5px;"><func>println</func>(<string>'Hello World!'</string>)</div>
 				Fract has built-in functions, you can print a value with the <x class="inline_code"> print </x> and <x class="inline_code"> println </x> functions, which is one of the built-in functions.
 
 				<br>
@@ -62,15 +63,13 @@
 				It is a convenient tool to understand the algorithm when you look at it later or when a different developer looks at it.
 				<h3>Singleline Comment</h3>
 				<x class="inline_code"> // </x> is used for singline comments. The rest of the line from the point of use is marked as a comment.
+				<div class="code" style="margin-top: 5px;"><comment>// Singleline Comment</comment></div>
 				<h3>Multiline Comment</h3>
 				<x class="inline_code"> /* ... */ </x> are used for multiline comments. It accepts the part from opening to closing as a comment.
-				<div class="code" style="margin-top: 5px;">/*
-    Say hello to name.
-    x = Name.
-*/
-func Hello(name) {
-    println('Hello ' + name)
-}</div>
+				<div class="code" style="margin-top: 5px;"><comment>/*
+  Multiline
+  Comment
+*/</comment></div>
 				<div class="tip">
 					It is always advantageous to use a single line comment because the lexer it gives free space to the memory by deleting these comments from the lines that are read.
 				</div>
@@ -81,7 +80,7 @@ func Hello(name) {
 				It is available in many programming languages ​​and is generally mandated. Fract does not enforce this, but supports its use.
 				If you wanted to continue the line, it would be freedom-restricting not having that option.
 				Therefore, you can write multiple statements on a single line by separating the statements with the statement terminator.
-				<div class="code" style="margin-top: 5px;">println(5); println(2)</div>
+				<div class="code" style="margin-top: 5px;"><func>println</func>(<numeric>5</numeric>); <func>println</func>(<numeric>2</numeric>)</div>
 
 				<br>
 				<br>
@@ -247,20 +246,20 @@ func Hello(name) {
 				Data types are the types provided so that the Fract understands what to do with that data.
 				<h3>None</h3>
 				None is not represents any value.
-				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">none</div>
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;"><valkeyword>none</valkeyword></div>
 				<h3>Integer</h3>
 				It is an integer, no decimal value.
-				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">890</div>
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;"><numeric>890</numeric></div>
 				<br>
 				You can give an integer value in hexadecimal format by starting with <x class="inline_code"> 0x </x>.
-				<div class="code" style="margin-top: 5px;">0xAA90F // Equals to 43664</div>
+				<div class="code" style="margin-top: 5px;"><numeric>0xAA90F</numeric> <comment>// Equals to 43664</comment></div>
 				<h3>Double</h3>
 				It is a double, can contains decimal value.
-				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">400.2387</div>
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;"><numeric>400.2387</numeric></div>
 				<h3>String</h3>
 				<li><a target="_blank" href="docs/builtin_objects/string.html">String Object</a></li><br>
 				Strings of characters, hold text data.
-				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">'Fract!'; "Fract!"</div>
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;"><string>'Fract!'</string>; <string>"Fract!"</string></div>
 				String provides a escape sequences and represents with <x class="inline_code"> \ </x>.
 				<h4>Escape Sequences</h4>
 				<table>
@@ -305,7 +304,7 @@ func Hello(name) {
 						<td>ASCII Bell.</td>
 					</tr>
 				</table>
-				<div class="code">str = 'Fract with\nNew Line!'</div>
+				<div class="code"><name>str</name> <operator>=</operator> <string>'Fract with\nNew Line!'</string></div>
 
 				<br>
 				<br>
@@ -334,33 +333,33 @@ func Hello(name) {
 				<br>
 				<br>
 				The <x class="inline_code"> var </x> keyword used for declare variable.
-				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">var x = <@expression></div>
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;"><keyword>var</keyword> <name>x</name> <operator>=</operator> <@expression></div>
 				The <x class="inline_code"> var </x> keyword is immutable. If wants declare mutable variable, use <x class="inline_code"> mut </x> keyword.
-				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">mut x = <@expression></div>
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;"><keyword>mut</keyword> <name>x</name> <operator>=</operator> <@expression></div>
 				You may want to create a variable whose value cannot be changed after it is defined.
 				The <x class="inline_code"> const </x> keyword used for declare constant variable, is immutable and cannot set as mutable.
-				<div class="code" style="margin-top: 5px;">const pi = 3.14</div>
+				<div class="code" style="margin-top: 5px;"><keyword>const</keyword> <name>pi</name> <operator>=</operator> <numeric>3.14</numeric></div>
 				<div class="tip">
 					Variable declarations can be provided by grouping.
-					<div class="code" style="margin-top: 5px">var (
-    FiboFirst = 1
-    Ln2Hi     = 6.93147180369123816490e-01
-    Hex       = 0x07EDD5E59A4E28C2
+				<div class="code" style="margin-top: 5px"><keyword>var</keyword> (
+  <name>FiboFirst</name> <operator>=</operator> <numeric>1</numeric>
+  <name>Ln2Hi</name> <operator>=</operator> <numeric>6.93147180369123816490e</numeric><operator>-</operator><numeric>01</numeric>
+  <name>Hex</name> <operator>=</operator> <numeric>0x07EDD5E59A4E28C2</numeric>
 )</div>
 				</div>
 				<h3>Short Variable Declaration and Setting</h3>
 				It is possible to define variables by shortcut.
-				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">x = 1</div>
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;"><name>x</name> <operator>=</operator> <numeric>1</numeric></div>
 				The definition above is equivalent to: <x class="inline_code"> var x = 1 </x>
 				<br><br>
-				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">x mut = 1</div>
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;"><name>x</name> <keyword>mut</keyword> <operator>=</operator> <numeric>1</numeric></div>
 				The definition above is equivalent to: <x class="inline_code"> mut x = 1 </x>
 				<br><br>
-				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">x const = 1</div>
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;"><name>x</name> <keyword>const</keyword> <operator>=</operator> <numeric>1</numeric></div>
 				The definition above is equivalent to: <x class="inline_code"> const x = 1 </x>
 				<br><br>
 				Also this way used for multiple variable declaration;
-				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">a, b const, c mut = 1, 2, 3</div>
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;"><name>a</name>, <name>b</name> <keyword>const</keyword>, <name>c</name> <keyword>mut</keyword> <operator>=</operator> <numeric>1</numeric>, <numeric>2</numeric>, <numeric>3</numeric></div>
 				The code above, create named <x class="inline_code"> a </x>,
 				constant named <x class="inline_code"> b </x> and mutable <x class="inline_code"> c </x> variables.
 				<br><br>
@@ -379,29 +378,29 @@ func Hello(name) {
 				<li><a target="_blank" href="docs/builtin_objects/list.html">List Object</a></li><br>
 				The list structure, which is useful for holding multiple values, is offered by many programming languages.
 				Once an list is defined, its size remains constant. Each element can be of a different data type.
-				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">list = [1, 20.3, 'Fract', print]</div>
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;"><name>list</name> <operator>=</operator> [<numeric>1</numeric>, <numeric>20.3</numeric>, <string>'Fract'</string>, <name>print</name>]</div>
 				An list is defined by writing the values ​​between the parentheses, separated by commas.
 				<br><br>
-				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">list = [1, 10, 2, 20, 3, 30]
-println(list)
-println(list[2])
-list[2] = 200
-println(list)
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;"><name>list</name> <operator>=</operator> [<numeric>1</numeric>, <numeric>10</numeric>, <numeric>2</numeric>, <numeric>20</numeric>, <numeric>3</numeric>, <numeric>30</numeric>]
+<func>println</func>(<name>list</name>)
+<func>println</func>(<name>list</name>[<numeric>2</numeric>])
+<name>list</name>[<numeric>2</numeric>] <operator>=</operator> <numeric>200</numeric>
+<func>println</func>(<name>list</name>)
 
-// OUTPUT
+<comment>// OUTPUT
 // [1 10 2 20 3 30]
 // 2
-// [1 10 200 20 3 30]</div>
+// [1 10 200 20 3 30]</comment></div>
 				List allows to get and set values ​​with the help of index.
 				The index is specified as an integer in parentheses and access is provided.
 				Index 0 represents the first element, and it continues to increase by one for each subsequent element.
 				It is also possible to access elements in reverse with negative indexing.
 				Negative indexing starts with -1 and continues to decrease one by one for each subsequent element.
 				<br><br>
-				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">list = [1, 10, 2, 20, 3, 30]
-println(list[-2])
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;"><name>list</name> <operator>=</operator> [<numeric>1</numeric>, <numeric>10</numeric>, <numeric>2</numeric>, <numeric>20</numeric>, <numeric>3</numeric>, <numeric>30</numeric>]
+<func>println</func>(<name>list</name>[<numeric>-2</numeric>])
 
-// OUTPUT: 3</div>
+<comment>// OUTPUT: 3</comment></div>
 				The index -2 of the list defined above is equal to index 4 by reverse indexing.
 				Since -1 represents the last index value, each decrease represents the index before it.
 				In other words, -2 index allows you to get the second-to-last element.
@@ -413,21 +412,21 @@ println(list[-2])
 				Maps work as key-value. One of the most used data types in computer science is hash tables.
 				In general, hash tables offer fast lookups, adds, and deletes. Fract's maps are built-in hash tables.
 				<br><br>
-				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">mut m = {
-  'name': 'Mason Vollo',
-  'mail': 'mason.vollo@abc.xyz',
-  'title': 'Software Engineer',
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;"><keyword>mut</keyword> <name>m</name> <operator>=</operator> {
+  <string>'name'</string>: <string>'Mason Vollo'</string>,
+  <string>'mail'</string>: <string>'mason.vollo@abc.xyz'</string>,
+  <string>'title'</string>: <string>'Software Engineer'</string>,
 }</div>
 				A map declaration can be made, first the keys, then the values.
 				<br><br>
 				Update value of key if exists, or append key with value:
-				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">m[key] = val</div>
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;"><name>m</name>[<name>key</name>] <operator>=</operator> <name>val</name></div>
 				<br>
 				Retrieve element:
-				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">val = m[key]</div>
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;"><name>val</name> <operator>=</operator> <name>m</name>[<name>key</name>]</div>
 				<br>
 				Key exist check:
-				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">key in m</div>
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;"><name>key</name> <keyword>in</keyword> <name>m</name></div>
 
 				<br>
 				<br>
@@ -436,8 +435,8 @@ println(list[-2])
 				If no initial value is given, <x class="inline_code"> 0 </x> is taken as the basis. <br>
 				If no value is given for the last index, it is taken as a basis until the last value.
 
-				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">lst = [1, 2, 3, 4, 5]
-println(lst[2:]) // [3, 4, 5]</div>
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;"><name>lst</name> <operator>=</operator> [<numeric>1</numeric>, <numeric>2</numeric>, <numeric>3</numeric>, <numeric>4</numeric>, <numeric>5</numeric>]
+<func>println</func>(<name>lst</name>[<numeric>2</numeric>:]) <comment>// [3, 4, 5]</comment></div>
 
 				<strong>Supported Types;</strong>
 				<li>List</li>
@@ -448,27 +447,27 @@ println(lst[2:]) // [3, 4, 5]</div>
 				<h2 id="why_immutability">Why Immutability?</h2>
 				By default, mutable values ​​can cause undesirable results.
 				Variable values ​​represent a reference when used directly, and the same value now has more than one delegate. This may cause you to change a value that you do not want to change.
-				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">a = [1, 4, 8]
-b = a
-b[2] = 10
-println(a)
-println(b)
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;"><name>a</name> <operator>=</operator> [<numeric>1</numeric>, <numeric>4</numeric>, <numeric>8</numeric>]
+<name>b</name> <operator>=</operator> <name>a</name>
+<name>b</name>[<numeric>2</numeric>] <operator>=</operator> <numeric>10</numeric>
+<func>println</func>(<name>a</name>)
+<func>println</func>(<name>b</name>)
 
-// OUTPUT
+<comment>// OUTPUT
 // [1 4 8]
-// [1 4 10]</div>
+// [1 4 10]</comment></div>
 				Since it is immutable by default, there is no referencing case here.
 				Variable <x class="inline_code"> b </x> takes the value of variable <x class="inline_code"> a </x> directly, it does not reference variable <x class="inline_code"> a </x>.
 				Therefore, when the second index is changed on variable <x class="inline_code"> b </x>, this change is not reflected in variable <x class="inline_code"> a </x>.
-				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">mut a = [1, 4, 8]
-b = a
-b[2] = 10
-println(a)
-println(b)
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;"><keyword>mut</keyword> <name>a</name> <operator>=</operator> [<numeric>1</numeric>, <numeric>4</numeric>, <numeric>8</numeric>]
+<name>b</name> <operator>=</operator> <name>a</name>
+<name>b</name>[<numeric>2</numeric>] <operator>=</operator> <numeric>10</numeric>
+<func>println</func>(<name>a</name>)
+<func>println</func>(<name>b</name>)
 
-// OUTPUT
+<comment>// OUTPUT
 // [1 4 10]
-// [1 4 10]</div>
+// [1 4 10]</comment></div>
 				When you create a variable as mutable, it now means that it is referenceable.
 				Now variable <x class="inline_code"> b </x> takes the reference of variable <x class="inline_code"> a </x> instead of getting its value directly.
 				Therefore, changes on <x class="inline_code"> b </x> are directly reflected on variable <x class="inline_code"> a </x>.
@@ -486,38 +485,38 @@ println(b)
 				<h3><x class="inline_code"> if </x> Expressions</h3>
 				An if statement allows you to branch your code based on conditions. You provide a condition and then write the algorithm that will run if the condition is met.
 				Optionally, you can also specify alternative conditions and situations where no conditions are met.
-				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">n = 3
-if n < 5 {
-  println('condition is true')
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;"><name>n</name> <operator>=</operator> <numeric>3</numeric>
+<keyword>if</keyword> <name>n</name> <operator><</operator> <numeric>5</numeric> {
+  <func>println</func>(<string>'condition is true'</string>)
 }
 
-// OUTPUT: condition is true</div>
+<comment>// OUTPUT: condition is true</comment></div>
 				Each conditional statement begins with an <x class="inline_code"> if </x> by the condition.
 				Then, the algorithm that will be realized if the condition is met is written into the block.
 				<br>
 				<br>
-				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">n = 50
-if n < 0 {
-  println('n is negative')
-} else if n < 100 {
-  println('n is less than 100')
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;"><name>n</name> <operator>=</operator> <numeric>50</numeric>
+<keyword>if</keyword> <name>n</name> <operator><</operator> <numeric>0</numeric> {
+  <func>println</func>(<string>'n is negative'</string>)
+} <keyword>else if</keyword> <name>n</name> <operator><</operator> <numeric>100</numeric> {
+  <func>println</func>(<string>'n is less than 100'</string>)
 }
 
-// OUTPUT: n is less than 100</div>
+<comment>// OUTPUT: n is less than 100</comment></div>
 				You can add <x class="inline_code"> else if </x> statements after the <x class="inline_code"> if </x> expression for alternative conditions.
 				It specifies an alternative condition that works if the previous conditions are not met.
 				<br>
 				<br>
-				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">n = 300
-if n < 0 {
-  println('n is negative')
-} else if n <= 100 {
-  println('n is less than 100')
-} else {
-  println('n is greater than 100')
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;"><name>n</name> <operator>=</operator> <numeric>300</numeric>
+<keyword>if</keyword> <name>n</name> <operator><</operator> <numeric>0</numeric> {
+  <func>println</func>(<string>'n is negative'</string>)
+} <keyword>else if</keyword> <name>n</name> <operator><=</operator> <numeric>100</numeric> {
+  <func>println</func>(<string>'n is less than or equals 100'</string>)
+} <keyword>else</keyword> {
+  <func>println</func>(<string>'n is greater than 100'</string>)
 }
 
-// OUTPUT: n is greater than 100</div>
+<comment>// OUTPUT: n is greater than 100</comment></div>
 				If you want to specify an algorithm that will run if no conditions are met, you can use the <x class="inline_code"> else </x> statement.
 				This statement is written at the bottom and should be the last statement of the block.
 				It works when no previous condition is met.
@@ -527,36 +526,36 @@ if n < 0 {
 					Starting on the next line is invalid syntax.
 				</div>
 				<h3 id="loops">Loops</h3>
-				It is useful to execute a block of code more than once. Fract provides various loops to do this.
+				It is useful to execute a block of code more than once. Fract provides various loops to do <keyword></keyword>this</keyword>.
 				A loop repeatedly executes the code block inside it as the condition is met.
 				<br>
 				<br>
 				Fract has two different cycles: <x class="inline_code"> foreach </x> and <x class="inline_code"> while </x> loops.
 				<h4>While Loop</h4>
 				While the condition is true, the loop runs.
-				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">n = 0
-while n < 10 {
-  n++
-  println(n)
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;"><name>n</name> <operator>=</operator> <numeric>0</numeric>
+<keyword>while</keyword> <name>n</name> <operator><</operator> <numeric>10</numeric> {
+  <name>n</name><operator>++</operator>
+  <func>println</func>(<name>n</name>)
 }</div>
 				The loop has a condition that will run as long as the variable <x class="inline_code"> n </x> is less than 10.
 				During the loop, the variable <x class="inline_code"> n </x> is incremented at each iteration, when it reaches 10, the loop ends as the condition is no longer met.
 				<div class="tip">The best way give an empty condition for infinite loop.</div>
 				<h4>Foreach Loop</h4>
 				You can loop through the elements of an list with a while loop.
-				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">t1 = [0, 3, 2, 1, 90]
-i = 0
-while i < 5 {
-  println(t1[i])
-  i++
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;"><name>t1</name> <operator>=</operator> [<numeric>0</numeric>, <numeric>3</numeric>, <numeric>2</numeric>, <numeric>1</numeric>, <numeric>90</numeric>]
+<name>i</name> <operator>=</operator> <numeric>0</numeric>
+<keyword>while</keyword> <name>i</name> <operator><</operator> <numeric>5</numeric> {
+  <func>println</func>(<name>t1</name>[<name>i</name>])
+  <name>i</name><operator>++</operator>
 }</div>
 				As expected, this code will work correctly. The loop is set to rotate according to the length of the list and will print each element to the screen.
 				However, this approach is error-prone and requires a lot of code modification.
 				If the size of the known list changes in the future, this code will cause an error if its size is less than 5, and if it is large, it will print incompletely.
 				So in any change the condition also needs to be updated, forgetting to change it will cause problems.
-				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">t1 = [0, 3, 2, 1, 90]
-foreach i in t1 {
-  println(t1[i])
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;"><name>t1</name> <operator>=</operator> [<numeric>0</numeric>, <numeric>3</numeric>, <numeric>2</numeric>, <numeric>1</numeric>, <numeric>90</numeric>]
+<keyword>foreach</keyword> <name>i</name> <keyword>in</keyword> <name>t1</name> {
+  <func>println</func>(<name>t1</name>[<name>i</name>])
 }</div>
 				You can eliminate these situations with the <x class="inline_code"> foreach </x> loop.
 				It adjusts itself according to the size of the list, and each element runs as a single repeat.
@@ -566,35 +565,35 @@ foreach i in t1 {
 				The first parameter of the loop always returns an index of current element.
 				If you want to get the element itself, you can add a second parameter.
 				If you don't need to use the index value, you can ignore it.
-				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">t1 = [0, 3, 2, 1, 90]
-foreach _, i in t1 {
-  println(i)
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;"><name>t1</name> <operator>=</operator> [<numeric>0</numeric>, <numeric>3</numeric>, <numeric>2</numeric>, <numeric>1</numeric>, <numeric>90</numeric>]
+<keyword>foreach</keyword> _, <name>i</name> <keyword>in</keyword> <name>t1</name> {
+  <func>println</func>(<name>t1</name>[<name>i</name>])
 }</div>
 				The code now looks cleaner and performs better.
 				When the element is accessed with index, the element is read again from the memory according to the index value, but when you add the element parameter, you do not need to do an extra reading as it will already be pulled from the memory.
 				<h4>Loop Controlling</h4>
 				In various situations you may want to manage loops such as ending loops or switching to other loop iterations and this is a very useful method that is widely used.
-				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">counter = 0
-while counter <= 10 {
-  counter = counter + 1
-  if counter > 5 {
-    break
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;"><name>counter</name> <operator>=</operator> <numeric>0</numeric>
+<keyword>while</keyword> <name>counter</name> <operator><=</operator> <numeric>10</numeric> {
+  <name>counter</name> <operator>=</operator> <name>counter</name> <operator>+</operator> <numeric>1</numeric>
+  <keyword>if</keyword> <name>counter</name> <operator>></operator> <numeric>5</numeric> {
+    <keyword>break</keyword>
   }
-  print(counter, ' ')
+  <func>print</func>(<name>counter</name>, <string>' '</string>)
 }
 
-// Output: 0 1 2 3 4 5</div>
+<comment>// Output: 0 1 2 3 4 5</comment></div>
 				With the keyword  <x class="inline_code"> break </x>, it is possible to override and terminate the entire loop even when the loop could still run.
 				<br>
 				<br>
-				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">foreach _, item in [ 0, 1, 2, 3, 4.0 ] {
-  if item == 1 || item == 3 {
-    continue
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;"><keyword>foreach</keyword> _, <name>item</name> <keyword>in</keyword> [<numeric>0</numeric>, <numeric>1</numeric>, <numeric>2</numeric>, <numeric>3</numeric>, <numeric>4.0</numeric>] {
+  <keyword>if</keyword> <name>item</name> <operator>==</operator> <numeric>1</numeric> <operator>||</operator> <name>item</name> <operator>==</operator> <numeric>3</numeric> {
+    <keyword>continue</keyword>
   }
-  print(item, ' ')
+  <func>print</func>(<name>item</name>, <string>' '</string>)
 }
 
-// Output: 0, 2, 4</div>
+<comment>// Output: 0, 2, 4</comment></div>
 				The keyword <x class="inline_code"> continue </x> is used to pass the loop to the next iteration.
 				If there is no next loop iteration, the loop is finished.
 
@@ -603,11 +602,11 @@ while counter <= 10 {
 				<h2 id="functions">Functions</h2>
 				Functions are very useful for adding functionality to your code, functions are very common in Fract code.
 				Functions are declared with the <x class="inline_code"> func </x> keyword.
-				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func helloWorld() {
-  println('Hello World!')
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;"><keyword>func</keyword> <func>helloWorld</func>() {
+  <func>println</func>(<string>'Hello World!'</string>)
 }
 
-helloWorld()</div>
+<func>helloWorld</func>()</div>
 				This code is a simple function declaration. It can be called without parameters and write "Hello World!".
 				<div class="tip" style="margin-top: 5px; margin-bottom: 5px;">
 					Parentheses are not required if the function takes no parameters.
@@ -618,28 +617,28 @@ helloWorld()</div>
 				Functions can also be defined to have parameters, which are special variables that are part of a function’s signature.
 				When a function has parameters, you can provide it with concrete values for those parameters.
 				<div class="warn">If a parameter is equal to a different definition name, it will replace that definition.</div>
-				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func sum(a, b) {
-  println(a + b)
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;"><keyword>func</keyword> <func>sum</func>(<name>a</name>, <name>b</name>) {
+  <func>println</func>(<name>a</name> <operator>+</operator> <name>b</name>)
 }
 
-sum(5, 4)
+<name>sum</name>(<numeric>5</numeric>, <numeric>4</numeric>)
 
-// OUTPUT: 9</div>
+<comment>// OUTPUT: 9</comment></div>
 				The above function takes two values, sums them up and writes them to the screen.
 				Since the values ​​given as arguments are <x class="inline_code"> 5 </x> and <x class="inline_code"> 4 </x>, the <x class="inline_code"> a </x> parameter is <x class="inline_code"> 5 </x> and the <x class="inline_code"> b </x> parameter is <x class="inline_code"> 4 </x>, respectively.
 				<br>
 				<br>
 				A parameter can take a default value. Parameters that take a default value do not have to take a value.
-				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func sum(a, b=90) {
-  println(a + b)
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;"><keyword>func</keyword> <func>sum</func>(<name>a</name>, <name>b</name><operator>=</operator><numeric>90</numeric>) {
+  <func>println</func>(<name>a</name> <operator>+</operator> <name>b</name>)
 }
 
-sum(5)
-sum(2, 10)
+<func>sum</func>(<numeric>5</numeric>)
+<func>sum</func>(<numeric>2</numeric>, <numeric>10</numeric>)
 
-// OUTPUT
+<comment>// OUTPUT
 // 95
-// 5.0</div>
+// 5.0</comment></div>
 				Although no value was specified during the first call, <x class="inline_code"> 90 </x> was given instead of the <x class="inline_code"> b </x> parameter, which defaults to <x class="inline_code"> 90 </x>.
 				Because a custom value was specified in the next call, the value <x class="inline_code"> 90 </x> was overridden and the value of the argument became <x class="inline_code"> 10 </x>.
 				<br>
@@ -649,46 +648,46 @@ sum(2, 10)
 				When marked as mutable, the argument it will take is directly mutable, even though it is immutable.
 				<br>
 				Forcing to mutable copy;
-				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func set(mut list) {
-  list[0] = nan
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;"><keyword>func</keyword> <func>set</func>(<keyword>mut</keyword> <name>list</name>) {
+  <name>list</name>[<numeric>0</numeric>] <operator>=</operator> <valkeyword>none</valkeyword>
 }
 
-list = [1, 2, 3, 4]
-println(list)
-set(list)
-println(list)
+<name>list</name> <operator>=</operator> [<numeric>1</numeric>, <numeric>2</numeric>, <numeric>3</numeric>, <numeric>4</numeric>]
+<func>println</func>(<name>list</name>)
+<func>set</func>(<name>list</name>)
+<func>println</func>(<name>list</name>)
 
-// OUTPUT
+<comment>// OUTPUT
 // [1 2 3 4]
-// [NaN 2 3 4]</div>
+// [none 2 3 4]</comment></div>
 				Although the list is created as immutable in the above code, the list is sent as a reference instead of being copied, as the function forces the argument to be mutable.
 				<br>
 				<br>
 				Forcing to immutable copy;
-				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func set(var list) {
-  list[0] = nan
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;"><keyword>func</keyword> <func>set</func>(<keyword>var</keyword> <name>list</name>) {
+  <name>list</name>[<numeric>0</numeric>] <operator>=</operator> <valkeyword>none</valkeyword>
 }
 
-list mut = [1, 2, 3, 4]
-println(list)
-set(list)
-println(list)
+<name>list</name> <operator>=</operator> [<numeric>1</numeric>, <numeric>2</numeric>, <numeric>3</numeric>, <numeric>4</numeric>]
+<func>println</func>(<name>list</name>)
+<func>set</func>(<name>list</name>)
+<func>println</func>(<name>list</name>)
 
-// OUTPUT
+<comment>// OUTPUT
 // [1 2 3 4]
-// [1 2 3 4]</div>
+// [1 2 3 4]</comment></div>
 				Although the list is created as mutable in the above code, the list is sent as immutable copy, as the function forces the argument to be immutable.
 				<br>
 				<br>
 				Forcing to constant;
-				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func set(const list) {
-  list[0] = nan
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;"><keyword>func</keyword> <func>set</func>(<keyword>const</keyword> <name>list</name>) {
+  <name>list</name>[<numeric>0</numeric>] <operator>=</operator> <valkeyword>none</valkeyword>
 }
 
-list mut = [1, 2, 3, 4]
-println(list)
-set(list)
-println(list)</div>
+<name>list</name> <operator>=</operator> [<numeric>1</numeric>, <numeric>2</numeric>, <numeric>3</numeric>, <numeric>4</numeric>]
+<func>println</func>(<name>list</name>)
+<func>set</func>(<name>list</name>)
+<func>println</func>(<name>list</name>)</div>
 				This code is paniced, because argument is constant.
 				<br>
 				<br>
@@ -702,16 +701,16 @@ println(list)</div>
 				<br>
 				<br>
 				Arguments can also be specified as names and their order can be ignored.
-				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func divide(a, b, c) {
-  println((a + b) / c)
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;"><keyword>func</keyword> <func>divide</func>(<name>a</name>, <name>b</name>, <name>c</name>) {
+  <func>println</func>((<name>a</name> <operator>+</operator> <name>b</name>) <operator>/</operator> <name>c</name>)
 }
 
-divide(c=9, a=5, b=0)
-divide(2, c=10, b=0)
+<func>divide</func>(<name>c</name><operator>=</operator><numeric>9</numeric>, <name>a</name><operator>=</operator><numeric>5</numeric>, <name>b</name><operator>=</operator><numeric>0</numeric>)
+<func>divide</func>(<numeric>2</numeric>, <name>c</name><operator>=<numeric>10</numeric>, <name>b</name><operator>=<numeric>0</numeric>)
 
-// OUTPUT
+<comment>// OUTPUT
 // 0.5555555556
-// 0.2</div>
+// 0.2</comment></div>
 				After an argument is specified by name, all subsequent arguments must also be specified by name.
 				In the first call, all the arguments were specified in different order by name and received their values.
 				In the second call, the first argument is not specified with a name.
@@ -719,23 +718,23 @@ divide(2, c=10, b=0)
 				<br>
 				<br>
 				A parameter can be used with the <x class="inline_code"> ... </x> operator so that it can take multiple values. In this way, the parameter will take all values ​​as an list.
-				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func params(...a, ...b=[]) {
-  r = 0
-  foreach _, n in a {
-    r += n
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;"><keyword>func</keyword> <func>params</func>(<operator>...</operator><name>a</name>, <operator>...</operator><name>b</name><operator>=</operator>[]) {
+  <name>r</name> <operator>=</operator> <numeric>0</numeric>
+  <keyword>foreach</keyword> _, <name>n</name> <keyword>in</keyword> <name>a</name> {
+    <name>r</name> <operator>+=</operator> <name>n</name>
   }
-  foreach _, n in b {
-    r += n
+  <keyword>foreach</keyword> _, <name>n</name> <keyword>in</keyword> <name>b</name> {
+    <name>r</name> <operator>+=</operator> <name>n</name>
   }
-  println(r)
+  <func>println</func>(<name>r</name>)
 }
 
-params(100, 110, 120)
-params(1, 4, 2, 6, b=0, 2, 5, 10)
+<func>params</func>(<numeric>100</numeric>, <numeric>110</numeric>, <numeric>120</numeric>)
+<func>params</func>(<numeric>1</numeric>, <numeric>4</numeric>, <numeric>2</numeric>, <numeric>6</numeric>, <name>b</name><operator>=</operator><numeric>0</numeric>, <numeric>2</numeric>, <numeric>5</numeric>, <numeric>10</numeric>)
 
-// OUTPUT
+<comment>// OUTPUT
 // 330
-// 30</div>
+// 30</comment></div>
 				The code above has a function with two more than one parameter, and this function finds the total values ​​of the parameters, adds them together and prints them out.
 				The first call assigns all values ​​to parameter <x class="inline_code"> a </x>, parameter <x class="inline_code"> b </x> remains its default value, the empty list.
 				If a parameter that can take multiple values ​​is followed by another parameter, it must be specified with its name.
@@ -744,37 +743,37 @@ params(1, 4, 2, 6, b=0, 2, 5, 10)
 				<br>
 				It can also be used when giving an argument to a parameter with this notation.
 				While giving arguments, it sends the elements of the list one by one, not the list itself.
-				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">println(['Fract', 'Programming', 'Language'])
-println(['Fract', ' ', 'Programming', ' ', 'Language']...)
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;"><func>println</func>([<string>'Fract'</string>, <string>'Programming'</string>, <string>'Language'</string>])
+<func>println</func>([<string>'Fract'</string>, <string>' '</string>, <string>'Programming'</string>, <string>' '</string>, <string>'Language'</string>]<operator>...</operator>)
 
 
-/* OUTPUT
+<comment>/* OUTPUT
 [Fract Programming Language]
 Fract Programming Language
-*/</div>
+*/</comment></div>
 				<br>
 				<br>
 				Functions can also return a value.
-				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func asHello(name) {
-  return 'Hello ' + name + '!'
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;"><keyword>func</keyword> <func>asHello</func>(<name>name</name>) {
+  <func>return</func> <string>'Hello '</string> <operator>+</operator> <name>name</name> <operator>+</operator> <string>'!'</string>
 }
 
-println(asHello('Fract'))
+<func>println</func>(<func>asHello</func>(<string>'Fract'</string>))
 
-// OUTPUT: Hello Fract!</div>
+<comment>// OUTPUT: Hello Fract!</comment></div>
 				The above function converts the value given to it to a hello message and returns it as a value.
 				The <x class="inline_code"> return </x> keyword is used to return a value.
 				When the function returns a value, the function returns the value and stops executing, if there is any code that follows it, they will never be reached.
 				<br><br>
 				Functions can returns multiple values;
-				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func example() {
-  return 1, 2, 3
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;"><keyword>func</keyword> <func>example</func>() {
+  <keyword>return</keyword> <numeric>1</numeric>, <numeric>2</numeric>, <numeric>3</numeric>
 }
 
-a, b, c = example()
-println(a, ' ', b, ' ', c)
+<name>a</name>, <name>b</name>, <name>c</name> <operator>=</operator> <func>example</func>()
+<func>println</func>(<name>a</name>, <string>' '</string>, <name>b</name>, <string>' '</string>, <name>c</name>)
 
-// OUTPUT: 1, 2, 3</div>
+<comment>// OUTPUT: 1, 2, 3</comment></div>
 
 				<div class="warn">
 					If function is not return any value, returns <x class="inline_code"> none </x>.
@@ -782,9 +781,9 @@ println(a, ' ', b, ' ', c)
 				<h3>Anonymous Functions</h3>
 				Anonymous functions can be easily defined. It's not much different from defining a normal function.
 				Anonymous functions can be very useful and a good choice.
-				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">b = func(x) { println('Hello ', x, '!') }
-b('Fract')
-// OUTPUT: Hello Fract!</div>
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;"><name>b</name> <operator>=</operator> <keyword>func</keyword>(<name>x</name>) { <func>println</func>(<string>'Hello '</string>, <name>x</name>, <string>'!'</string>) }
+<name>b</name>(<string>'Fract'</string>)
+<comment>// OUTPUT: Hello Fract!</comment></div>
 				The example above is similar to passing a function as a value to a variable.
 				The only difference is that the function is currently defined as a direct value.
 
@@ -794,11 +793,11 @@ b('Fract')
 				In some cases, Fract code may panic, preventing current code execution.
 				Catching errors and handling them on a case-by-case basis is an approach offered by many programming languages.
 				Error catching in Fract is done with try-catch blocks.
-				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">try {
-  arr = [1, 2, 3, 10, 341, 0]
-  println(arr[6]) // Out of range.
-} catch {
-  println('Panic!')
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;"><keyword>try</keyword> {
+  <name>arr</name> <operator>=</operator> [<numeric>1</numeric>, <numeric>2</numeric>, <numeric>3</numeric>, <numeric>10</numeric>, <numeric>341</numeric>, <numeric>0</numeric>]
+  <func>println</func>(<name>arr</name>[<numeric>6</numeric>]) <comment>// Out of range.</comment>
+} <keyword>catch</keyword> {
+  <func>println</func>(<string>'Panic!'</string>)
 }</div>
 				You write the codes you want to debug in the try block, in case of a panic, the catch block will run.
 				<div class="tip" style="margin-top: 5px;">
@@ -806,7 +805,7 @@ b('Fract')
 				</div>
 				<div class="info">
 					If you want catch panic message, give variable name to catch block.
-					<div class="code" style="margin-top: 5px;">try { ... } catch p { ... }</div>
+					<div class="code" style="margin-top: 5px;"><keyword>try</keyword> { <comment>/* ... */</comment> } <keyword>catch</keyword> <name>p</name> { <comment>/* ... */</comment> }</div>
 				</div>
 
 				<br>
@@ -817,9 +816,9 @@ b('Fract')
 					<li>enofi</li>
 					This pragma ignores the rest from where it was written during import and does not import.
 				</ul>
-				<div class="code" style="margin-bottom: 5px;">const Token = '938493enmnlfm3o5305m36390öfd903fö390jm3t6'
-#enofi
-const Code = '49R-er34-TGH'</div>
+				<div class="code" style="margin-bottom: 5px;"><keyword>const</keyword> <name>Token</name> <operator>=</operator> <string>'938493enmnlfm3o5305m36390öfd903fö390jm3t6'</string>
+<keyword>#</keyword>enofi
+<keyword>const</keyword> <name>Code</name> <operator>=</operator> <string>'49R-er34-TGH'</string></div>
 				When importing this code, it takes the <x class="inline_code"> Token </x> definition but excludes the <x class="inline_code"> Code </x> definition.
 
 				<br>
@@ -837,22 +836,22 @@ const Code = '49R-er34-TGH'</div>
 						<li>Function body</li>
 					</ul>
 				</div>
-				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">defer println('world')
-println('hello')
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;"><keyword>defer</keyword> <func>println</func>(<string>'world'</string>)
+<func>println</func>(<string>'hello'</string>)
 
-// OUTPUT
+<comment>// OUTPUT
 // hello
-// world</div>
+// world</comment></div>
 				The "hello" is printed first because "world!" the print process waits for the block to finish before being called.
 				<br>
 				<br>
-				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">println('counting')
-foreach _, i in range(0, 9) {
-  defer println(i)
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;"><func>println</func>(<string>'counting'</string>)
+<keyword>foreach</keyword> _, <name>i</name> <keyword>in</keyword> <func>range</func>(<numeric>9</numeric>) {
+  <keyword>defer</keyword> <func>println</func>(<name>i</name>)
 }
-println('done')
+<func>println</func>(<string>'done'</string>)
 
-// OUTPUT
+<comment>// OUTPUT
 // counting
 // done
 // 9
@@ -864,7 +863,7 @@ println('done')
 // 3
 // 2
 // 1
-// 0</div>
+// 0</comment></div>
 				Deferred function calls are pushed onto a stack. When a function returns, its deferred calls are executed in last-in-first-out order.
 
 				<br>
@@ -874,17 +873,17 @@ println('done')
 				The <x class="inline_code"> go </x> keyword is used to perform function calls concurrently.
 				Concurrent calls are performed by creating a lightweight thread managed by Fract.
 				<div class="warn" style="margin-top: 5px; margin-bottom: 5px;">Goroutines run in the different memory space.</div>
-				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func say(s) {
-  foreach _, i in range(0, 4) {
-    println(s)
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;"><keyword>func</keyword> <func>say</func>(<name>s</name>) {
+  <keyword>foreach</keyword> _, <name>i</name> <keyword>in</keyword> <func>range</func>(<numeric>0</numeric>, <numeric>4</numeric>) {
+    <func>println</func>(<name>s</name>)
   }
 }
 
-go say("world")
-go say("hello")
+<keyword>go</keyword> <func>say</func>(<string>'world'</string>)
+<keyword>go</keyword> <func>say</func>(<string>'hello'</string>)
 
-foreach _, a in range(10, 100) {
-  println(a)
+<keyword>foreach</keyword> _, <name>a</name> <keyword>in</keyword> <func>range</func>(<numeric>10</numeric>, <numeric>100</numeric>) {
+  <func>println</func>(<name>a</name>)
 }</div>
 
 				<br>
@@ -894,47 +893,47 @@ foreach _, a in range(10, 100) {
 				Checking whether there is a value in it is one of them, Fract has an approach that provides convenience in this regard.
 				With the <x class="inline_code"> in </x> keyword, it is also possible to check values ​​inside enumerable values.
 				The value on the left is searched within the value on the right.
-				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">if 'urk' in 'Turkey' {
-  println('Yes!')
-} else {
-  println('No!')
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;"><keyword>if</keyword> <string>'urk'</string> <keyword>in</keyword> <string>'Turkey'</string> {
+  <func>println</func>(<string>'Yes!'</string>)
+} <keyword>else</keyword> {
+  <func>println</func>(<string>'No!'</string>)
 }
 
-// OUTPUT: Yes!</div>
+<comment>// OUTPUT: Yes!</comment></div>
 				In this code, the value on the left is a string value. The value on the right must also be a string.
 				It is case sensitive and will return true if the value is in it and false otherwise.
-				Since <x class="inline_code"> urk </x> value is in <x class="inline_code"> Turkey </x>, it returns true.
+				Since <x class="inline_code"> urk </x> value is <keyword>in</keyword> <x class="inline_code"> Turkey </x>, it returns true.
 				<br>
 				<br>
-				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">if ['Hola', 'Bojour', 'Selam', 'Hello'] in 'Hi' {
-  println('Yes!')
-} else {
-  println('No!')
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;"><keyword>if</keyword> [<string>'Hola'</string>, <string>'Bojour'</string>, <string>'Selam'</string>, <string>'Hello'</string>] <keyword>in</keyword> <string>'Hi'</string> {
+  <func>println</func>(<string>'Yes!'</string>)
+} <keyword>else</keyword> {
+  <func>println</func>(<string>'No!'</string>)
 }
 
-// OUTPUT: No!</div>
+<comment>// OUTPUT: No!</comment></div>
 				An list can be given if it wants to be checked with more than one value. All elements of list must be strings.
 				Since there is no value equal to or containing any value in the list in this code, the result is evaluated as false.
 				<br>
 				<br>
-				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">if 4 in [4, 2, 7] {
-  println('Yes!')
-} else {
-  println('No!')
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;"><keyword>if</keyword> <numeric>4</numeric> <keyword>in</keyword> [<numeric>4</numeric>, <numeric>2</numeric>, <numeric>7</numeric>] {
+  <func>println</func>(<string>'Yes!'</string>)
+} <keyword>else</keyword> {
+  <func>println</func>(<string>'No!'</string>)
 }
 
-// OUTPUT: Yes!</div>
+<comment>// OUTPUT: Yes!</comment></div>
 				The left value can be a string, the value given on the right is compared with its elements of list and evaluates to true if it is equal to any of its elements, false otherwise.
 				In the code <x class="inline_code"> 4 </x> returns true because it exists in the given list.
 				<br>
 				<br>
-				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">if [4, 'Fract'] in [4, 2, [4, 'Fract'], 7] {
-  println('Yes!')
-} else {
-  println('No!')
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;"><keyword>if</keyword> [<numeric>4</numeric>, <string>'Fract'</string>] <keyword>in</keyword> [<numeric>4</numeric>, <numeric>2</numeric>, [<numeric>4</numeric>, <string>'Fract'</string>], <numeric>7</numeric>] {
+  <func>println</func>(<string>'Yes!'</string>)
+} <keyword>else</keyword> {
+  <func>println</func>(<string>'No!'</string>)
 }
 
-// OUTPUT: Yes!</div>
+<comment>// OUTPUT: Yes!</comment></div>
 			When the left value is an list, the value of the other side is searched directly in it, as with string values, when the right value is an list, it does not scroll through all its elements.
 			<x class="inline_code"> [4, 'Fract'] </x> evaluates to true because it is contained in the given list.
 			The order of the elements makes a difference in the comparison, if the value was <x class="inline_code"> ['Fract', 4] </x> the evaluation would result in false.
@@ -943,13 +942,13 @@ foreach _, a in range(10, 100) {
 			<h2 id="list_comprehension">List Comprehension</h2>
 			List comprehension is a syntactic construct that can be used to build a list based on existing lists.
 			It allows to select existing items by editing or filtering in a shortcut.
-			<div class="code" style="margin-top: 5px; margin-bottom: 5px;">println([x*100 foreach x in range(1, 100)])
-println([x*100 foreach x in range(1, 100), x <= 50])
+			<div class="code" style="margin-top: 5px; margin-bottom: 5px;"><func>println</func>([<name>x</name><operator>*</operator><numeric>100</numeric> <keyword>foreach</keyword> <name>x</name> <keyword>in</keyword> <func>range</func>(<numeric>1</numeric>, <numeric>100</numeric>)])
+<func>println</func>([<name>x</name><operator>*</operator><numeric>100</numeric> <keyword>foreach</keyword> <name>x</name> <keyword>in</keyword> <func>range</func>(<numeric>1</numeric>, <numeric>100</numeric>), <name>x</name> <operator><=</operator> <numeric>50</numeric>])
 
-/* OUTPUT
+<comment>/* OUTPUT
 [100 200 300 400 500 600 700 800 900 1000 1100 1200 1300 1400 1500 1600 1700 1800 1900 2000 2100 2200 2300 2400 2500 2600 2700 2800 2900 3000 3100 3200 3300 3400 3500 3600 3700 3800 3900 4000 4100 4200 4300 4400 4500 4600 4700 4800 4900 5000 5100 5200 5300 5400 5500 5600 5700 5800 5900 6000 6100 6200 6300 6400 6500 6600 6700 6800 6900 7000 7100 7200 7300 7400 7500 7600 7700 7800 7900 8000 8100 8200 8300 8400 8500 8600 8700 8800 8900 9000 9100 9200 9300 9400 9500 9600 9700 9800 9900 10000]
 [100 200 300 400 500 600 700 800 900 1000 1100 1200 1300 1400 1500 1600 1700 1800 1900 2000 2100 2200 2300 2400 2500 2600 2700 2800 2900 3000 3100 3200 3300 3400 3500 3600 3700 3800 3900 4000 4100 4200 4300 4400 4500 4600 4700 4800 4900 5000]
-*/</div>
+*/</comment></div>
 			The first statement selects each element as a multiple of <x class="inline_code"> 100 </x> and does not apply any filters.
 			The second statement selects elements in the same way but applies a filter and only selects values ​<x class="inline_code">​ 50 </x> and below.
 			As seen from the examples, the filter statement is separated by a comma.
@@ -964,21 +963,21 @@ println([x*100 foreach x in range(1, 100), x <= 50])
 			<br>
 			The keyword <x class="inline_code"> struct </x> is used to define a struct.
 			A struct can only contain field names.
-			<div class="code" style="margin-top: 5px; margin-bottom: 5px;">struct Vertex {
-  Lat
-  Long
+			<div class="code" style="margin-top: 5px; margin-bottom: 5px;"><keyword>struct</keyword> <name>Vertex</name> {
+  <name>Lat
+  Long</name>
 }</div>
 			The default constructor function is used to create a struct instance.
 			All fields, including custom fields, must be specified as parameters in the constructor function.
-			<div class="code" style="margin-top: 5px; margin-bottom: 5px;">v = Vertex(10, -10)
-println(v.Lat, ' ', v.Long)
-// OUTPUT: 10 -10</div>
+			<div class="code" style="margin-top: 5px; margin-bottom: 5px;"><name>v</name> <operator>=</operator> <name>Vertex</name>(<numeric>10</numeric>, <numeric>-10</numeric>)
+<func>println</func>(<name>v</name>.<name>Lat</name>, <string>' '</string>, <name>v</name>.<name>Long</name>)
+<comment>// OUTPUT: 10 -10</comment></div>
 			<h3 id="anonymoud_struct">Anonymous Structs</h3>
 			A classic struct statement can be used anonymously to create anonymous structures without name.
-			<div class="code" style="margin-top: 5px; margin-bottom: 5px;">s = struct{Lat, Long}
-v = s(10, -10)
-println(v.Lat, ' ', v.Long)
-// OUTPUT: 10 -10</div>
+			<div class="code" style="margin-top: 5px; margin-bottom: 5px;"><name>s</name> <operator>=</operator> <keyword>struct</keyword>{<name>Lat</name>, <name>Long</name>}
+<name>v</name> <operator>=</operator> <func>s</func>(<numeric>10</numeric>, <numeric>-10</numeric>)
+<func>println</func>(<name>v</name>.<name>Lat</name>, <string>' '</string>, <name>v</name>.<name>Long</name>)
+<comment>// OUTPUT: 10 -10</comment></div>
 
 			<br>
 			<br>
@@ -989,28 +988,28 @@ println(v.Lat, ' ', v.Long)
 			<br><br>
 			If a constructor method is not defined, a default constructor method that takes no parameters is defined.
 			To define a constructor method, it is sufficient to define a method in the name of the class.
-			<div class="code" style="margin-top: 5px; margin-bottom: 5px;">class employee {
-  name = ''
-  surname = ''
-  salary = ''
+			<div class="code" style="margin-top: 5px; margin-bottom: 5px;"><keyword>class</keyword> <name>employee</name> {
+  <name>name</name>    <operator>=</operator> <string>''</string>
+  <name>surname</name> <operator>=</operator> <string>''</string>
+  <name>salary</name>  <operator>=</operator> <string>''</string>
 
-  func employee(name, surname, salary) {
-    this.name = name
-    this.surname = surname
-    this.salary = salary
+  <keyword>func</keyword> <func>employee</func>(<name>name</name>, <name>surname</name>, <name>salary</name>) {
+    <keyword>this</keyword>.<name>name</name>    <operator>=</operator> <name>name</name>
+    <keyword>this</keyword>.<name>surname</name> <operator>=</operator> <name>surname</name>
+    <keyword>this</keyword>.<name>salary</name>  <operator>=</operator> <name>salary</name>
   }
 
-  func getName       { return this.name }
-  func setName(name) { this.name = name }
-  func string        { return this.name + ' ' + this.surname + ' ' + string(this.salary) }
+  <keyword>func</keyword> <func>getName</func>       { <keyword>return</keyword> <keyword>this</keyword>.<name>name</name>  }
+  <keyword>func</keyword> <func>setName</func>(<name>name</name>) { <keyword>this</keyword>.<name>name</name> = <name>name</name>  }
+  <keyword>func</keyword> <func>string</func>        { <keyword>return</keyword> <keyword>this</keyword>.<name>name</name> <operator>+</operator> <string>' '</string> <operator>+</operator> <keyword>this</keyword>.<name>surname</name> <operator>+</operator> <string>' '</string> <operator>+</operator> <func>string</func>(<keyword>this</keyword>.<name>salary</name>) }
 }
 
-e = employee('Daniel', 'McVollo', 9000)
-println(e.string())
-println(e.getName())
-e.setName('Dan')
-println(e.getName())
-println(e.string())</div>
+<name>e</name> <operator>=</operator> <name>employee</name>(<string>'Daniel'</string>, <string>'McVollo'</string>, <numeric>9000</numeric>)
+<func>println</func>(<name>e</name>.<func>string</func>())
+<func>println</func>(<name>e</name>.<func>getName</func>())
+<name>e</name>.<func>setName</func>(<string>'Dan'</string>)
+<func>println</func>(<name>e</name>.<func>getName</func>())
+<func>println</func>(<name>e</name>.<func>string</func>())</div>
 			The <x class="inline_code"> this </x> keyword is used within the class to access the elements of the class.
 			It is a mutable reference of Class.
 			<br>
@@ -1037,7 +1036,7 @@ println(e.string())</div>
 			The <x class="inline_code"> open </x> keyword used for import packages.
 			<h3>Standard Library Import</h3>
 			Standard libraries can be imported with standard import.
-			<div class="code" style="margin-top: 5px; margin-bottom: 5px;">open math</div>
+			<div class="code" style="margin-top: 5px; margin-bottom: 5px;"><keyword>open</keyword> <name>math</name></div>
 			<h3>Local Import</h3>
 			Your directory;
 			<div class="code" style="margin-top: 5px; margin-bottom: 5px;">myproject/
@@ -1045,13 +1044,13 @@ println(e.string())</div>
 |   ├── foo.fract
 └── main.fract</div>
 			You can import your other directories with local import.
-			<div class="code" style="margin-top: 5px; margin-bottom: 5px;">open "./bar"</div>
+			<div class="code" style="margin-top: 5px; margin-bottom: 5px;"><keyword>open</keyword> <string>"./bar"</string></div>
 		<h3>Aliases</h3>
 		Package name is too long or complex?
-		<div class="code" style="margin-top: 5px; margin-bottom: 5px;">open m math
-println(m.Pi)</div>
-		<div class="code" style="margin-top: 5px; margin-bottom: 5px;">open b "./foo/bar"
-println(b.Foo)</div>
+		<div class="code" style="margin-top: 5px; margin-bottom: 5px;"><keyword>open</keyword> <name>m math</name>
+<func>println</func>(<name>m</name>.<name>Pi</name>)</div>
+		<div class="code" style="margin-top: 5px; margin-bottom: 5px;"><keyword>open</keyword> <name>b</name> <string>"./foo/bar"</string>
+<func>println</func>(<name>b</name>.<name>Foo</name>)</div>
 		<div class="warn">
 			<ul>
 				<li>Files in the same directory as your startup file are assumed to have been imported.</li>

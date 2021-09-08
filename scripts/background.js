@@ -1,4 +1,4 @@
-
+/*
 window.onscroll = function() {
   if (window.pageYOffset >= 200) {
     document.body.style = "background-color: #fffcf7;"
@@ -6,3 +6,4 @@ window.onscroll = function() {
     document.body.style = ""
   }
 }
+*/

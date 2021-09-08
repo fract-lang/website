@@ -6,6 +6,7 @@
 		</title>
 		<link rel="icon" href="https://raw.githubusercontent.com/fract-lang/resources/main/logo/fract.svg">
 		<link rel="stylesheet" type="text/css" href="../styles/main.css">
+		<link rel="stylesheet" type="text/css" href="../styles/syntax.css">
 	</head>
 	<body>
 		<div id="navigation">
@@ -30,95 +31,95 @@
 			</div>
 			<div class="main" style="width: 90%;">
 				<div id="simplecalculator" class="section_title">Simple Calculator</div>
-				<div class="code">package main
+				<div class="code"><keyword>package</keyword> <name>main</name>
 
-print('Welcome to Fract simple calculator!')
-println('**** Operations ****')
-println('1 - Add')
-println('2 - Subtract')
-println('3 - Multiple')
-println('4 - Divide')
-println('0 - Exit')
+<func>println</func>(<string>'Welcome to Fract simple calculator!'</string>)
+<func>println</func>(<string>'**** Operations ****'</string>)
+<func>println</func>(<string>'1 - Add'</string>)
+<func>println</func>(<string>'2 - Subtract'</string>)
+<func>println</func>(<string>'3 - Multiple'</string>)
+<func>println</func>(<string>'4 - Divide'</string>)
+<func>println</func>(<string>'0 - Exit'</string>)
 
-while {
-  choice = input('Select your operation: ')
-  if choice == '0' {
-    break
-  } else if choice in ['1', '2', '3', '4'] {
-    first  = float(input('Enter first number: '))
-    second = float(input('Enter second number: '))
-    if choice == '1' {
-      println(first + second)
-    } else if choice == '2' {
-      println(first - second)
-    } else if choice == '3' {
-      println(first * second)
-    } else {
-      println(first / second)
+<keyword>while</keyword> {
+  <name>choice</name> = <func>input</func>(<string>'Select your operation: '</string>)
+  <keyword>if</keyword> <name>choice</name> <operator>==</operator> <string>'0'</string> {
+    <keyword>break</keyword>
+  } <keyword>else if</keyword> <name>choice</name> <keyword>in</keyword> [<string>'1'</string>, <string>'2'</string>, <string>'3'</string>, <string>'4'</string>] {
+    <name>first</name>  = <func>float</func>(<func>input</func>(<string>'Enter first number: '</string>))
+    <name>second</name> = <func>float</func>(<func>input</func>(<string>'Enter second number: '</string>))
+    <keyword>if</keyword> <name>choice</name> <operator>==</operator> <string>'1'</string> {
+      <func>println</func>(<name>first</name> <operator>+</operator> <name>second</name>)
+    } <keyword>else if</keyword> <name>choice</name> <operator>==</operator> <string>'2'</string> {
+      <func>println</func>(<name>first</name> <operator>-</operator> <name>second</name>)
+    } <keyword>else if</keyword> <name>choice</name> <operator>==</operator> <string>'3'</string> {
+      <func>println</func>(<name>first</name> <operator>*</operator> <name>second</name>)
+    } <keyword>else</keyword> {
+      <func>println</func>(<name>first</name> <operator>/</operator> <name>second</name>)
     }
-  } else {
-    println('Invalid choice!')
+  } <keyword>else</keyword> {
+    <func>println</func>(<string>'Invalid choice!'</string>)
   }
 }</div>
 				<br>
 				<br>
 				<div id="fibonacci" class="section_title">Fibonacci</div>
-				<div class="code">package main
+				<div class="code"><keyword>package</keyword> <name>main</name>
 
-nterms = int(input('How many terms: '))
-n1     = 0
-n2     = 1
-count  = 0
-if nterms <= 0 {
-  println('Please enter a positive integer!')
-} else {
-  println('Fibonacci sequence;')
-  while count < nterms {
-    println(n1)
-    nth = n1 + n2
-    # update values
-    n1 = n2
-    n2 = nth
-    count++
+<name>nterms</name> <operator>=</operator> <func>int</func>(<func>input</func>(<string>'How many terms: '</string>))
+<name>n1</name>     <operator>=</operator> <numeric>0</numeric>
+<name>n2</name>     <operator>=</operator> <numeric>1</numeric>
+<name>count</name>  <operator>=</operator> <numeric>0</numeric>
+<keyword>if</keyword> <name>nterms</name> <operator><=</operator> <numeric>0</numeric> {
+  <func>println</func>(<script>'Please enter a positive integer!'</script>)
+} <keyword>else</keyword> {
+  <func>println</func>(<string>'Fibonacci sequence;'</string>)
+  <keyword>while</keyword> <name>count</name> <operator><</operator> <name>nterms</name> {
+    <func>println</func>(<name>n1</name>)
+    <name>nth</name> <operator>=</operator> <name>n1</name> <operator>+<operator> <name>n2</name>
+    <comment>// update values</comment>
+    <name>n1</name> <operator>=</operator> <name>n2</name>
+    <name>n2</name> <operator>=</operator> <name>nth</name>
+    <name>count</name><operator>++</operator>
   }
 }</div>
 				<br>
 				<br>
 				<div id="fizzbuzz" class="section_title">FizzBuzz</div>
-				<div class="code">package main
+				<div class="code"><keyword>package</keyword> <name>main</name>
 
-foreach _, number in range(1, 100) {
-  if number % 3 == 0 && number % 5 == 0 {
-    println('FizzBuzz')
-  } else if number % 3 == 0 {
-    println('Fizz')
-  } else if number % 5 == 0 {
-    println('Buzz')
-  } else {
-    println(number)
+<keyword>foreach</keyword> _, <name>number</name> <keyword>in</keyword> <func>range</func>(<numeric>1</numeric>, <numeric>100</numeric>) {
+  <keyword>if</keyword> <name>number</name> <operator>%</operator> <numeric>3</numeric> <operator>==</operator> <numeric>0</numeric> <operator>&&</operator> <name>number</name> <operator>%</operator> <numeric>5</numeric> <operator>==</operator> <numeric>0</numeric> {
+    <func>println</func>(<string>'FizzBuzz'</string>)
+  } <keyword>else if</keyword> <name>number</name> <operator>%</operator> <numeric>3</numeric> <operator>==</operator> <numeric>0</numeric> {
+    <func>println</func>(<string>'Fizz'</string>)
+  } <keyword>else if</keyword> <name>number</name> <operator>%</operator> <numeric>5</numeric> <operator>==</operator> <numeric>0</numeric> {
+    <func>println</func>(<string>'Buzz'</string>)
+  } <keyword>else</keyword> {
+    <func>println</func>(<name>number</name>)
   }
 }</div>
 				<br>
 				<br>
 				<div id="primenumber" class="section_title">Prime Number</div>
-				<div class="code">package main
+				<div class="code"><keyword> package</keyword> <name>main</name>
 
-foreach _, x in range(2, 100) {
-  if x ==  2 {
-    println(x)
-    continue
-  } else if x < 2 || x % 2 == 0 {
-    continue
+<keyword>foreach</keyword> _, <name>x</name> <keyword>in</keyword> <func>range</func>(<numeric>2</numeric>, <numeric>100</numeric>) {
+  <keyword>if</keyword> <name>x</name> <operator>==</operator> <numeric>2</numeric> {
+    <func>println</func>(<name>x</name>)
+    <keyword>continue</keyword>
+  } <keyword>else if</keyword> <name>x</name> <operator><</operator> <numeric>2</numeric> <operator>||</operator> <name>x</name> <operator>%</operator> <numeric>2</numeric> <operator>==</operator> <numeric>0</numeric> {
+    <keyword>continue</keyword>
   }
-  prime = true
-  foreach _, y in range(2, x - 1) {
-    if x % y == 0 {
-      prime = false
-      break
+  <name>prime</name> <operator>=</operator> <valkeyword>true</valkeyword>
+  <keyword>foreach</keyword> _, <name>y</name> <keyword>in</keyword> <func>range</func>(<numeric>2</numeric>, <name>x</name> <operator>-</operator> <numeric>1</numeric>) {
+    <keyword>if</keyword> <name>x</name> <operator>%</operator> <name>y</name> <operator>==</operator> <numeric>0</numeric> {
+      <name>prime</name> <operator>=</operator> <valkeyword>false</valkeyword>
+      <keyword>break</keyword>
     }
   }
-  if prime {
-    println(x)
+  <keyword>if</keyword> <name>prime</name> {
+    <func>println</func>(<name>x</name>)
   }
 }</div>
 			</div>

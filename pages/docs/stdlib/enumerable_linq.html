@@ -6,11 +6,12 @@
 		</title>
 		<link rel="icon" href="https://raw.githubusercontent.com/fract-lang/resources/main/logo/fract.svg">
 		<link rel="stylesheet" type="text/css" href="../../../styles/main.css">
+		<link rel="stylesheet" type="text/css" href="../../../styles/syntax.css">
 	</head>
 	<body>
 		<div id="navigation">
 			<div>
-				<a href="../../index.html">
+				<a href="../../../index.html">
 					<img width="70" height="70" src="https://raw.githubusercontent.com/fract-lang/resources/main/logo/fract.svg">
 				</a>
 			</div>
@@ -28,7 +29,7 @@
 			<div class="main" style="width: 90%;">
 				<h1>enumerable.linq</h1>
 				<h2 id="functions">Functions</h2>
-				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func Max(lst, filter=none)</div>
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;"><keyword>func</keyword> <func>Max</func>(<name>lst</name>, <name>filter</name><operator>=</operator><keyword>none</keyword>)</div>
 				Max returns maximum value in list by filter.
 				<br>
 				Special cases are:
@@ -39,7 +40,7 @@
 				Panics if filter function is not compatible.<br>
 				Filter function: <x class="inline_code"> func(x) -> bool </x>
 				<br><br>
-				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func Min(lst, filter=none)</div>
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;"><keyword>func</keyword> <func>Min</func>(<name>lst</name>, <name>filter</name><operator>=</operator><keyword>none</keyword>)</div>
 				Min returns minimum value in list by filter.
 				<br>
 				Special cases are:
@@ -50,7 +51,7 @@
 				Panics if filter function is not compatible.<br>
 				Filter function: <x class="inline_code"> func(x) -> bool </x>
 				<br><br>
-				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func Sum(lst, filter=none)</div>
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;"><keyword>func</keyword> <func>Sum</func>(<name>lst</name>, <name>filter</name><operator>=</operator><keyword>none</keyword>)</div>
 				Sum returns sum of all elements by filter.
 				<br>
 				Special cases are:
@@ -61,7 +62,7 @@
 				Panics if filter function is not compatible.<br>
 				Filter function: <x class="inline_code"> func(x) -> bool </x>
 				<br><br>
-				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func Avg(lst, filter=none)</div>
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;"><keyword>func</keyword> <func>Avg</func>(<name>lst</name>, <name>filter</name><operator>=</operator><keyword>none</keyword>)</div>
 				Avg returns average of all elements by filter.
 				<br>
 				Special cases are:
@@ -73,7 +74,7 @@
 				Panics if filter function is not compatible.<br>
 				Filter function: <x class="inline_code"> func(x) -> bool </x>
 				<br><br>
-				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func Any(lst, filter=none)</div>
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;"><keyword>func</keyword> <func>Any</func>(<name>lst</name>, <name>filter</name><operator>=</operator><keyword>none</keyword>)</div>
 				Any returns true if list have a any element by filter, returns false if not.
 				<br>
 				Special cases are:
@@ -84,7 +85,7 @@
 				Panics if filter function is not compatible.<br>
 				Filter function: <x class="inline_code"> func(x) -> bool </x>
 				<br><br>
-				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func Count(lst, filter=none)</div>
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;"><keyword>func</keyword> <func>Count</func>(<name>lst</name>, <name>filter</name><operator>=</operator><keyword>none</keyword>)</div>
 				Count returns count of matched elements by filter.
 				<br>
 				Special cases are:
@@ -95,7 +96,7 @@
 				Panics if filter function is not compatible.<br>
 				Filter function: <x class="inline_code"> func(x) -> bool </x>
 				<br><br>
-				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func Select(lst, selector)</div>
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;"><keyword>func</keyword> <func>Select</func>(<name>lst</name>, <name>selector</name>)</div>
 				Select projects each element of a sequence into a new form.
 				<br>
 				Special cases are:
@@ -106,7 +107,7 @@
 				Panics if selector function is not compatible. <br>
 				Selector function: <x class="inline_code"> func(x) -> any </x>
 				<br><br>
-				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func Where(lst, filter)</div>
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;"><keyword>func</keyword> <func>Where</func>(<name>lst</name>, <name>filter</name>)</div>
 				Where filter each element by filter.
 				<br>
 				Special cases are:
@@ -117,7 +118,7 @@
 				Panics if filter function is not compatible.<br>
 				Filter function: <x class="inline_code"> func(x) -> bool </x>
 				<br><br>
-				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func Index(lst, filter)</div>
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;"><keyword>func</keyword> <func>Index</func>(<name>lst</name>, <name>filter</name>)</div>
 				Index returns index of first matched element, returns -1 if not matched any element.
 				<br>
 				Special cases are:
@@ -128,7 +129,7 @@
 				Panics if filter function is not compatible.<br>
 				Filter function: <x class="inline_code"> func(x) -> bool </x>
 				<br><br>
-				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func IndexLast(lst, filter)</div>
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;"><keyword>func</keyword> <func>IndexLast</func>(<name>lst</name>, <name>filter</name>)</div>
 				IndexLast returns index of first matched element at last of list, returns -1 if not matched any element.
 				<br>
 				Special cases are:
@@ -139,7 +140,7 @@
 				Panics if filter function is not compatible.<br>
 				Filter function: <x class="inline_code"> func(x) -> bool </x>
 				<br><br>
-				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func Order(lst, comparer=none)</div>
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;"><keyword>func</keyword> <func>Order</func>(<name>lst</name>, <name>comparer</name><operator>=</operator><keyword>none</keyword>)</div>
 				Order returns ordered copy of list by comparer.
 				<br>
 				Special cases are:
@@ -149,7 +150,7 @@
 				Panics if comparer function is not compatible.
 				Comparer function: <x class="inline_code"> func(a, b) -> bool </x>
 				<br><br>
-				<div class="code" style="margin-top: 5px; margin-bottom: 5px;">func Match(lst, filter)</div>
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;"><keyword>func</keyword> <func>Match</func>(<name>lst</name>, <name>filter</name>)</div>
 				Match returns true if all elements is returns true from filter, false if not.
 				<br>
 				Special cases are:
