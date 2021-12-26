@@ -999,9 +999,9 @@ Fract Programming Language
     <keyword>this</keyword>.<name>salary</name>  <operator>=</operator> <name>salary</name>
   }
 
-  <keyword>func</keyword> <func>getName</func>       { <keyword>return</keyword> <keyword>this</keyword>.<name>name</name>  }
+  <keyword>func</keyword> <func>getName</func>()     { <keyword>return</keyword> <keyword>this</keyword>.<name>name</name>  }
   <keyword>func</keyword> <func>setName</func>(<name>name</name>) { <keyword>this</keyword>.<name>name</name> = <name>name</name>  }
-  <keyword>func</keyword> <func>string</func>        { <keyword>return</keyword> <keyword>this</keyword>.<name>name</name> <operator>+</operator> <string>' '</string> <operator>+</operator> <keyword>this</keyword>.<name>surname</name> <operator>+</operator> <string>' '</string> <operator>+</operator> <func>string</func>(<keyword>this</keyword>.<name>salary</name>) }
+  <keyword>func</keyword> <func>string</func>()      { <keyword>return</keyword> <keyword>this</keyword>.<name>name</name> <operator>+</operator> <string>' '</string> <operator>+</operator> <keyword>this</keyword>.<name>surname</name> <operator>+</operator> <string>' '</string> <operator>+</operator> <func>string</func>(<keyword>this</keyword>.<name>salary</name>) }
 }
 
 <name>e</name> <operator>=</operator> <name>employee</name>(<string>'Daniel'</string>, <string>'McVollo'</string>, <numeric>9000</numeric>)
@@ -1019,6 +1019,38 @@ Fract Programming Language
 				Can use returns statement in constructor methods but not returns any value.<br>
 				Constructors always returns instance of class.<br>
 			</div>
+			<h3>Default Methods</h3>
+			Default methods are defined by default.
+			But you can override this methods.
+			<ul>
+				<li><strong>String</strong></li>
+				Default string conversion method of object instance.
+			</ul>
+
+			<h4>Example to Default Methods</h4>
+			<div class="code"><keyword>class</keyword> <name>MyList</name> {
+  <name>list</name><operator> =</operator> []
+
+  <keyword>func</keyword> <func>MyList</func>(<keyword>var</keyword> <name>list</name>) {
+    <keyword>this</keyword>.<name>list</name> = <name>list</name>
+  }
+
+  <keyword>func</keyword> <func>String</func>() {
+    <keyword>return this</keyword>.<name>list</name>
+  }
+}
+
+<name>lst</name> = <name>MyList</name>([<numeric>1</numeric>, <numeric>2</numeric>, <numeric>20</numeric>, <numeric>-3</numeric>, <numeric>590</numeric>, <numeric>49</numeric>])
+<func>println</func>(<name>lst</name>)
+<func>println</func>(<name>lst</name>.<func>String</func>())
+<func>println</func>(<func>string</func>(<name>lst</name>))
+
+<comment>/* OUTPUT
+[1, 2, 20, -3, 590, 49]
+[1, 2, 20, -3, 590, 49]
+[1, 2, 20, -3, 590, 49]
+*/</comment>
+</div>
 
 			<br>
 			<br>
