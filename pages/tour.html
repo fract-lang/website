@@ -379,7 +379,7 @@
 				The list structure, which is useful for holding multiple values, is offered by many programming languages.
 				Once an list is defined, its size remains constant. Each element can be of a different data type.
 				<div class="code" style="margin-top: 5px; margin-bottom: 5px;"><name>list</name> <operator>=</operator> [<numeric>1</numeric>, <numeric>20.3</numeric>, <string>'Fract'</string>, <name>print</name>]</div>
-				An list is defined by writing the values ​​between the parentheses, separated by commas.
+				An list is defined by writing the values between the parentheses, separated by commas.
 				<br><br>
 				<div class="code" style="margin-top: 5px; margin-bottom: 5px;"><name>list</name> <operator>=</operator> [<numeric>1</numeric>, <numeric>10</numeric>, <numeric>2</numeric>, <numeric>20</numeric>, <numeric>3</numeric>, <numeric>30</numeric>]
 <func>println</func>(<name>list</name>)
@@ -391,7 +391,7 @@
 // [1 10 2 20 3 30]
 // 2
 // [1 10 200 20 3 30]</comment></div>
-				List allows to get and set values ​​with the help of index.
+				List allows to get and set values with the help of index.
 				The index is specified as an integer in parentheses and access is provided.
 				Index 0 represents the first element, and it continues to increase by one for each subsequent element.
 				It is also possible to access elements in reverse with negative indexing.
@@ -431,7 +431,7 @@
 				<br>
 				<br>
 				<h2 id="slicing">Slicing</h2>
-				You can get a specific range with index values ​​separated by colons. <br>
+				You can get a specific range with index values separated by colons. <br>
 				If no initial value is given, <x class="inline_code"> 0 </x> is taken as the basis. <br>
 				If no value is given for the last index, it is taken as a basis until the last value.
 
@@ -445,8 +445,8 @@
 				<br>
 				<br>
 				<h2 id="why_immutability">Why Immutability?</h2>
-				By default, mutable values ​​can cause undesirable results.
-				Variable values ​​represent a reference when used directly, and the same value now has more than one delegate. This may cause you to change a value that you do not want to change.
+				By default, mutable values can cause undesirable results.
+				Variable values represent a reference when used directly, and the same value now has more than one delegate. This may cause you to change a value that you do not want to change.
 				<div class="code" style="margin-top: 5px; margin-bottom: 5px;"><name>a</name> <operator>=</operator> [<numeric>1</numeric>, <numeric>4</numeric>, <numeric>8</numeric>]
 <name>b</name> <operator>=</operator> <name>a</name>
 <name>b</name>[<numeric>2</numeric>] <operator>=</operator> <numeric>10</numeric>
@@ -480,7 +480,7 @@
 				<br>
 				<br>
 				<h2 id="control_flow">Control Flow</h2>
-				It is the building block of most programming languages ​​to repeatedly run or manipulate algorithms according to conditions.
+				It is the building block of most programming languages to repeatedly run or manipulate algorithms according to conditions.
 				The most common expressions that will allow you to control the Fract code are if and loop expressions.
 				<h3><x class="inline_code"> if </x> Expressions</h3>
 				An if statement allows you to branch your code based on conditions. You provide a condition and then write the algorithm that will run if the condition is met.
@@ -625,7 +625,7 @@
 
 <comment>// OUTPUT: 9</comment></div>
 				The above function takes two values, sums them up and writes them to the screen.
-				Since the values ​​given as arguments are <x class="inline_code"> 5 </x> and <x class="inline_code"> 4 </x>, the <x class="inline_code"> a </x> parameter is <x class="inline_code"> 5 </x> and the <x class="inline_code"> b </x> parameter is <x class="inline_code"> 4 </x>, respectively.
+				Since the values given as arguments are <x class="inline_code"> 5 </x> and <x class="inline_code"> 4 </x>, the <x class="inline_code"> a </x> parameter is <x class="inline_code"> 5 </x> and the <x class="inline_code"> b </x> parameter is <x class="inline_code"> 4 </x>, respectively.
 				<br>
 				<br>
 				A parameter can take a default value. Parameters that take a default value do not have to take a value.
@@ -714,10 +714,10 @@
 				After an argument is specified by name, all subsequent arguments must also be specified by name.
 				In the first call, all the arguments were specified in different order by name and received their values.
 				In the second call, the first argument is not specified with a name.
-				All values ​​until specified by name are assigned to the arguments in order, like a regular call.
+				All values until specified by name are assigned to the arguments in order, like a regular call.
 				<br>
 				<br>
-				A parameter can be used with the <x class="inline_code"> ... </x> operator so that it can take multiple values. In this way, the parameter will take all values ​​as an list.
+				A parameter can be used with the <x class="inline_code"> ... </x> operator so that it can take multiple values. In this way, the parameter will take all values as an list.
 				<div class="code" style="margin-top: 5px; margin-bottom: 5px;"><keyword>func</keyword> <func>params</func>(<operator>...</operator><name>a</name>, <operator>...</operator><name>b</name><operator>=</operator>[]) {
   <name>r</name> <operator>=</operator> <numeric>0</numeric>
   <keyword>foreach</keyword> _, <name>n</name> <keyword>in</keyword> <name>a</name> {
@@ -735,9 +735,9 @@
 <comment>// OUTPUT
 // 330
 // 30</comment></div>
-				The code above has a function with two more than one parameter, and this function finds the total values ​​of the parameters, adds them together and prints them out.
-				The first call assigns all values ​​to parameter <x class="inline_code"> a </x>, parameter <x class="inline_code"> b </x> remains its default value, the empty list.
-				If a parameter that can take multiple values ​​is followed by another parameter, it must be specified with its name.
+				The code above has a function with two more than one parameter, and this function finds the total values of the parameters, adds them together and prints them out.
+				The first call assigns all values to parameter <x class="inline_code"> a </x>, parameter <x class="inline_code"> b </x> remains its default value, the empty list.
+				If a parameter that can take multiple values is followed by another parameter, it must be specified with its name.
 				As was done in the second call, the <x class="inline_code"> a </x> and <x class="inline_code"> b </x> parameters now have special values.
 				<br>
 				<br>
@@ -891,7 +891,7 @@ Fract Programming Language
 				<h2 id="contains_checking">Contains Checking</h2>
 				Often times, it may be necessary to quickly check the value.
 				Checking whether there is a value in it is one of them, Fract has an approach that provides convenience in this regard.
-				With the <x class="inline_code"> in </x> keyword, it is also possible to check values ​​inside enumerable values.
+				With the <x class="inline_code"> in </x> keyword, it is also possible to check values inside enumerable values.
 				The value on the left is searched within the value on the right.
 				<div class="code" style="margin-top: 5px; margin-bottom: 5px;"><keyword>if</keyword> <string>'urk'</string> <keyword>in</keyword> <string>'Turkey'</string> {
   <func>println</func>(<string>'Yes!'</string>)
@@ -950,7 +950,7 @@ Fract Programming Language
 [100 200 300 400 500 600 700 800 900 1000 1100 1200 1300 1400 1500 1600 1700 1800 1900 2000 2100 2200 2300 2400 2500 2600 2700 2800 2900 3000 3100 3200 3300 3400 3500 3600 3700 3800 3900 4000 4100 4200 4300 4400 4500 4600 4700 4800 4900 5000]
 */</comment></div>
 			The first statement selects each element as a multiple of <x class="inline_code"> 100 </x> and does not apply any filters.
-			The second statement selects elements in the same way but applies a filter and only selects values ​<x class="inline_code">​ 50 </x> and below.
+			The second statement selects elements in the same way but applies a filter and only selects values <x class="inline_code"> 50 </x> and below.
 			As seen from the examples, the filter statement is separated by a comma.
 			The loop does not support a double variable (index, element) like the classic foreach loop.
 			It can take a single variable and that variable represents the element in that loop step.
@@ -1036,7 +1036,7 @@ Fract Programming Language
   }
 
   <keyword>func</keyword> <func>String</func>() {
-    <keyword>return this</keyword>.<name>list</name>
+    <keyword>return</keyword> <func>string</func>(<keyword>this</keyword>.<name>list</name>)
   }
 }
 
