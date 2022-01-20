@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>
+			The Fract Programming Language
+		</title>
+		<link rel="icon" href="https://raw.githubusercontent.com/fract-lang/resources/main/logo/fract.svg">
+		<link rel="stylesheet" type="text/css" href="../../../styles/main.css">
+		<link rel="stylesheet" type="text/css" href="../../../styles/syntax.css">
+	</head>
+	<body>
+		<div id="navigation">
+			<div>
+				<a href="../../../index.html">
+					<img width="70" height="70" src="https://raw.githubusercontent.com/fract-lang/resources/main/logo/fract.svg">
+				</a>
+			</div>
+			<ul class="linktable">
+				<li><a href="../../samples.html">Samples</a></li>
+				<li><a href="../docs.html">Documentation</a></li>
+				<li><a href="../../tour.html">Tour</a></li>
+			</ul>
+		</div>
+
+		<div id="side_menu" class="side_menu">
+			<div class="linktable" style="width: 276px; position: sticky; top: 40px;">
+				<a href="#functions">Functions</a>
+			</div>
+			<div class="main" style="width: 90%;">
+				<h1>mem</h1>
+				<h2 id="functions">Functions</h2>
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;"><keyword>func</keyword> <func>Malloc</func>(<name>size</name>)</div>
+				Malloc returns n size allocated list by specified size.
+				Elements are actually none but is not literally none.
+				For this reason, this is dangerous function if you not set each element with real value manually.
+				<br>
+				Special case is:
+				<li>Malloc(size) = None if size is not integer</li>
+				<br><br>
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;"><keyword>func</keyword> <func>Calloc</func>(<name>size</name>, <name>value</name><operator>=</operator><keyword>none</keyword>)</div>
+				Calloc returns n size allocated and list, setted each elements sets as specified value.
+				<br>
+				Special case is:
+				<li>Calloc(size) = None if size is not integer</li>
+				<br><br>
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;"><keyword>func</keyword> <func>Drop</func>(<name>name</name>)</div>
+				Drop deletes define from current package source by specified name.
+				Reports process state as boolean.
+				<br>
+				Special case is:
+				<li>Drop(name) = error if "name" is not string</li>
+				<br><br>
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;"><keyword>func</keyword> <func>Copy</func>(*<name>dest</name>, <keyword>const var</keyword> <name>src</name>)</div>
+				Copy copies source list into destination list.
+				And reports success state as boolean.
+				<br>
+				Special case is:
+				<li>Copy(dest, src) = false if "dest" or "src" is not list</li>
+				<br><br>
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;"><keyword>func</keyword> <func>Defs</func>()</div>
+				Defs returns all defines as list of current package.
+				<br><br>
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;"><keyword>func</keyword> <func>IsReal</func>(<name>value</name>)</div>
+				IsReal reports specified value is real or not.
+			</div>
+		</div>
+
+		<div style="margin-top: 100px; margin-bottom: 50px;">
+			<center style="user-select: none;">
+				<table class="linktable" style="margin: 100px;">
+					<tr>
+						<td>Contribute</td>
+						<td>Open Source</td>
+						<td>Community</td>
+					</tr>
+					<tr>
+						<td><a href="../../code_of_conduct.html">Code of Conduct</a></td>
+						<td><a target="_blank" href="https://github.com/fract-lang/fract">Repository</a></td>
+						<td><a href="../../license.html">License</a></td>
+					</tr>
+					<tr>
+						<td><a href="../../contributor_guide.html">Guide</td>
+						<td><a target="_blank" href="https://github.com/fract-lang">GitHub Organization</a></td>
+						<td><a target="_blank" href="https://github.com/fract-lang/fract/graphs/contributors">Contributors</a></td>
+					</tr>
+					<tr>
+						<td><a target="_blank" href="https://github.com/fract-lang/fract/discussions">Discussions</a></td>
+						<td><a target="_blank" href="https://github.com/fract-lang/website">Source Code</a></td>
+						<td><a target="_blank" href="https://github.com/fract-lang/resources">Resources</a></td>
+					</tr>
+					<tr>
+						<td><a target="_blank" href="https://github.com/fract-lang/fract/issues">Issues</a></td>
+						<td></td>
+						<td></td>
+					</tr>
+				</table>
+				<div id="endmsg"></div>
+			</center>
+		</div>
+	</body>
+	<script src="../../../scripts/background.js"></script>
+	<script src="../../../scripts/generic.js"></script>
+</html>
