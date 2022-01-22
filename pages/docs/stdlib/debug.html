@@ -27,45 +27,22 @@
 				<a href="#functions">Functions</a>
 			</div>
 			<div class="main" style="width: 90%;">
-				<h1>mem</h1>
+				<h1>debug</h1>
 				<h2 id="functions">Functions</h2>
-				<div class="code" style="margin-top: 5px; margin-bottom: 5px;"><keyword>func</keyword> <func>Malloc</func>(<name>size</name>)</div>
-				Malloc returns n size allocated list by specified size.
-				Elements are actually none but is not literally none.
-				For this reason, this is dangerous function if you not set each element with real value manually.
-				<br>
-				Special case is:
-				<li>Malloc(size) = None if size is not integer</li>
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;"><keyword>func</keyword> <func>Assert</func>(<name>exp</name>, <name>message</name><operator>=</operator><string>"assertion failed"</string>)</div>
+				Assert is check specified expression and if debug mode is enabled, panics program with specified message if expression is not true.
 				<br><br>
-				<div class="code" style="margin-top: 5px; margin-bottom: 5px;"><keyword>func</keyword> <func>Calloc</func>(<name>size</name>, <name>value</name><operator>=</operator><keyword>none</keyword>)</div>
-				Calloc returns n size allocated and list, setted each elements sets as specified value.
-				<br>
-				Special case is:
-				<li>Calloc(size) = None if size is not integer</li>
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;"><keyword>func</keyword> <func>AssertIf</func>(<name>exp</name>, <name>value</name>, <name>message</name><operator>=</operator><string>"assertion failed"</string>)</div>
+				AssertIf is check specified expression and if debug mode is enabled, panics program with specified message if expression is not equals to specified value.
 				<br><br>
-				<div class="code" style="margin-top: 5px; margin-bottom: 5px;"><keyword>func</keyword> <func>Drop</func>(<name>name</name>)</div>
-				Drop deletes define from current package source by specified name.
-				Reports process state as boolean.
-				<br>
-				Special case is:
-				<li>Drop(name) = error if "name" is not string</li>
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;"><keyword>func</keyword> <func>Enable</func>()</div>
+				Enables the debug mode.
 				<br><br>
-				<div class="code" style="margin-top: 5px; margin-bottom: 5px;"><keyword>func</keyword> <func>Copy</func>(*<name>dest</name>, <keyword>const var</keyword> <name>src</name>)</div>
-				Copy copies source list into destination list.
-				And reports success state as boolean.
-				<br>
-				Special case is:
-				<li>Copy(dest, src) = false if "dest" or "src" is not list</li>
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;"><keyword>func</keyword> <func>Disable</func>()</div>
+				Disables the debug mode.
 				<br><br>
-				<div class="code" style="margin-top: 5px; margin-bottom: 5px;"><keyword>func</keyword> <func>Defs</func>()</div>
-				Defs returns all defines as list of current package.
-				<br><br>
-				<div class="code" style="margin-top: 5px; margin-bottom: 5px;"><keyword>func</keyword> <func>GC</func>()</div>
-				GC runs a garbage collection of Go and blocks the caller until the garbage collection is complete.
-				It may also block the entire program.
-				<br><br>
-				<div class="code" style="margin-top: 5px; margin-bottom: 5px;"><keyword>func</keyword> <func>IsReal</func>(<name>value</name>)</div>
-				IsReal reports specified value is real or not.
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;"><keyword>func</keyword> <func>Mode</func>()</div>
+				Mode returns debug mode state.
 			</div>
 		</div>
 
