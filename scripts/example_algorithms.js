@@ -24,7 +24,7 @@ const code_primecheck =
   } <keyword>else if</keyword> <name>x</name> <operator><</operator> <numeric>2</numeric> <operator>||</operator> <name>x</name> <operator>%</operator> <numeric>2</numeric> <operator>==</operator> <numeric>0</numeric> {
     <keyword>return</keyword> <valkeyword>false</valkeyword>
   }
-  <keyword>foreach</keyword> _, <name>y</name> <keyword>in</keyword> <func>range</func>(<numeric>2</numeric>, <name>x</name> <operator>-</operator> <numeric>1</numeric>) {
+  <keyword>for</keyword> _, <name>y</name> <keyword>in</keyword> <func>range</func>(<numeric>2</numeric>, <name>x</name> <operator>-</operator> <numeric>1</numeric>) {
     <keyword>if</keyword> <name>x</name> <operator>%</operator> <name>y</name> <operator>==</operator> <numeric>0</numeric> {
       <keyword>return</keyword> <valkeyword>false</valkeyword>
     }
@@ -32,7 +32,7 @@ const code_primecheck =
   <keyword>return</keyword> <valkeyword>true</valkeyword>
 }
 
-<keyword>foreach</keyword> _, <name>i</name> <keyword>in</keyword> <func>range</func>(<numeric>2</numeric>, <numeric>100</numeric>) {
+<keyword>for</keyword> _, <name>i</name> <keyword>in</keyword> <func>range</func>(<numeric>2</numeric>, <numeric>100</numeric>) {
   <keyword>if</keyword> <func>prime</func>(<name>i</name>) {
     <func>println</func>(<name>i</name>)
   }
@@ -41,7 +41,7 @@ const code_primecheck =
 const code_fizzbuzz =
 `<keyword>package</keyword> <name>main</name>
 
-<keyword>foreach</keyword> _, <name>number</name> <keyword>in</keyword> <func>range</func>(<numeric>1</numeric>, <numeric>100</numeric>) {
+<keyword>for</keyword> _, <name>number</name> <keyword>in</keyword> <func>range</func>(<numeric>1</numeric>, <numeric>100</numeric>) {
   <keyword>if</keyword> <name>number</name> <operator>%</operator> <numeric>3</numeric> <operator>==</operator> <numeric>0</numeric> <operator>&&</operator> <name>number</name> <operator>%</operator> <numeric>5</numeric> <operator>==</operator> <numeric>0</numeric> {
     <func>println</func>(<string>'FizzBuzz'</string>)
   } <keyword>else if</keyword> <name>number</name> <operator>%</operator> <numeric>3</numeric> <operator>==</operator> <numeric>0</numeric> {
@@ -72,7 +72,7 @@ const code_listordering =
 
 <keyword>func</keyword> <func>order</func>(<keyword>var</keyword> <name>lst</name>, <name>comparer</name><operator>=</operator><keyword>none</keyword>) {
   <name>length</name> <operator>=</operator> <name>lst</name>.<name>length</name>-<numeric>1</numeric>
-  <keyword>foreach</keyword> <name>i</name> <keyword>in</keyword> <name>lst</name> {
+  <keyword>for</keyword> <name>i</name> <keyword>in</keyword> <name>lst</name> {
     <name>j</name> <operator>=</operator> <numeric>0</numeric>
     <keyword>while</keyword> <name>j</name> <operator><</operator> <name>length</name>-<name>i</name> {
       <name>a</name>, <name>b</name> <operator>=</operator> <operator>&</operator><name>lst</name>[<name>j</name><operator>+</operator><numeric>1</numeric>], <operator>&</operator><name>lst</name>[<name>j</name>]

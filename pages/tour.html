@@ -530,7 +530,7 @@
 				A loop repeatedly executes the code block inside it as the condition is met.
 				<br>
 				<br>
-				Fract has two different cycles: <x class="inline_code"> foreach </x> and <x class="inline_code"> while </x> loops.
+				Fract has two different cycles: <x class="inline_code"> for </x> and <x class="inline_code"> while </x> loops.
 				<h4>While Loop</h4>
 				While the condition is true, the loop runs.
 				<div class="code" style="margin-top: 5px; margin-bottom: 5px;"><name>n</name> <operator>=</operator> <numeric>0</numeric>
@@ -554,10 +554,10 @@
 				If the size of the known list changes in the future, this code will cause an error if its size is less than 5, and if it is large, it will print incompletely.
 				So in any change the condition also needs to be updated, forgetting to change it will cause problems.
 				<div class="code" style="margin-top: 5px; margin-bottom: 5px;"><name>t1</name> <operator>=</operator> [<numeric>0</numeric>, <numeric>3</numeric>, <numeric>2</numeric>, <numeric>1</numeric>, <numeric>90</numeric>]
-<keyword>foreach</keyword> <name>i</name> <keyword>in</keyword> <name>t1</name> {
+<keyword>for</keyword> <name>i</name> <keyword>in</keyword> <name>t1</name> {
   <func>println</func>(<name>t1</name>[<name>i</name>])
 }</div>
-				You can eliminate these situations with the <x class="inline_code"> foreach </x> loop.
+				You can eliminate these situations with the <x class="inline_code"> for </x> loop.
 				It adjusts itself according to the size of the list, and each element runs as a single repeat.
 				Also, the code now looks cleaner and more readable.
 				<br>
@@ -566,7 +566,7 @@
 				If you want to get the element itself, you can add a second parameter.
 				If you don't need to use the index value, you can ignore it.
 				<div class="code" style="margin-top: 5px; margin-bottom: 5px;"><name>t1</name> <operator>=</operator> [<numeric>0</numeric>, <numeric>3</numeric>, <numeric>2</numeric>, <numeric>1</numeric>, <numeric>90</numeric>]
-<keyword>foreach</keyword> _, <name>i</name> <keyword>in</keyword> <name>t1</name> {
+<keyword>for</keyword> _, <name>i</name> <keyword>in</keyword> <name>t1</name> {
   <func>println</func>(<name>t1</name>[<name>i</name>])
 }</div>
 				The code now looks cleaner and performs better.
@@ -586,7 +586,7 @@
 				With the keyword  <x class="inline_code"> break </x>, it is possible to override and terminate the entire loop even when the loop could still run.
 				<br>
 				<br>
-				<div class="code" style="margin-top: 5px; margin-bottom: 5px;"><keyword>foreach</keyword> _, <name>item</name> <keyword>in</keyword> [<numeric>0</numeric>, <numeric>1</numeric>, <numeric>2</numeric>, <numeric>3</numeric>, <numeric>4.0</numeric>] {
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;"><keyword>for</keyword> _, <name>item</name> <keyword>in</keyword> [<numeric>0</numeric>, <numeric>1</numeric>, <numeric>2</numeric>, <numeric>3</numeric>, <numeric>4.0</numeric>] {
   <keyword>if</keyword> <name>item</name> <operator>==</operator> <numeric>1</numeric> <operator>||</operator> <name>item</name> <operator>==</operator> <numeric>3</numeric> {
     <keyword>continue</keyword>
   }
@@ -720,10 +720,10 @@
 				A parameter can be used with the <x class="inline_code"> ... </x> operator so that it can take multiple values. In this way, the parameter will take all values as an list.
 				<div class="code" style="margin-top: 5px; margin-bottom: 5px;"><keyword>func</keyword> <func>params</func>(<operator>...</operator><name>a</name>, <operator>...</operator><name>b</name><operator>=</operator>[]) {
   <name>r</name> <operator>=</operator> <numeric>0</numeric>
-  <keyword>foreach</keyword> _, <name>n</name> <keyword>in</keyword> <name>a</name> {
+  <keyword>for</keyword> _, <name>n</name> <keyword>in</keyword> <name>a</name> {
     <name>r</name> <operator>+=</operator> <name>n</name>
   }
-  <keyword>foreach</keyword> _, <name>n</name> <keyword>in</keyword> <name>b</name> {
+  <keyword>for</keyword> _, <name>n</name> <keyword>in</keyword> <name>b</name> {
     <name>r</name> <operator>+=</operator> <name>n</name>
   }
   <func>println</func>(<name>r</name>)
@@ -846,7 +846,7 @@ Fract Programming Language
 				<br>
 				<br>
 				<div class="code" style="margin-top: 5px; margin-bottom: 5px;"><func>println</func>(<string>'counting'</string>)
-<keyword>foreach</keyword> _, <name>i</name> <keyword>in</keyword> <func>range</func>(<numeric>9</numeric>) {
+<keyword>for</keyword> _, <name>i</name> <keyword>in</keyword> <func>range</func>(<numeric>9</numeric>) {
   <keyword>defer</keyword> <func>println</func>(<name>i</name>)
 }
 <func>println</func>(<string>'done'</string>)
@@ -874,7 +874,7 @@ Fract Programming Language
 				Concurrent calls are performed by creating a lightweight thread managed by Fract.
 				<div class="warn" style="margin-top: 5px; margin-bottom: 5px;">Goroutines run in the different memory space.</div>
 				<div class="code" style="margin-top: 5px; margin-bottom: 5px;"><keyword>func</keyword> <func>say</func>(<name>s</name>) {
-  <keyword>foreach</keyword> _, <name>i</name> <keyword>in</keyword> <func>range</func>(<numeric>0</numeric>, <numeric>4</numeric>) {
+  <keyword>for</keyword> _, <name>i</name> <keyword>in</keyword> <func>range</func>(<numeric>0</numeric>, <numeric>4</numeric>) {
     <func>println</func>(<name>s</name>)
   }
 }
@@ -882,7 +882,7 @@ Fract Programming Language
 <keyword>go</keyword> <func>say</func>(<string>'world'</string>)
 <keyword>go</keyword> <func>say</func>(<string>'hello'</string>)
 
-<keyword>foreach</keyword> _, <name>a</name> <keyword>in</keyword> <func>range</func>(<numeric>10</numeric>, <numeric>100</numeric>) {
+<keyword>for</keyword> _, <name>a</name> <keyword>in</keyword> <func>range</func>(<numeric>10</numeric>, <numeric>100</numeric>) {
   <func>println</func>(<name>a</name>)
 }</div>
 
@@ -942,8 +942,8 @@ Fract Programming Language
 			<h2 id="list_comprehension">List Comprehension</h2>
 			List comprehension is a syntactic construct that can be used to build a list based on existing lists.
 			It allows to select existing items by editing or filtering in a shortcut.
-			<div class="code" style="margin-top: 5px; margin-bottom: 5px;"><func>println</func>([<name>x</name><operator>*</operator><numeric>100</numeric> <keyword>foreach</keyword> <name>x</name> <keyword>in</keyword> <func>range</func>(<numeric>1</numeric>, <numeric>100</numeric>)])
-<func>println</func>([<name>x</name><operator>*</operator><numeric>100</numeric> <keyword>foreach</keyword> <name>x</name> <keyword>in</keyword> <func>range</func>(<numeric>1</numeric>, <numeric>100</numeric>), <name>x</name> <operator><=</operator> <numeric>50</numeric>])
+			<div class="code" style="margin-top: 5px; margin-bottom: 5px;"><func>println</func>([<name>x</name><operator>*</operator><numeric>100</numeric> <keyword>for</keyword> <name>x</name> <keyword>in</keyword> <func>range</func>(<numeric>1</numeric>, <numeric>100</numeric>)])
+<func>println</func>([<name>x</name><operator>*</operator><numeric>100</numeric> <keyword>for</keyword> <name>x</name> <keyword>in</keyword> <func>range</func>(<numeric>1</numeric>, <numeric>100</numeric>), <name>x</name> <operator><=</operator> <numeric>50</numeric>])
 
 <comment>/* OUTPUT
 [100 200 300 400 500 600 700 800 900 1000 1100 1200 1300 1400 1500 1600 1700 1800 1900 2000 2100 2200 2300 2400 2500 2600 2700 2800 2900 3000 3100 3200 3300 3400 3500 3600 3700 3800 3900 4000 4100 4200 4300 4400 4500 4600 4700 4800 4900 5000 5100 5200 5300 5400 5500 5600 5700 5800 5900 6000 6100 6200 6300 6400 6500 6600 6700 6800 6900 7000 7100 7200 7300 7400 7500 7600 7700 7800 7900 8000 8100 8200 8300 8400 8500 8600 8700 8800 8900 9000 9100 9200 9300 9400 9500 9600 9700 9800 9900 10000]

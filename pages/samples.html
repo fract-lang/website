@@ -88,7 +88,7 @@
 				<div id="fizzbuzz" class="section_title">FizzBuzz</div>
 				<div class="code"><keyword>package</keyword> <name>main</name>
 
-<keyword>foreach</keyword> _, <name>number</name> <keyword>in</keyword> <func>range</func>(<numeric>1</numeric>, <numeric>100</numeric>) {
+<keyword>for</keyword> _, <name>number</name> <keyword>in</keyword> <func>range</func>(<numeric>1</numeric>, <numeric>100</numeric>) {
   <keyword>if</keyword> <name>number</name> <operator>%</operator> <numeric>3</numeric> <operator>==</operator> <numeric>0</numeric> <operator>&&</operator> <name>number</name> <operator>%</operator> <numeric>5</numeric> <operator>==</operator> <numeric>0</numeric> {
     <func>println</func>(<string>'FizzBuzz'</string>)
   } <keyword>else if</keyword> <name>number</name> <operator>%</operator> <numeric>3</numeric> <operator>==</operator> <numeric>0</numeric> {
@@ -104,7 +104,7 @@
 				<div id="primenumber" class="section_title">Prime Number</div>
 				<div class="code"><keyword> package</keyword> <name>main</name>
 
-<keyword>foreach</keyword> _, <name>x</name> <keyword>in</keyword> <func>range</func>(<numeric>2</numeric>, <numeric>100</numeric>) {
+<keyword>for</keyword> _, <name>x</name> <keyword>in</keyword> <func>range</func>(<numeric>2</numeric>, <numeric>100</numeric>) {
   <keyword>if</keyword> <name>x</name> <operator>==</operator> <numeric>2</numeric> {
     <func>println</func>(<name>x</name>)
     <keyword>continue</keyword>
@@ -112,7 +112,7 @@
     <keyword>continue</keyword>
   }
   <name>prime</name> <operator>=</operator> <valkeyword>true</valkeyword>
-  <keyword>foreach</keyword> _, <name>y</name> <keyword>in</keyword> <func>range</func>(<numeric>2</numeric>, <name>x</name> <operator>-</operator> <numeric>1</numeric>) {
+  <keyword>for</keyword> _, <name>y</name> <keyword>in</keyword> <func>range</func>(<numeric>2</numeric>, <name>x</name> <operator>-</operator> <numeric>1</numeric>) {
     <keyword>if</keyword> <name>x</name> <operator>%</operator> <name>y</name> <operator>==</operator> <numeric>0</numeric> {
       <name>prime</name> <operator>=</operator> <valkeyword>false</valkeyword>
       <keyword>break</keyword>
