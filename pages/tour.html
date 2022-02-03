@@ -27,7 +27,6 @@
 			<div class="linktable" style="width: 276px; position: sticky; top: 40px;">
 				<a href="#hello_world">Hello World!</a>
 				<a href="#comments">Comments</a>
-				<a href="#statement_terminator">Statement Terminator</a>
 				<a href="#operators">Operators</a>
 				<a href="#data_types">Data Types</a>
 				<a href="#naming_conventions">Naming Conventions</a>
@@ -76,20 +75,8 @@
 
 				<br>
 				<br>
-				<h2 id="statement_terminator">Statement Terminator</h2>
-				It is available in many programming languages and is generally mandated. Fract does not enforce this, but supports its use.
-				If you wanted to continue the line, it would be freedom-restricting not having that option.
-				Therefore, you can write multiple statements on a single line by separating the statements with the statement terminator.
-				<div class="code" style="margin-top: 5px;"><func>println</func>(<numeric>5</numeric>); <func>println</func>(<numeric>2</numeric>)</div>
-
-				<br>
-				<br>
 				<h2 id="operators">Operators</h2>
 				<table border="1">
-					<tr>
-						<td align="center"><b>;</b></td>
-						<td>Statement Terminator.</td>
-					</tr>
 					<tr>
 						<td align="center"><b>+</b></td>
 						<td>Addition.</td>
@@ -259,7 +246,8 @@
 				<h3>String</h3>
 				<li><a target="_blank" href="docs/builtin_objects/string.html">String Object</a></li><br>
 				Strings of characters, hold text data.
-				<div class="code" style="margin-top: 5px; margin-bottom: 5px;"><string>'Fract!'</string>; <string>"Fract!"</string></div>
+				<div class="code" style="margin-top: 5px; margin-bottom: 5px;"><string>'Fract!'</string>
+<string>"Fract!"</string></div>
 				String provides a escape sequences and represents with <x class="inline_code"> \ </x>.
 				<h4>Escape Sequences</h4>
 				<table>
@@ -1024,7 +1012,9 @@ Fract Programming Language
 			But you can override this methods.
 			<ul>
 				<li><strong>String</strong></li>
-				Default string conversion method of object instance.
+				Default string conversion method of class instance.
+				<li><strong>Length</strong></li>
+				Default length method of class instance. Not define auto by Fract.
 			</ul>
 
 			<h4>Example to Default Methods</h4>
