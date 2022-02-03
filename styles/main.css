@@ -19,12 +19,14 @@ body {
 	background-color: white;
 }
 
-::-moz-selection { /* Code for Firefox */
-	background: rgb(255, 208, 0);
+::-moz-selection {
+	background: rgb(255, 145, 0);
+	color: rgb(255, 255, 255);
 }
 
 ::selection {
-	background: rgb(255, 208, 0);
+	background: rgb(255, 145, 0);
+	color: rgb(255, 255, 255);
 }
 
 #navigation {
@@ -73,13 +75,15 @@ body {
 
 .code {
 	color: gainsboro;
-	background-color: #1d1d1d;
+	background-color: #000000;
 	white-space: pre-wrap;
 	overflow: auto;
 	font-family: 'Code';
 	font-size: 15px;
-	border: 2px solid silver;
-	border-radius: 10px;
+	border-style: solid;
+	border-color: rgb(197, 113, 35);
+	border-width: 1px;
+	border-radius: 5px;
 	padding: 20px;
 }
 
@@ -132,7 +136,7 @@ body {
 
 .dropdown-content a:hover {
 	transition: 0.15s;
-	background-color: #e0e0e0
+	background-color: #ffefbc
 }
 
 .dropdown:hover .dropdown-content {
