@@ -77,7 +77,7 @@
 				<br>
 				<br>
 				<h2 id="statement_terminator">Statement Terminator</h2>
-				It is available in many programming languages ​​and is generally mandated. Fract does not enforce this, but supports its use.
+				It is available in many programming languages and is generally mandated. Fract does not enforce this, but supports its use.
 				If you wanted to continue the line, it would be freedom-restricting not having that option.
 				Therefore, you can write multiple statements on a single line by separating the statements with the statement terminator.
 				<div class="code" style="margin-top: 5px;"><func>println</func>(<numeric>5</numeric>); <func>println</func>(<numeric>2</numeric>)</div>
@@ -1051,6 +1051,52 @@ Fract Programming Language
 [1, 2, 20, -3, 590, 49]
 */</comment>
 </div>
+
+			<h3>Indexers</h3>
+			Indexers are not default-defined class members for index accessing with class instance.
+			You can create indexer your own class like string, list or similar to.
+			This indexers actually a function, yes function.
+			You can define and call similar to function them.
+			You can define and call them similar to function.
+			One difference is, uses <x class="inline_code">[...]</x> for definition and calling.
+			<br>
+			For example;
+			<div class="code"><keyword>class</keyword> <name>MyList</name> {
+  <name>buffer</name> = []
+
+  <keyword>func</keyword> <func>append</func>(<operator>...</operator><name>elements</name>) {
+    <keyword>this</keyword>.<name>buffer</name>.<func>pushBack</func>(<name>elements</name><operator>...</operator>)
+  }
+
+  <keyword>func</keyword> <func>String</func>() {
+    <keyword>return</keyword> <func>string</func>(<keyword>this</keyword><name>buffer</name>)
+  }
+
+  <keyword>func</keyword> <name>MyList</name>[<name>index</name>] {
+    <keyword>return</keyword> <keyword>this</keyword>.<name>buffer</name>[<name>index</name>]
+  }
+}
+
+<name>mylist</name> = <name>MyList</name>()
+<name>mylist</name>.<func>append</func>(<numeric>1</numeric>, <numeric>90</numeric>, <numeric>4</numeric>, <numeric>6</numeric>, <numeric>345</numeric>, <numeric>-49</numeric>)
+<func>println</func>(<name>mylist</name>)
+<name>mylist</name>[-1] = <numeric>9724</numeric>
+<func>println</func>(<name>mylist</name>)
+
+<comment>/* OUTPUT
+[1 90 4 6 345 -49]
+[1 90 4 6 345 9724]
+*/</comment>
+</div>
+			<br>
+			Indexers are a single function. Not have getter/setter specifications.<br>
+			Sure, we have return value with indexer, but we don't wanna changable?<br>
+			This thime, return value as constant.
+
+			<div class="warn">
+				Each returned value from indexers, returns reference of value.
+				So any assignment, effects to real value.
+			</div>
 
 			<br>
 			<br>
