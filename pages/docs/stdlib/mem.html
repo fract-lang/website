@@ -47,8 +47,9 @@
 				Drop deletes define from current package source by specified name.
 				Reports process state as boolean.
 				<br>
-				Special case is:
+				Special cases are:
 				<li>Drop(name) = error if "name" is not string</li>
+				<li>Drop(name) = false if "name" is empty</li>
 				<br><br>
 				<div class="code" style="margin-top: 5px; margin-bottom: 5px;"><keyword>func</keyword> <func>Copy</func>(*<name>dest</name>, <keyword>const var</keyword> <name>src</name>)</div>
 				Copy copies source list into destination list.
