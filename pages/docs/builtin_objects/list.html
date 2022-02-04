@@ -40,34 +40,68 @@
 			<br><br>
 			<div class="code" style="margin-top: 5px; margin-bottom: 5px;"><keyword>func</keyword> <func>insert</func>(<name>i</name>, <name>v</name>)</div>
 			Append values to list start at position.
+			<br>
+			Special cases are:
+			<li>insert(i, v) = panics if i is not integer</li>
+			<li>insert(i, v) = panics if index out of bounds</li>
 			<br><br>
 			<div class="code" style="margin-top: 5px; margin-bottom: 5px;"><keyword>func</keyword> <func>removeAt</func>(<name>i</name>)</div>
 			Remove element by index.
+			<br>
+			Special cases are:
+			<li>removeAt(i) = panics if i is not integer</li>
+			<li>removeAt(i) = panics if index out of bounds</li>
 			<br><br>
 			<div class="code" style="margin-top: 5px; margin-bottom: 5px;"><keyword>func</keyword> <func>remove</func>(<name>v</name>, <name>start</name><operator>=</operator><numeric>0</numeric>)</div>
 			Remove first matched element. Returns true value is removed, false if not.
 			Start parameter provides start position of search.
+			<br>
+			Special cases are:
+			<li>removeLast(v, start) = panics if start is not integer</li>
+			<li>removeLast(v, start) = panics if start out of bounds</li>
 			<br><br>
 			<div class="code" style="margin-top: 5px; margin-bottom: 5px;"><keyword>func</keyword> <func>removeLast</func>(<name>v</name>, <name>start</name><operator>=</operator><name>$len</name><operator>-</operator><numeric>1</numeric>)</div>
 			This function is same with <x class="inline_code"> remove </x> function.
 			Only difference is count down from list.
+			<br>
+			Special cases are:
+			<li>removeLast(v, start) = panics if start is not integer</li>
+			<li>removeLast(v, start) = panics if start out of bounds</li>
 			<br><br>
 			<div class="code" style="margin-top: 5px; margin-bottom: 5px;"><keyword>func</keyword> <func>removeAll</func>(<name>v</name>)</div>
 			Remove all matched elements.
 			<br><br>
 			<div class="code" style="margin-top: 5px; margin-bottom: 5px;"><keyword>func</keyword> <func>removeRange</func>(<name>start</name>, <name>to</name>)</div>
 			Remove elements between at start index and to specified end index.
+			<br>
+			Special cases are:
+			<li>removeRange(start, end) = panics if start is not integer</li>
+			<li>removeRange(start, end) = panics if start out of bounds</li>
+			<li>removeRange(start, end) = panics if end is not integer</li>
+			<li>removeRange(start, end) = panics if end out of bounds</li>
 			<br><br>
 			<div class="code" style="margin-top: 5px; margin-bottom: 5px;"><keyword>func</keyword> <func>index</func>(<name>v<name>, <name>start</name><operator>=</operator><numeric>0</numeric>)</div>
 			Returns index of first matched element if any matched element, <x class="inline_code"> -1 </x> if not.
 			Start parameter provides start position of search.
+			<br>
+			Special cases are:
+			<li>index(v, start) = panics if start is not integer</li>
+			<li>index(v, start) = panics if start out of bounds</li>
 			<br><br>
 			<div class="code" style="margin-top: 5px; margin-bottom: 5px;"><keyword>func</keyword> <func>indexLast</func>(<name>v</name>, <name>start</name><operator>=</operator><name>$len</name><operator>-</operator><numeric>1</numeric>)</div>
 			This function is same with <x class="inline_code"> index </x> function.
 			Only difference is count down from list.
+			<br>
+			Special cases are:
+			<li>indexLast(v, start) = panics if start is not integer</li>
+			<li>indexLast(v, start) = panics if start out of bounds</li>
 			<br><br>
 			<div class="code" style="margin-top: 5px; margin-bottom: 5px;"><keyword>func</keyword> <func>include</func>(<name>v</name>, <name>start</name><operator>=</operator><numeric>0</numeric>)</div>
 			Returns true if any matched element, false if not. Start parameter provides start position of search.
+			<br>
+			Special cases are:
+			<li>include(v, start) = panics if start is not integer</li>
+			<li>include(v, start) = panics if start out of bounds</li>
 			<br><br>
 			<div class="code" style="margin-top: 5px; margin-bottom: 5px;"><keyword>func</keyword> <func>clear</func>()</div>
 			Remove all elements.
@@ -75,8 +109,11 @@
 			<div class="code" style="margin-top: 5px; margin-bottom: 5px;"><keyword>func</keyword> <func>reverse</func>()</div>
 			Reverse elements.
 			<br><br>
-			<div class="code" style="margin-top: 5px; margin-bottom: 5px;"><keyword>func</keyword> <func>sort</func>()</div>
+			<div class="code" style="margin-top: 5px; margin-bottom: 5px;"><keyword>func</keyword> <func>sort</func>(<name>desc</name><operator>=</operator><keyword>false</keyword>)</div>
 			Sort elements.
+			<br>
+			Special case is are:
+			<li>sort(dest) = panics if dest is not boolean</li>
 			<br><br>
 			<div class="code" style="margin-top: 5px; margin-bottom: 5px;"><keyword>func</keyword> <func>unique</func>()</div>
 			Returns each element maximum one repetition in another list.
