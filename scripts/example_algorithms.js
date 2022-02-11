@@ -1,3 +1,7 @@
+// Copyright 2022 The Fract Authors.
+// Use of this source code is governed by a BSD 3-Clause
+// license that can be found in the LICENSE file.
+
 const code_helloworld = `<keyword>package</keyword> <name>main</name>
 
 <func>println</func>(<string>'Hello, 世界!'</string>)`
